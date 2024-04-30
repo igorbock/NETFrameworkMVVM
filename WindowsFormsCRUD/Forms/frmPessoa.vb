@@ -1,23 +1,24 @@
 ﻿Imports EntityFrameworkLib.Models
+Imports EntityFrameworkLib.Models.DTOs
 Imports VisualBasicLib.Abstracts
 Imports VisualBasicLib.Repositories
 Imports VisualBasicLib.ViewModels
 
 Public Class frmPessoa
-  Private Property _viewModelPessoa As TypeTViewModel(Of Pessoa)
+  Private Property _viewModelPessoa As TypeTViewModel(Of Pessoa, PessoaDTO)
 
   Public Sub New()
     InitializeComponent()
 
     _viewModelPessoa = New PessoaViewModel(New PessoaRepository)
 
-    TextBoxNome.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.Nome", True, DataSourceUpdateMode.OnPropertyChanged)
-    MaskedTextBoxCPF.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.CPF", True, DataSourceUpdateMode.OnPropertyChanged)
-    MaskedTextBoxRG.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.RG", True, DataSourceUpdateMode.OnPropertyChanged)
-    TextBoxEndereco.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.Endereco", True, DataSourceUpdateMode.OnPropertyChanged)
-    DateTimePickerNascimento.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.Nascimento", True, DataSourceUpdateMode.OnPropertyChanged)
-    UscDataGridViewPessoas.DataBindings.Add("DataSource", _viewModelPessoa, "ListTypeT", True, DataSourceUpdateMode.OnPropertyChanged)
-    UscDataGridViewPessoas.DataBindings.Add("Pessoa", _viewModelPessoa, "CurrentItem", True, DataSourceUpdateMode.OnPropertyChanged)
+    TextBoxNome.DataBindings.Add("Text", _viewModelPessoa, "CurrentItemDTO.Nome", True, DataSourceUpdateMode.OnPropertyChanged)
+    MaskedTextBoxCPF.DataBindings.Add("Text", _viewModelPessoa, "CurrentItemDTO.CPF", True, DataSourceUpdateMode.OnPropertyChanged)
+    MaskedTextBoxRG.DataBindings.Add("Text", _viewModelPessoa, "CurrentItemDTO.RG", True, DataSourceUpdateMode.OnPropertyChanged)
+    TextBoxEndereco.DataBindings.Add("Text", _viewModelPessoa, "Endereco", True, DataSourceUpdateMode.OnPropertyChanged)
+    DateTimePickerNascimento.DataBindings.Add("Text", _viewModelPessoa, "CurrentItemDTO.Nascimento", True, DataSourceUpdateMode.OnPropertyChanged)
+    UscDataGridViewPessoas.DataBindings.Add("DataSource", _viewModelPessoa, "ListTypeTDTO", True, DataSourceUpdateMode.OnPropertyChanged)
+    UscDataGridViewPessoas.DataBindings.Add("Pessoa", _viewModelPessoa, "CurrentItemDTO", True, DataSourceUpdateMode.OnPropertyChanged)
 
     ButtonNovo.DataBindings.Add("Enabled", _viewModelPessoa, "ButtonInsertVisible", True, DataSourceUpdateMode.OnPropertyChanged)
     ButtonEditar.DataBindings.Add("Enabled", _viewModelPessoa, "ButtonEditVisible", True, DataSourceUpdateMode.OnPropertyChanged)

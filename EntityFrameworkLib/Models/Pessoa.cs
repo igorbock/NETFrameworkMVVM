@@ -1,6 +1,7 @@
 ﻿using EntityFrameworkLib.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityFrameworkLib.Models
 {
@@ -23,7 +24,9 @@ namespace EntityFrameworkLib.Models
         [MaxLength(10)]
         public string RG { get; set; }
 
-        [MaxLength(100)]
-        public string Endereco { get; set; }
+        [ForeignKey("Endereco")]
+        public int? IdEndereco { get; set; }
+
+        public Endereco Endereco { get; set; }
     }
 }

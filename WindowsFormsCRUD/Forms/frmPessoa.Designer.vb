@@ -38,10 +38,10 @@ Partial Class frmPessoa
     Me.ButtonNovo = New System.Windows.Forms.Button()
     Me.GroupBoxPessoa = New System.Windows.Forms.GroupBox()
     Me.TableLayoutPanelMVVM = New System.Windows.Forms.TableLayoutPanel()
-    Me.ButtonEditar = New System.Windows.Forms.Button()
+    Me.UscDataGridViewPessoas = New WindowsFormsCRUD.UscDataGridViewPessoas()
     Me.GroupBoxComandos = New System.Windows.Forms.GroupBox()
     Me.TableLayoutPanelComandos = New System.Windows.Forms.TableLayoutPanel()
-    Me.UscDataGridViewPessoas = New WindowsFormsCRUD.UscDataGridViewPessoas()
+    Me.ButtonEditar = New System.Windows.Forms.Button()
     Me.ButtonCancelar = New System.Windows.Forms.Button()
     Me.TableLayoutPanelPessoas.SuspendLayout()
     Me.GroupBoxPessoa.SuspendLayout()
@@ -249,15 +249,15 @@ Partial Class frmPessoa
     Me.TableLayoutPanelMVVM.Size = New System.Drawing.Size(554, 418)
     Me.TableLayoutPanelMVVM.TabIndex = 0
     '
-    'ButtonEditar
+    'UscDataGridViewPessoas
     '
-    Me.ButtonEditar.Location = New System.Drawing.Point(78, 1)
-    Me.ButtonEditar.Margin = New System.Windows.Forms.Padding(1)
-    Me.ButtonEditar.Name = "ButtonEditar"
-    Me.ButtonEditar.Size = New System.Drawing.Size(75, 23)
-    Me.ButtonEditar.TabIndex = 1
-    Me.ButtonEditar.Text = "Editar"
-    Me.ButtonEditar.UseVisualStyleBackColor = True
+    Me.UscDataGridViewPessoas.DataSource = Nothing
+    Me.UscDataGridViewPessoas.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.UscDataGridViewPessoas.Location = New System.Drawing.Point(3, 137)
+    Me.UscDataGridViewPessoas.Name = "UscDataGridViewPessoas"
+    Me.UscDataGridViewPessoas.Pessoa = Nothing
+    Me.UscDataGridViewPessoas.Size = New System.Drawing.Size(550, 229)
+    Me.UscDataGridViewPessoas.TabIndex = 3
     '
     'GroupBoxComandos
     '
@@ -293,15 +293,15 @@ Partial Class frmPessoa
     Me.TableLayoutPanelComandos.Size = New System.Drawing.Size(548, 28)
     Me.TableLayoutPanelComandos.TabIndex = 0
     '
-    'UscDataGridViewPessoas
+    'ButtonEditar
     '
-    Me.UscDataGridViewPessoas.DataSource = Nothing
-    Me.UscDataGridViewPessoas.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.UscDataGridViewPessoas.Location = New System.Drawing.Point(3, 137)
-    Me.UscDataGridViewPessoas.Name = "UscDataGridViewPessoas"
-    Me.UscDataGridViewPessoas.Pessoa = Nothing
-    Me.UscDataGridViewPessoas.Size = New System.Drawing.Size(550, 229)
-    Me.UscDataGridViewPessoas.TabIndex = 3
+    Me.ButtonEditar.Location = New System.Drawing.Point(78, 1)
+    Me.ButtonEditar.Margin = New System.Windows.Forms.Padding(1)
+    Me.ButtonEditar.Name = "ButtonEditar"
+    Me.ButtonEditar.Size = New System.Drawing.Size(75, 23)
+    Me.ButtonEditar.TabIndex = 1
+    Me.ButtonEditar.Text = "Editar"
+    Me.ButtonEditar.UseVisualStyleBackColor = True
     '
     'ButtonCancelar
     '
