@@ -1,36 +1,22 @@
-﻿Imports System.Collections.ObjectModel
+﻿Imports System.Windows.Input
 Imports EntityFrameworkLib.Models
-Imports EntityFrameworkLib.Models.DTOs
 Imports VisualBasicLib.Abstracts
+Imports VisualBasicLib.Classes
+Imports VisualBasicLib.Interfaces
 Imports VisualBasicLib.Repositories
 
 Namespace ViewModels
   Public Class PessoaViewModel
-    Inherits TypeTViewModel(Of Pessoa, PessoaDTO)
+    Inherits TypeTViewModel(Of Pessoa)
 
     Private ReadOnly Property _enderecoRepository As RepositoryAbstract(Of Endereco)
+    Private ReadOnly Property _navigationManager As INavigationManager
 
-    Public Sub New(typeTRepository As RepositoryAbstract(Of Pessoa))
-      MyBase.New(typeTRepository)
+    Public Sub New(navigationManager As INavigationManager)
+      MyBase.New(New PessoaRepository())
 
       _enderecoRepository = New EnderecoRepository()
-      LoadTypeTDTO()
-    End Sub
-
-    Private Sub LoadTypeTDTO()
-      Dim enderecos As ObservableCollection(Of Endereco) = _enderecoRepository.GetAll()
-
-      ListTypeTDTO = New ObservableCollection(Of PessoaDTO)((From p In ListTypeT
-                                                             Join e In enderecos On e.Id Equals p.IdEndereco
-                                                             Select New PessoaDTO With {
-                                                               .Id = p.Id,
-                                                               .CPF = p.CPF,
-                                                               .RG = p.RG,
-                                                               .Nascimento = p.Nascimento,
-                                                               .Nome = p.Nome,
-                                                               .IdEndereco = e.Id,
-                                                               .Endereco = e.ToString
-                                                              }).ToList)
+      _navigationManager = navigationManager
     End Sub
 
     Public Property Nome() As String
@@ -72,16 +58,21 @@ Namespace ViewModels
     Private _endereco As String
     Public Property Endereco() As String
       Get
-        If CurrentItem.Endereco Is Nothing Then
+        If CurrentItem.IdEndereco Is Nothing Then
           Return _endereco
         Else
-          Return CurrentItem.Endereco.ToString
+          Return _enderecoRepository.GetById(CurrentItem.IdEndereco).ToString
         End If
       End Get
       Set(value As String)
         _endereco = value
         OnPropertyChanged(NameOf(Endereco))
       End Set
+    End Property
+    Public ReadOnly Property AddEnderecoCommand As ICommand
+      Get
+        Return New RelayCommand(Sub() _navigationManager.ShowPage("frmEndereco"))
+      End Get
     End Property
   End Class
 End Namespace

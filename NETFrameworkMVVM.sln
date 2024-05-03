@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VisualBasicLib", "VisualBasicLib\VisualBasicLib.vbproj", "{5E606570-0C6A-4D38-8AC8-A216DFD2595A}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VisualBasicLib", "VisualBasicLib\VisualBasicLib.vbproj", "{5E606570-0C6A-4D38-8AC8-A216DFD2595A}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WindowsFormsCRUD", "WindowsFormsCRUD\WindowsFormsCRUD.vbproj", "{338C579A-F77C-4224-934F-69819C718F07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkLib", "EntityFrameworkLib\EntityFrameworkLib.csproj", "{0953044A-9ECF-41D3-9240-76773294D9C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkLib", "EntityFrameworkLib\EntityFrameworkLib.csproj", "{0953044A-9ECF-41D3-9240-76773294D9C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiCRUD", "MauiCRUD\MauiCRUD.csproj", "{245DC3A8-1CB1-4D2F-9DFC-0075F4DCA99D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,12 @@ Global
 		{0953044A-9ECF-41D3-9240-76773294D9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0953044A-9ECF-41D3-9240-76773294D9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0953044A-9ECF-41D3-9240-76773294D9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{245DC3A8-1CB1-4D2F-9DFC-0075F4DCA99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{245DC3A8-1CB1-4D2F-9DFC-0075F4DCA99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{245DC3A8-1CB1-4D2F-9DFC-0075F4DCA99D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{245DC3A8-1CB1-4D2F-9DFC-0075F4DCA99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{245DC3A8-1CB1-4D2F-9DFC-0075F4DCA99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{245DC3A8-1CB1-4D2F-9DFC-0075F4DCA99D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

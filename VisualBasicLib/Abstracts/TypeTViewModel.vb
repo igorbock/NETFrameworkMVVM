@@ -6,7 +6,7 @@ Imports EntityFrameworkLib.Interfaces
 Imports VisualBasicLib.Classes
 
 Namespace Abstracts
-  Public MustInherit Class TypeTViewModel(Of TypeT As IEntity, TypeTDTO As Class)
+  Public MustInherit Class TypeTViewModel(Of TypeT As IEntity) ', TypeTDTO As Class)
     Implements INotifyPropertyChanged
 
     Protected ReadOnly Property _typeTRepository As RepositoryAbstract(Of TypeT)
@@ -15,7 +15,7 @@ Namespace Abstracts
       _typeTRepository = typeTRepository
       ListTypeT = _typeTRepository.GetAll()
       CurrentItem = Activator.CreateInstance(Of TypeT)
-      CurrentItemDTO = Activator.CreateInstance(Of TypeTDTO)
+      'CurrentItemDTO = Activator.CreateInstance(Of TypeTDTO)
       ReadMode()
     End Sub
     Private Property _listTypeT As ObservableCollection(Of TypeT)
@@ -28,26 +28,26 @@ Namespace Abstracts
         OnPropertyChanged(NameOf(ListTypeT))
       End Set
     End Property
-    Private _listTypeTDTO As ObservableCollection(Of TypeTDTO)
-    Public Property ListTypeTDTO() As ObservableCollection(Of TypeTDTO)
-      Get
-        Return _listTypeTDTO
-      End Get
-      Set(value As ObservableCollection(Of TypeTDTO))
-        _listTypeTDTO = value
-        OnPropertyChanged(NameOf(ListTypeTDTO))
-      End Set
-    End Property
-    Private _currentItemDTO As TypeTDTO
-    Public Property CurrentItemDTO() As TypeTDTO
-      Get
-        Return _currentItemDTO
-      End Get
-      Set(value As TypeTDTO)
-        _currentItemDTO = value
-        OnPropertyChanged(NameOf(CurrentItemDTO))
-      End Set
-    End Property
+    'Private _listTypeTDTO As ObservableCollection(Of TypeTDTO)
+    'Public Property ListTypeTDTO() As ObservableCollection(Of TypeTDTO)
+    '  Get
+    '    Return _listTypeTDTO
+    '  End Get
+    '  Set(value As ObservableCollection(Of TypeTDTO))
+    '    _listTypeTDTO = value
+    '    OnPropertyChanged(NameOf(ListTypeTDTO))
+    '  End Set
+    'End Property
+    'Private _currentItemDTO As TypeTDTO
+    'Public Property CurrentItemDTO() As TypeTDTO
+    '  Get
+    '    Return _currentItemDTO
+    '  End Get
+    '  Set(value As TypeTDTO)
+    '    _currentItemDTO = value
+    '    OnPropertyChanged(NameOf(CurrentItemDTO))
+    '  End Set
+    'End Property
     Private Property _currentItem As TypeT
     Public Property CurrentItem As TypeT
       Get
@@ -183,7 +183,7 @@ Namespace Abstracts
 
         If _currentItem.Id = 0 Then
           CurrentItem = Activator.CreateInstance(Of TypeT)
-          CurrentItemDTO = Activator.CreateInstance(Of TypeTDTO)
+          'CurrentItemDTO = Activator.CreateInstance(Of TypeTDTO)
         End If
       Catch ex As Exception
         OnErrorOcurred(ex)
@@ -194,7 +194,7 @@ Namespace Abstracts
         _typeTRepository.Begin()
         EditMode()
         CurrentItem = Activator.CreateInstance(Of TypeT)
-        CurrentItemDTO = Activator.CreateInstance(Of TypeTDTO)
+        'CurrentItemDTO = Activator.CreateInstance(Of TypeTDTO)
       Catch ex As Exception
         OnErrorOcurred(ex)
       End Try

@@ -183,6 +183,12 @@
     <Compile Include="Controls\UscTextBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\frmEndereco.Designer.vb">
+      <DependentUpon>frmEndereco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEndereco.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmPessoa.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Navigator\NavigatorWindowsForm.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\UscDataGridViewPessoas.resx">
@@ -212,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UscTextBox.resx">
       <DependentUpon>UscTextBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEndereco.resx">
+      <DependentUpon>frmEndereco.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPessoa.resx">
       <DependentUpon>frmPessoa.vb</DependentUpon>
@@ -248,6 +258,9 @@
       <Project>{5e606570-0c6a-4d38-8ac8-a216dfd2595a}</Project>
       <Name>VisualBasicLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -22,6 +22,7 @@ Partial Class frmPessoa
   'Não o modifique usando o editor de códigos.
   <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
+    Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPessoa))
     Me.DateTimePickerNascimento = New System.Windows.Forms.DateTimePicker()
     Me.TableLayoutPanelPessoas = New System.Windows.Forms.TableLayoutPanel()
     Me.MaskedTextBoxCPF = New System.Windows.Forms.MaskedTextBox()
@@ -33,16 +34,17 @@ Partial Class frmPessoa
     Me.LabelRG = New System.Windows.Forms.Label()
     Me.LabelNascimento = New System.Windows.Forms.Label()
     Me.LabelNome = New System.Windows.Forms.Label()
+    Me.ButtonAdicionarEndereco = New System.Windows.Forms.Button()
     Me.ButtonSalvar = New System.Windows.Forms.Button()
     Me.ButtonExcluir = New System.Windows.Forms.Button()
     Me.ButtonNovo = New System.Windows.Forms.Button()
     Me.GroupBoxPessoa = New System.Windows.Forms.GroupBox()
     Me.TableLayoutPanelMVVM = New System.Windows.Forms.TableLayoutPanel()
-    Me.UscDataGridViewPessoas = New WindowsFormsCRUD.UscDataGridViewPessoas()
     Me.GroupBoxComandos = New System.Windows.Forms.GroupBox()
     Me.TableLayoutPanelComandos = New System.Windows.Forms.TableLayoutPanel()
     Me.ButtonEditar = New System.Windows.Forms.Button()
     Me.ButtonCancelar = New System.Windows.Forms.Button()
+    Me.UscDataGridViewPessoas = New WindowsFormsCRUD.UscDataGridViewPessoas()
     Me.TableLayoutPanelPessoas.SuspendLayout()
     Me.GroupBoxPessoa.SuspendLayout()
     Me.TableLayoutPanelMVVM.SuspendLayout()
@@ -52,6 +54,7 @@ Partial Class frmPessoa
     '
     'DateTimePickerNascimento
     '
+    Me.TableLayoutPanelPessoas.SetColumnSpan(Me.DateTimePickerNascimento, 2)
     Me.DateTimePickerNascimento.Dock = System.Windows.Forms.DockStyle.Fill
     Me.DateTimePickerNascimento.Location = New System.Drawing.Point(71, 67)
     Me.DateTimePickerNascimento.Margin = New System.Windows.Forms.Padding(1)
@@ -61,9 +64,10 @@ Partial Class frmPessoa
     '
     'TableLayoutPanelPessoas
     '
-    Me.TableLayoutPanelPessoas.ColumnCount = 2
+    Me.TableLayoutPanelPessoas.ColumnCount = 3
     Me.TableLayoutPanelPessoas.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
     Me.TableLayoutPanelPessoas.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+    Me.TableLayoutPanelPessoas.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36.0!))
     Me.TableLayoutPanelPessoas.Controls.Add(Me.MaskedTextBoxCPF, 1, 1)
     Me.TableLayoutPanelPessoas.Controls.Add(Me.MaskedTextBoxRG, 1, 2)
     Me.TableLayoutPanelPessoas.Controls.Add(Me.TextBoxNome, 1, 0)
@@ -74,6 +78,7 @@ Partial Class frmPessoa
     Me.TableLayoutPanelPessoas.Controls.Add(Me.LabelNascimento, 0, 3)
     Me.TableLayoutPanelPessoas.Controls.Add(Me.DateTimePickerNascimento, 1, 3)
     Me.TableLayoutPanelPessoas.Controls.Add(Me.LabelNome, 0, 0)
+    Me.TableLayoutPanelPessoas.Controls.Add(Me.ButtonAdicionarEndereco, 2, 4)
     Me.TableLayoutPanelPessoas.Dock = System.Windows.Forms.DockStyle.Fill
     Me.TableLayoutPanelPessoas.Location = New System.Drawing.Point(3, 16)
     Me.TableLayoutPanelPessoas.Margin = New System.Windows.Forms.Padding(1)
@@ -84,12 +89,12 @@ Partial Class frmPessoa
     Me.TableLayoutPanelPessoas.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
     Me.TableLayoutPanelPessoas.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
     Me.TableLayoutPanelPessoas.RowStyles.Add(New System.Windows.Forms.RowStyle())
-    Me.TableLayoutPanelPessoas.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
     Me.TableLayoutPanelPessoas.Size = New System.Drawing.Size(548, 113)
     Me.TableLayoutPanelPessoas.TabIndex = 0
     '
     'MaskedTextBoxCPF
     '
+    Me.TableLayoutPanelPessoas.SetColumnSpan(Me.MaskedTextBoxCPF, 2)
     Me.MaskedTextBoxCPF.Dock = System.Windows.Forms.DockStyle.Fill
     Me.MaskedTextBoxCPF.Location = New System.Drawing.Point(71, 23)
     Me.MaskedTextBoxCPF.Margin = New System.Windows.Forms.Padding(1)
@@ -101,6 +106,7 @@ Partial Class frmPessoa
     '
     'MaskedTextBoxRG
     '
+    Me.TableLayoutPanelPessoas.SetColumnSpan(Me.MaskedTextBoxRG, 2)
     Me.MaskedTextBoxRG.Dock = System.Windows.Forms.DockStyle.Fill
     Me.MaskedTextBoxRG.Location = New System.Drawing.Point(71, 45)
     Me.MaskedTextBoxRG.Margin = New System.Windows.Forms.Padding(1)
@@ -111,6 +117,7 @@ Partial Class frmPessoa
     '
     'TextBoxNome
     '
+    Me.TableLayoutPanelPessoas.SetColumnSpan(Me.TextBoxNome, 2)
     Me.TextBoxNome.Dock = System.Windows.Forms.DockStyle.Fill
     Me.TextBoxNome.Location = New System.Drawing.Point(71, 1)
     Me.TextBoxNome.Margin = New System.Windows.Forms.Padding(1)
@@ -132,11 +139,11 @@ Partial Class frmPessoa
     '
     'TextBoxEndereco
     '
-    Me.TextBoxEndereco.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.TextBoxEndereco.Location = New System.Drawing.Point(71, 89)
+    Me.TextBoxEndereco.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+    Me.TextBoxEndereco.Location = New System.Drawing.Point(71, 90)
     Me.TextBoxEndereco.Margin = New System.Windows.Forms.Padding(1)
     Me.TextBoxEndereco.Name = "TextBoxEndereco"
-    Me.TextBoxEndereco.Size = New System.Drawing.Size(476, 20)
+    Me.TextBoxEndereco.Size = New System.Drawing.Size(440, 20)
     Me.TextBoxEndereco.TabIndex = 9
     '
     'LabelCPF
@@ -186,6 +193,17 @@ Partial Class frmPessoa
     Me.LabelNome.Size = New System.Drawing.Size(68, 13)
     Me.LabelNome.TabIndex = 0
     Me.LabelNome.Text = ":Nome"
+    '
+    'ButtonAdicionarEndereco
+    '
+    Me.ButtonAdicionarEndereco.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.ButtonAdicionarEndereco.Image = CType(resources.GetObject("ButtonAdicionarEndereco.Image"), System.Drawing.Image)
+    Me.ButtonAdicionarEndereco.Location = New System.Drawing.Point(513, 89)
+    Me.ButtonAdicionarEndereco.Margin = New System.Windows.Forms.Padding(1)
+    Me.ButtonAdicionarEndereco.Name = "ButtonAdicionarEndereco"
+    Me.ButtonAdicionarEndereco.Size = New System.Drawing.Size(34, 23)
+    Me.ButtonAdicionarEndereco.TabIndex = 10
+    Me.ButtonAdicionarEndereco.UseVisualStyleBackColor = True
     '
     'ButtonSalvar
     '
@@ -249,23 +267,13 @@ Partial Class frmPessoa
     Me.TableLayoutPanelMVVM.Size = New System.Drawing.Size(554, 418)
     Me.TableLayoutPanelMVVM.TabIndex = 0
     '
-    'UscDataGridViewPessoas
-    '
-    Me.UscDataGridViewPessoas.DataSource = Nothing
-    Me.UscDataGridViewPessoas.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.UscDataGridViewPessoas.Location = New System.Drawing.Point(3, 137)
-    Me.UscDataGridViewPessoas.Name = "UscDataGridViewPessoas"
-    Me.UscDataGridViewPessoas.Pessoa = Nothing
-    Me.UscDataGridViewPessoas.Size = New System.Drawing.Size(550, 229)
-    Me.UscDataGridViewPessoas.TabIndex = 3
-    '
     'GroupBoxComandos
     '
     Me.GroupBoxComandos.Controls.Add(Me.TableLayoutPanelComandos)
-    Me.GroupBoxComandos.Location = New System.Drawing.Point(1, 370)
+    Me.GroupBoxComandos.Location = New System.Drawing.Point(1, 373)
     Me.GroupBoxComandos.Margin = New System.Windows.Forms.Padding(1)
     Me.GroupBoxComandos.Name = "GroupBoxComandos"
-    Me.GroupBoxComandos.Size = New System.Drawing.Size(554, 47)
+    Me.GroupBoxComandos.Size = New System.Drawing.Size(554, 44)
     Me.GroupBoxComandos.TabIndex = 1
     Me.GroupBoxComandos.TabStop = False
     Me.GroupBoxComandos.Text = "Comandos"
@@ -284,13 +292,12 @@ Partial Class frmPessoa
     Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonExcluir, 2, 0)
     Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonCancelar, 5, 0)
     Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonSalvar, 4, 0)
-    Me.TableLayoutPanelComandos.Dock = System.Windows.Forms.DockStyle.Fill
     Me.TableLayoutPanelComandos.Location = New System.Drawing.Point(3, 16)
     Me.TableLayoutPanelComandos.Margin = New System.Windows.Forms.Padding(1)
     Me.TableLayoutPanelComandos.Name = "TableLayoutPanelComandos"
     Me.TableLayoutPanelComandos.RowCount = 1
     Me.TableLayoutPanelComandos.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-    Me.TableLayoutPanelComandos.Size = New System.Drawing.Size(548, 28)
+    Me.TableLayoutPanelComandos.Size = New System.Drawing.Size(548, 25)
     Me.TableLayoutPanelComandos.TabIndex = 0
     '
     'ButtonEditar
@@ -312,6 +319,16 @@ Partial Class frmPessoa
     Me.ButtonCancelar.TabIndex = 4
     Me.ButtonCancelar.Text = "Cancelar"
     Me.ButtonCancelar.UseVisualStyleBackColor = True
+    '
+    'UscDataGridViewPessoas
+    '
+    Me.UscDataGridViewPessoas.DataSource = Nothing
+    Me.UscDataGridViewPessoas.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.UscDataGridViewPessoas.Location = New System.Drawing.Point(3, 137)
+    Me.UscDataGridViewPessoas.Name = "UscDataGridViewPessoas"
+    Me.UscDataGridViewPessoas.Pessoa = Nothing
+    Me.UscDataGridViewPessoas.Size = New System.Drawing.Size(550, 232)
+    Me.UscDataGridViewPessoas.TabIndex = 3
     '
     'frmPessoa
     '
@@ -355,4 +372,5 @@ Partial Class frmPessoa
   Friend WithEvents UscDataGridViewPessoas As UscDataGridViewPessoas
   Friend WithEvents ButtonEditar As Button
   Friend WithEvents ButtonCancelar As Button
+  Friend WithEvents ButtonAdicionarEndereco As Button
 End Class

@@ -32,7 +32,6 @@ Partial Class UscDataGridViewPessoas
     Me.colCPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.colRG = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.colIdEndereco = New System.Windows.Forms.DataGridViewTextBoxColumn()
-    Me.colEndereco = New System.Windows.Forms.DataGridViewTextBoxColumn()
     CType(Me.DataGridViewPessoas, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.SuspendLayout()
     '
@@ -57,7 +56,7 @@ Partial Class UscDataGridViewPessoas
     Me.DataGridViewPessoas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
     Me.DataGridViewPessoas.ColumnHeadersHeight = 30
     Me.DataGridViewPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-    Me.DataGridViewPessoas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colId, Me.colNome, Me.colNascimento, Me.colCPF, Me.colRG, Me.colIdEndereco, Me.colEndereco})
+    Me.DataGridViewPessoas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colId, Me.colNome, Me.colNascimento, Me.colCPF, Me.colRG, Me.colIdEndereco})
     DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
     DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
     DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -138,17 +137,7 @@ Partial Class UscDataGridViewPessoas
     Me.colIdEndereco.Name = "colIdEndereco"
     Me.colIdEndereco.ReadOnly = True
     Me.colIdEndereco.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-    Me.colIdEndereco.Visible = False
     Me.colIdEndereco.Width = 91
-    '
-    'colEndereco
-    '
-    Me.colEndereco.DataPropertyName = "Endereco"
-    Me.colEndereco.HeaderText = "Endereço"
-    Me.colEndereco.Name = "colEndereco"
-    Me.colEndereco.ReadOnly = True
-    Me.colEndereco.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-    Me.colEndereco.Width = 84
     '
     'UscDataGridViewPessoas
     '
@@ -169,5 +158,4 @@ Partial Class UscDataGridViewPessoas
   Friend WithEvents colCPF As DataGridViewTextBoxColumn
   Friend WithEvents colRG As DataGridViewTextBoxColumn
   Friend WithEvents colIdEndereco As DataGridViewTextBoxColumn
-  Friend WithEvents colEndereco As DataGridViewTextBoxColumn
 End Class

@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkLib.Interfaces;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -27,6 +28,7 @@ namespace EntityFrameworkLib.Models
         [ForeignKey("Endereco")]
         public int? IdEndereco { get; set; }
 
+        [Browsable(false)]
         public Endereco Endereco { get; set; }
     }
 }
