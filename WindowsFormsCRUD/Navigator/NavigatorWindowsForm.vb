@@ -3,7 +3,6 @@
 Namespace Navigator
   Public Class NavigatorWindowsForm
     Implements INavigationManager
-
     Public Sub ShowPage(pageName As String) Implements INavigationManager.ShowPage
       Try
         Dim formName As String = $"WindowsFormsCRUD.{pageName}"

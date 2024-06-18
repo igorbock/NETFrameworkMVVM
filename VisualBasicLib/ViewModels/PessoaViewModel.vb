@@ -10,13 +10,11 @@ Namespace ViewModels
     Inherits TypeTViewModel(Of Pessoa)
 
     Private ReadOnly Property _enderecoRepository As RepositoryAbstract(Of Endereco)
-    Private ReadOnly Property _navigationManager As INavigationManager
 
-    Public Sub New(navigationManager As INavigationManager)
-      MyBase.New(New PessoaRepository())
+    Public Sub New(navManager As INavigationManager)
+      MyBase.New(New PessoaRepository(), navManager)
 
       _enderecoRepository = New EnderecoRepository()
-      _navigationManager = navigationManager
     End Sub
 
     Public Property Nome() As String

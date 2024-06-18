@@ -1,12 +1,13 @@
-﻿namespace MauiCRUD
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+﻿using MauiCRUD.Pages;
 
-            MainPage = new AppShell();
-        }
+namespace MauiCRUD;
+
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+
+        MainPage = new frmHome();
     }
 }

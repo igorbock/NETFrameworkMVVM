@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiCRUD.Pages;
+using Microsoft.Extensions.Logging;
 
 namespace MauiCRUD
 {
@@ -18,6 +19,7 @@ namespace MauiCRUD
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            Routing.RegisterRoute("endereco", typeof(frmEndereco));
 
             return builder.Build();
         }
