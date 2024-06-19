@@ -218,6 +218,7 @@ Partial Class frmEndereco
         Me.gEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.gEnderecos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colId, Me.colRua, Me.colNumero, Me.colCidade, Me.colEstado})
         Me.TableLayoutPanelEndereco.SetColumnSpan(Me.gEnderecos, 6)
+        Me.gEnderecos.DataMember = "Endereco"
         Me.gEnderecos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gEnderecos.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.gEnderecos.Location = New System.Drawing.Point(3, 143)

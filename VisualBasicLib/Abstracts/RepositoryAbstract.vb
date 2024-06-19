@@ -12,12 +12,7 @@ Namespace Abstracts
     End Sub
 
     Protected Overrides Sub Finalize()
-      If _dbContext IsNot Nothing Then
-        _dbContext.Dispose()
-      End If
-      If _transaction IsNot Nothing Then
-        _transaction.Dispose()
-      End If
+      If _transaction IsNot Nothing Then _transaction.Dispose()
     End Sub
 
     Public MustOverride Sub Insert(entity As TypeT)

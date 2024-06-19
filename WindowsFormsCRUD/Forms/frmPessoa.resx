@@ -120,12 +120,12 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonAdicionarEndereco.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADtSURBVDhPtZNLCsIwEIZ7Ar2Geg4XxYYmCF5FrWfxAb4W
-        IokrT6AHsJ7BXdfufMykI6btBBT0h3/TzPdPZkiDvyjexa1IqwQ8IycdrZp07Fd706tHRq6FVndh1KNg
-        +AZBq3Af1qi8KISFkecKWLZWKRtiO3MAa7kgLBfOzF37cDlal79jbWEn0H1UKQJ7A9BaDQmHANi0e/gC
-        s2tmzQfJCeE2YOoefhIAzJjwH4yAC/lmidDwJrbdBuG58JGUC32G2jlhb+HjgFukHOAa4JP3NdoQI5fc
-        OHht7OyFXeFOABgAkP9MRvYrM/9GQfAE+DZ2OmWGk2UAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAO1JREFUOE+1k0sKwjAQhnsCvYZ6DhfFhiYIXkWtZ/EBvhYiiStPoAewnsFd1+58
+        zKQjpu0EFPSHf9PM909mSIO/KN7FrUirBDwjJx2tmnTsV3vTq0dGroVWd2HUo2D4BkGrcB/WqLwohIWR
+        5wpYtlYpG2I7cwBruSAsF87MXftwOVqXv2NtYSfQfVQpAnsD0FoNCYcA2LR7+AKza2bNB8kJ4TZg6h5+
+        EgDMmPAfjIAL+WaJ0PAmtt0G4bnwkZQLfYbaOWFv4eOAW6Qc4Brgk/c12hAjl9w4eG3s7IVd4U4AGACQ
+        /0xG9isz/0ZB8AT4NnY6ZYaTZQAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

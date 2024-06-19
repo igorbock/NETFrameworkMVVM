@@ -8,7 +8,8 @@ Namespace Classes
     End Sub
     Public Shared Function SelectTypeT(Of TypeT)(grid As DataGridView) As TypeT
       Dim row As Integer = grid.SelectedRows(0).Index
-      Return grid.Rows(row).DataBoundItem
+      Dim retorno As TypeT = CType(grid.Rows(row).DataBoundItem, TypeT)
+      Return retorno
     End Function
   End Class
 End Namespace

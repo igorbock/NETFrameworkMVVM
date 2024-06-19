@@ -16,6 +16,7 @@ Public Class frmPessoa
     DateTimePickerNascimento.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.Nascimento), True, DataSourceUpdateMode.OnPropertyChanged)
     UscDataGridViewPessoas.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.ListTypeT), True, DataSourceUpdateMode.OnPropertyChanged)
     UscDataGridViewPessoas.DataBindings.Add("Pessoa", _viewModelPessoa, NameOf(_viewModelPessoa.CurrentItem), True, DataSourceUpdateMode.OnPropertyChanged)
+    cmbEndereco.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.Enderecos), True, DataSourceUpdateMode.Never)
 
     ButtonNovo.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonInsertVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     ButtonEditar.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonEditVisible), True, DataSourceUpdateMode.OnPropertyChanged)

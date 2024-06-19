@@ -11,10 +11,10 @@ Public Class frmEndereco
 
     _viewModelEndereco = New EnderecoViewModel(New NavigatorWindowsForm)
 
-    txtRua.DataBindings.Add("EditValue", _viewModelEndereco, "CurrentItem.Rua", True, DataSourceUpdateMode.OnPropertyChanged)
-    txtNumero.DataBindings.Add("EditValue", _viewModelEndereco, "CurrentItem.Numero", True, DataSourceUpdateMode.OnPropertyChanged)
-    txtCidade.DataBindings.Add("EditValue", _viewModelEndereco, "CurrentItem.Cidade", True, DataSourceUpdateMode.OnPropertyChanged)
-    txtEstado.DataBindings.Add("EditValue", _viewModelEndereco, "CurrentItem.Estado", True, DataSourceUpdateMode.OnPropertyChanged)
+    txtRua.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Rua", True, DataSourceUpdateMode.OnPropertyChanged)
+    txtNumero.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Numero", True, DataSourceUpdateMode.OnPropertyChanged)
+    txtCidade.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Cidade", True, DataSourceUpdateMode.OnPropertyChanged)
+    txtEstado.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Estado", True, DataSourceUpdateMode.OnPropertyChanged)
     gEnderecos.DataBindings.Add("DataSource", _viewModelEndereco, "ListTypeT", True, DataSourceUpdateMode.OnPropertyChanged)
 
     btnNovo.DataBindings.Add("Enabled", _viewModelEndereco, NameOf(_viewModelEndereco.ButtonInsertVisible), True, DataSourceUpdateMode.OnPropertyChanged)
@@ -34,7 +34,8 @@ Public Class frmEndereco
     AddHandler btnSalvar.Click, Sub() _viewModelEndereco.SaveCommand.Execute(Nothing)
     AddHandler btnEditar.Click, Sub() _viewModelEndereco.UpdateCommand.Execute(Nothing)
     AddHandler btnCancelar.Click, Sub() _viewModelEndereco.CancelCommand.Execute(Nothing)
-    AddHandler gEnderecos.SelectionChanged, AddressOf SelectCurrentItem
+    'AddHandler gEnderecos.SelectionChanged, AddressOf SelectCurrentItem
+    AddHandler gEnderecos.CellClick, Sub(sender, e) CellClick(e, gEnderecos)
   End Sub
 
   Private Sub SelectCurrentItem()
@@ -42,5 +43,12 @@ Public Class frmEndereco
       _viewModelEndereco.CurrentItem = Classes.FormUtils.SelectTypeT(Of Endereco)(gEnderecos)
     Catch ex As Exception
     End Try
+  End Sub
+  Private Sub CellClick(e As DataGridViewCellEventArgs, grid As DataGridView)
+    If e.RowIndex >= 0 Then
+      Dim linhaSelecionada As DataGridViewRow = grid.Rows(e.RowIndex)
+      Dim typeTInstance As Endereco = linhaSelecionada.DataBoundItem
+      _viewModelEndereco.CurrentItem = typeTInstance
+    End If
   End Sub
 End Class

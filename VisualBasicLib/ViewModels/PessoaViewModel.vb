@@ -15,6 +15,7 @@ Namespace ViewModels
       MyBase.New(New PessoaRepository(), navManager)
 
       _enderecoRepository = New EnderecoRepository()
+      Enderecos = _enderecoRepository.GetAll.Select(Function(a) $"{a.Rua}, {If(a.Numero IsNot Nothing, a.Numero.ToString, "S/N")} / {a.Cidade} - {a.Estado}").ToList
     End Sub
 
     Public Property Nome() As String
@@ -65,6 +66,15 @@ Namespace ViewModels
       Set(value As String)
         _endereco = value
         OnPropertyChanged(NameOf(Endereco))
+      End Set
+    End Property
+    Private _enderecos As List(Of String)
+    Public Property Enderecos() As List(Of String)
+      Get
+        Return _enderecos
+      End Get
+      Set(value As List(Of String))
+        _enderecos = value
       End Set
     End Property
     Public ReadOnly Property AddEnderecoCommand As ICommand
