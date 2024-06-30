@@ -55,20 +55,6 @@ Namespace ViewModels
         OnPropertyChanged(NameOf(Nascimento))
       End Set
     End Property
-    'Private _endereco As String
-    'Public Property Endereco() As String
-    '  Get
-    '    If CurrentItem.IdEndereco Is Nothing Then
-    '      Return _endereco
-    '    Else
-    '      Return _enderecoRepository.GetById(CurrentItem.IdEndereco).ToString
-    '    End If
-    '  End Get
-    '  Set(value As String)
-    '    _endereco = value
-    '    OnPropertyChanged(NameOf(Endereco))
-    '  End Set
-    'End Property
     Public Property Endereco As Integer?
       Get
         Return CurrentItem.IdEndereco

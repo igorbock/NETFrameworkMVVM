@@ -1,5 +1,4 @@
-﻿Imports EntityFrameworkLib.Models
-Imports VisualBasicLib.ViewModels
+﻿Imports VisualBasicLib.ViewModels
 Imports WindowsFormsCRUD.Navigator
 
 Public Class frmPessoa
@@ -21,12 +20,11 @@ Public Class frmPessoa
     TextBoxNome.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.Nome), True, DataSourceUpdateMode.OnPropertyChanged)
     MaskedTextBoxCPF.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.CPF), True, DataSourceUpdateMode.OnPropertyChanged)
     MaskedTextBoxRG.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.RG), True, DataSourceUpdateMode.OnPropertyChanged)
-    TextBoxEndereco.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.Endereco), True, DataSourceUpdateMode.OnPropertyChanged)
     DateTimePickerNascimento.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.Nascimento), True, DataSourceUpdateMode.OnPropertyChanged)
     UscDataGridViewPessoas.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.ListTypeT), True, DataSourceUpdateMode.OnPropertyChanged)
     UscDataGridViewPessoas.DataBindings.Add("Pessoa", _viewModelPessoa, NameOf(_viewModelPessoa.CurrentItem), True, DataSourceUpdateMode.OnPropertyChanged)
-    DataBindings.Add("Enderecos", _viewModelPessoa, NameOf(_viewModelPessoa.Enderecos), True, DataSourceUpdateMode.Never)
-    cmbEndereco.DataBindings.Add("SelectedItem", _viewModelPessoa, NameOf(_viewModelPessoa.Endereco), True, DataSourceUpdateMode.OnPropertyChanged)
+    DataBindings.Add("Enderecos", _viewModelPessoa, NameOf(_viewModelPessoa.Enderecos), True, DataSourceUpdateMode.OnPropertyChanged)
+    cmbEndereco.DataBindings.Add("SelectedValue", _viewModelPessoa, NameOf(_viewModelPessoa.Endereco), True, DataSourceUpdateMode.OnPropertyChanged)
 
     ButtonNovo.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonInsertVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     ButtonEditar.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonEditVisible), True, DataSourceUpdateMode.OnPropertyChanged)

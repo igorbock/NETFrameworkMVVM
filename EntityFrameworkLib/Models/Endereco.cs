@@ -24,7 +24,5 @@ namespace EntityFrameworkLib.Models
         {
             get => $"{Rua}, {(Numero.HasValue ? Numero.ToString() : "S/N")} / {Cidade} - {Estado}";
         }
-
-        public override string ToString() => $"{Rua}, {(Numero.HasValue ? Numero.ToString() : "S/N")} / {Cidade} - {Estado}";
     }
 }

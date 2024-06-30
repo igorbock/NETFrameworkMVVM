@@ -24,10 +24,6 @@ Partial Class frmEndereco
   Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanelEndereco = New System.Windows.Forms.TableLayoutPanel()
-        Me.txtRua = New WindowsFormsCRUD.UscTextBox()
-        Me.txtNumero = New WindowsFormsCRUD.UscTextBox()
-        Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
-        Me.txtEstado = New WindowsFormsCRUD.UscTextBox()
         Me.btnNovo = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
@@ -39,6 +35,10 @@ Partial Class frmEndereco
         Me.colNumero = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colCidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtRua = New WindowsFormsCRUD.UscTextBox()
+        Me.txtNumero = New WindowsFormsCRUD.UscTextBox()
+        Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
+        Me.txtEstado = New WindowsFormsCRUD.UscTextBox()
         Me.TableLayoutPanelEndereco.SuspendLayout()
         CType(Me.gEnderecos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,66 +75,6 @@ Partial Class frmEndereco
         Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanelEndereco.Size = New System.Drawing.Size(504, 408)
         Me.TableLayoutPanelEndereco.TabIndex = 0
-        '
-        'txtRua
-        '
-        Me.txtRua.AutoSize = True
-        Me.txtRua.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtRua, 6)
-        Me.txtRua.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtRua.EditValue = ""
-        Me.txtRua.LabelText = "Rua"
-        Me.txtRua.Location = New System.Drawing.Point(1, 1)
-        Me.txtRua.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtRua.Name = "txtRua"
-        Me.txtRua.Size = New System.Drawing.Size(502, 33)
-        Me.txtRua.TabIndex = 8
-        '
-        'txtNumero
-        '
-        Me.txtNumero.AutoSize = True
-        Me.txtNumero.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtNumero, 6)
-        Me.txtNumero.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtNumero.EditValue = ""
-        Me.txtNumero.LabelText = "Número"
-        Me.txtNumero.Location = New System.Drawing.Point(1, 36)
-        Me.txtNumero.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtNumero.Name = "txtNumero"
-        Me.txtNumero.Size = New System.Drawing.Size(502, 33)
-        Me.txtNumero.TabIndex = 9
-        '
-        'txtCidade
-        '
-        Me.txtCidade.AutoSize = True
-        Me.txtCidade.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtCidade, 6)
-        Me.txtCidade.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtCidade.EditValue = ""
-        Me.txtCidade.LabelText = "Cidade"
-        Me.txtCidade.Location = New System.Drawing.Point(1, 71)
-        Me.txtCidade.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtCidade.Name = "txtCidade"
-        Me.txtCidade.Size = New System.Drawing.Size(502, 33)
-        Me.txtCidade.TabIndex = 10
-        '
-        'txtEstado
-        '
-        Me.txtEstado.AutoSize = True
-        Me.txtEstado.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtEstado, 6)
-        Me.txtEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtEstado.EditValue = ""
-        Me.txtEstado.LabelText = "Estado"
-        Me.txtEstado.Location = New System.Drawing.Point(1, 106)
-        Me.txtEstado.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.Size = New System.Drawing.Size(502, 33)
-        Me.txtEstado.TabIndex = 11
         '
         'btnNovo
         '
@@ -274,14 +214,76 @@ Partial Class frmEndereco
         Me.colEstado.ReadOnly = True
         Me.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
+        'txtRua
+        '
+        Me.txtRua.AutoSize = True
+        Me.txtRua.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtRua, 6)
+        Me.txtRua.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtRua.EditValue = ""
+        Me.txtRua.LabelText = "Rua"
+        Me.txtRua.Location = New System.Drawing.Point(1, 1)
+        Me.txtRua.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtRua.Name = "txtRua"
+        Me.txtRua.Size = New System.Drawing.Size(502, 33)
+        Me.txtRua.TabIndex = 8
+        '
+        'txtNumero
+        '
+        Me.txtNumero.AutoSize = True
+        Me.txtNumero.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtNumero, 6)
+        Me.txtNumero.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtNumero.EditValue = ""
+        Me.txtNumero.LabelText = "Número"
+        Me.txtNumero.Location = New System.Drawing.Point(1, 36)
+        Me.txtNumero.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(502, 33)
+        Me.txtNumero.TabIndex = 9
+        '
+        'txtCidade
+        '
+        Me.txtCidade.AutoSize = True
+        Me.txtCidade.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtCidade, 6)
+        Me.txtCidade.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCidade.EditValue = ""
+        Me.txtCidade.LabelText = "Cidade"
+        Me.txtCidade.Location = New System.Drawing.Point(1, 71)
+        Me.txtCidade.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtCidade.Name = "txtCidade"
+        Me.txtCidade.Size = New System.Drawing.Size(502, 33)
+        Me.txtCidade.TabIndex = 10
+        '
+        'txtEstado
+        '
+        Me.txtEstado.AutoSize = True
+        Me.txtEstado.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtEstado, 6)
+        Me.txtEstado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtEstado.EditValue = ""
+        Me.txtEstado.LabelText = "Estado"
+        Me.txtEstado.Location = New System.Drawing.Point(1, 106)
+        Me.txtEstado.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtEstado.Name = "txtEstado"
+        Me.txtEstado.Size = New System.Drawing.Size(502, 33)
+        Me.txtEstado.TabIndex = 11
+        '
         'frmEndereco
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(504, 408)
         Me.Controls.Add(Me.TableLayoutPanelEndereco)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmEndereco"
-        Me.Text = "frmEndereco"
+        Me.Text = "Cadastro de Endereço"
         Me.TableLayoutPanelEndereco.ResumeLayout(False)
         Me.TableLayoutPanelEndereco.PerformLayout()
         CType(Me.gEnderecos, System.ComponentModel.ISupportInitialize).EndInit()

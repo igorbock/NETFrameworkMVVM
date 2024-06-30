@@ -37,7 +37,6 @@ Partial Class frmPessoa
         Me.LabelNascimento = New System.Windows.Forms.Label()
         Me.LabelNome = New System.Windows.Forms.Label()
         Me.ButtonAdicionarEndereco = New System.Windows.Forms.Button()
-        Me.TextBoxEndereco = New System.Windows.Forms.TextBox()
         Me.ButtonSalvar = New System.Windows.Forms.Button()
         Me.ButtonExcluir = New System.Windows.Forms.Button()
         Me.ButtonNovo = New System.Windows.Forms.Button()
@@ -217,15 +216,6 @@ Partial Class frmPessoa
         Me.ButtonAdicionarEndereco.TabIndex = 10
         Me.ButtonAdicionarEndereco.UseVisualStyleBackColor = True
         '
-        'TextBoxEndereco
-        '
-        Me.TextBoxEndereco.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxEndereco.Location = New System.Drawing.Point(232, 2)
-        Me.TextBoxEndereco.Margin = New System.Windows.Forms.Padding(1)
-        Me.TextBoxEndereco.Name = "TextBoxEndereco"
-        Me.TextBoxEndereco.Size = New System.Drawing.Size(163, 20)
-        Me.TextBoxEndereco.TabIndex = 9
-        '
         'ButtonSalvar
         '
         Me.ButtonSalvar.Location = New System.Drawing.Point(397, 1)
@@ -319,7 +309,6 @@ Partial Class frmPessoa
         Me.TableLayoutPanelComandos.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanelComandos.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonEditar, 1, 0)
-        Me.TableLayoutPanelComandos.Controls.Add(Me.TextBoxEndereco, 3, 0)
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonNovo, 0, 0)
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonExcluir, 2, 0)
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonCancelar, 5, 0)
@@ -371,7 +360,6 @@ Partial Class frmPessoa
         Me.TableLayoutPanelMVVM.ResumeLayout(False)
         Me.GroupBoxComandos.ResumeLayout(False)
         Me.TableLayoutPanelComandos.ResumeLayout(False)
-        Me.TableLayoutPanelComandos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -386,9 +374,8 @@ Partial Class frmPessoa
   Friend WithEvents LabelRG As Label
   Friend WithEvents LabelEndereco As Label
   Friend WithEvents LabelNascimento As Label
-  Friend WithEvents TextBoxEndereco As TextBox
-  Friend WithEvents MaskedTextBoxCPF As MaskedTextBox
-  Friend WithEvents MaskedTextBoxRG As MaskedTextBox
+    Friend WithEvents MaskedTextBoxCPF As MaskedTextBox
+    Friend WithEvents MaskedTextBoxRG As MaskedTextBox
   Friend WithEvents GroupBoxPessoa As GroupBox
   Friend WithEvents TableLayoutPanelMVVM As TableLayoutPanel
   Friend WithEvents GroupBoxComandos As GroupBox

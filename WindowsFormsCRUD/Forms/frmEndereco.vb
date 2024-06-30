@@ -34,7 +34,6 @@ Public Class frmEndereco
     AddHandler btnSalvar.Click, Sub() _viewModelEndereco.SaveCommand.Execute(Nothing)
     AddHandler btnEditar.Click, Sub() _viewModelEndereco.UpdateCommand.Execute(Nothing)
     AddHandler btnCancelar.Click, Sub() _viewModelEndereco.CancelCommand.Execute(Nothing)
-    'AddHandler gEnderecos.SelectionChanged, AddressOf SelectCurrentItem
     AddHandler gEnderecos.CellClick, Sub(sender, e) CellClick(e, gEnderecos)
   End Sub
 
