@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkLib.Interfaces;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityFrameworkLib.Models
 {
@@ -17,6 +18,12 @@ namespace EntityFrameworkLib.Models
 
         [Required, MaxLength(2)]
         public string Estado { get; set; }
+
+        [NotMapped]
+        public string EnderecoCompleto
+        {
+            get => $"{Rua}, {(Numero.HasValue ? Numero.ToString() : "S/N")} / {Cidade} - {Estado}";
+        }
 
         public override string ToString() => $"{Rua}, {(Numero.HasValue ? Numero.ToString() : "S/N")} / {Cidade} - {Estado}";
     }

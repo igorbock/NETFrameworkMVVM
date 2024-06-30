@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="bsEndereco.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonAdicionarEndereco.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAO1JREFUOE+1k0sKwjAQhnsCvYZ6DhfFhiYIXkWtZ/EBvhYiiStPoAewnsFd1+58
+        DAAACwwBP0AiyAAAAO1JREFUOE+1k0sKwjAQhnsCvYZ6DhfFhiYIXkWtZ/EBvhYiiStPoAewnsFd1+58
         zKQjpu0EFPSHf9PM909mSIO/KN7FrUirBDwjJx2tmnTsV3vTq0dGroVWd2HUo2D4BkGrcB/WqLwohIWR
         5wpYtlYpG2I7cwBruSAsF87MXftwOVqXv2NtYSfQfVQpAnsD0FoNCYcA2LR7+AKza2bNB8kJ4TZg6h5+
         EgDMmPAfjIAL+WaJ0PAmtt0G4bnwkZQLfYbaOWFv4eOAW6Qc4Brgk/c12hAjl9w4eG3s7IVd4U4AGACQ

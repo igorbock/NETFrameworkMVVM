@@ -22,31 +22,34 @@ Partial Class frmPessoa
   'Não o modifique usando o editor de códigos.
   <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
-    Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPessoa))
-    Me.DateTimePickerNascimento = New System.Windows.Forms.DateTimePicker()
-    Me.TableLayoutPanelPessoas = New System.Windows.Forms.TableLayoutPanel()
-    Me.MaskedTextBoxCPF = New System.Windows.Forms.MaskedTextBox()
-    Me.MaskedTextBoxRG = New System.Windows.Forms.MaskedTextBox()
-    Me.TextBoxNome = New System.Windows.Forms.TextBox()
-    Me.LabelEndereco = New System.Windows.Forms.Label()
-    Me.TextBoxEndereco = New System.Windows.Forms.TextBox()
-    Me.LabelCPF = New System.Windows.Forms.Label()
-    Me.LabelRG = New System.Windows.Forms.Label()
-    Me.LabelNascimento = New System.Windows.Forms.Label()
-    Me.LabelNome = New System.Windows.Forms.Label()
-    Me.ButtonAdicionarEndereco = New System.Windows.Forms.Button()
-    Me.ButtonSalvar = New System.Windows.Forms.Button()
-    Me.ButtonExcluir = New System.Windows.Forms.Button()
-    Me.ButtonNovo = New System.Windows.Forms.Button()
-    Me.GroupBoxPessoa = New System.Windows.Forms.GroupBox()
-    Me.TableLayoutPanelMVVM = New System.Windows.Forms.TableLayoutPanel()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPessoa))
+        Me.DateTimePickerNascimento = New System.Windows.Forms.DateTimePicker()
+        Me.TableLayoutPanelPessoas = New System.Windows.Forms.TableLayoutPanel()
+        Me.MaskedTextBoxCPF = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxRG = New System.Windows.Forms.MaskedTextBox()
+        Me.TextBoxNome = New System.Windows.Forms.TextBox()
+        Me.LabelEndereco = New System.Windows.Forms.Label()
+        Me.LabelCPF = New System.Windows.Forms.Label()
+        Me.cmbEndereco = New System.Windows.Forms.ComboBox()
+        Me.bsEndereco = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LabelRG = New System.Windows.Forms.Label()
+        Me.LabelNascimento = New System.Windows.Forms.Label()
+        Me.LabelNome = New System.Windows.Forms.Label()
+        Me.ButtonAdicionarEndereco = New System.Windows.Forms.Button()
+        Me.TextBoxEndereco = New System.Windows.Forms.TextBox()
+        Me.ButtonSalvar = New System.Windows.Forms.Button()
+        Me.ButtonExcluir = New System.Windows.Forms.Button()
+        Me.ButtonNovo = New System.Windows.Forms.Button()
+        Me.GroupBoxPessoa = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanelMVVM = New System.Windows.Forms.TableLayoutPanel()
         Me.UscDataGridViewPessoas = New WindowsFormsCRUD.UscDataGridViewPessoas()
         Me.GroupBoxComandos = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanelComandos = New System.Windows.Forms.TableLayoutPanel()
         Me.ButtonEditar = New System.Windows.Forms.Button()
         Me.ButtonCancelar = New System.Windows.Forms.Button()
-        Me.cmbEndereco = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanelPessoas.SuspendLayout()
+        CType(Me.bsEndereco, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxPessoa.SuspendLayout()
         Me.TableLayoutPanelMVVM.SuspendLayout()
         Me.GroupBoxComandos.SuspendLayout()
@@ -73,8 +76,8 @@ Partial Class frmPessoa
         Me.TableLayoutPanelPessoas.Controls.Add(Me.MaskedTextBoxRG, 1, 2)
         Me.TableLayoutPanelPessoas.Controls.Add(Me.TextBoxNome, 1, 0)
         Me.TableLayoutPanelPessoas.Controls.Add(Me.LabelEndereco, 0, 4)
-        Me.TableLayoutPanelPessoas.Controls.Add(Me.TextBoxEndereco, 1, 4)
         Me.TableLayoutPanelPessoas.Controls.Add(Me.LabelCPF, 0, 1)
+        Me.TableLayoutPanelPessoas.Controls.Add(Me.cmbEndereco, 1, 4)
         Me.TableLayoutPanelPessoas.Controls.Add(Me.LabelRG, 0, 2)
         Me.TableLayoutPanelPessoas.Controls.Add(Me.LabelNascimento, 0, 3)
         Me.TableLayoutPanelPessoas.Controls.Add(Me.DateTimePickerNascimento, 1, 3)
@@ -138,15 +141,6 @@ Partial Class frmPessoa
         Me.LabelEndereco.TabIndex = 8
         Me.LabelEndereco.Text = ":Endereço"
         '
-        'TextBoxEndereco
-        '
-        Me.TextBoxEndereco.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxEndereco.Location = New System.Drawing.Point(71, 90)
-        Me.TextBoxEndereco.Margin = New System.Windows.Forms.Padding(1)
-        Me.TextBoxEndereco.Name = "TextBoxEndereco"
-        Me.TextBoxEndereco.Size = New System.Drawing.Size(440, 20)
-        Me.TextBoxEndereco.TabIndex = 9
-        '
         'LabelCPF
         '
         Me.LabelCPF.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -158,6 +152,23 @@ Partial Class frmPessoa
         Me.LabelCPF.Size = New System.Drawing.Size(68, 13)
         Me.LabelCPF.TabIndex = 2
         Me.LabelCPF.Text = ":CPF"
+        '
+        'cmbEndereco
+        '
+        Me.cmbEndereco.DataSource = Me.bsEndereco
+        Me.cmbEndereco.DisplayMember = "EnderecoCompleto"
+        Me.cmbEndereco.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cmbEndereco.FormattingEnabled = True
+        Me.cmbEndereco.Location = New System.Drawing.Point(71, 89)
+        Me.cmbEndereco.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmbEndereco.Name = "cmbEndereco"
+        Me.cmbEndereco.Size = New System.Drawing.Size(440, 21)
+        Me.cmbEndereco.TabIndex = 5
+        Me.cmbEndereco.ValueMember = "Id"
+        '
+        'bsEndereco
+        '
+        Me.bsEndereco.DataSource = GetType(EntityFrameworkLib.Models.Endereco)
         '
         'LabelRG
         '
@@ -205,6 +216,15 @@ Partial Class frmPessoa
         Me.ButtonAdicionarEndereco.Size = New System.Drawing.Size(34, 23)
         Me.ButtonAdicionarEndereco.TabIndex = 10
         Me.ButtonAdicionarEndereco.UseVisualStyleBackColor = True
+        '
+        'TextBoxEndereco
+        '
+        Me.TextBoxEndereco.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBoxEndereco.Location = New System.Drawing.Point(232, 2)
+        Me.TextBoxEndereco.Margin = New System.Windows.Forms.Padding(1)
+        Me.TextBoxEndereco.Name = "TextBoxEndereco"
+        Me.TextBoxEndereco.Size = New System.Drawing.Size(163, 20)
+        Me.TextBoxEndereco.TabIndex = 9
         '
         'ButtonSalvar
         '
@@ -299,11 +319,11 @@ Partial Class frmPessoa
         Me.TableLayoutPanelComandos.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanelComandos.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonEditar, 1, 0)
+        Me.TableLayoutPanelComandos.Controls.Add(Me.TextBoxEndereco, 3, 0)
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonNovo, 0, 0)
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonExcluir, 2, 0)
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonCancelar, 5, 0)
         Me.TableLayoutPanelComandos.Controls.Add(Me.ButtonSalvar, 4, 0)
-        Me.TableLayoutPanelComandos.Controls.Add(Me.cmbEndereco, 3, 0)
         Me.TableLayoutPanelComandos.Location = New System.Drawing.Point(3, 16)
         Me.TableLayoutPanelComandos.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanelComandos.Name = "TableLayoutPanelComandos"
@@ -332,14 +352,6 @@ Partial Class frmPessoa
         Me.ButtonCancelar.Text = "Cancelar"
         Me.ButtonCancelar.UseVisualStyleBackColor = True
         '
-        'cmbEndereco
-        '
-        Me.cmbEndereco.FormattingEnabled = True
-        Me.cmbEndereco.Location = New System.Drawing.Point(234, 3)
-        Me.cmbEndereco.Name = "cmbEndereco"
-        Me.cmbEndereco.Size = New System.Drawing.Size(121, 21)
-        Me.cmbEndereco.TabIndex = 5
-        '
         'frmPessoa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -354,10 +366,12 @@ Partial Class frmPessoa
         Me.Text = "MVVM"
         Me.TableLayoutPanelPessoas.ResumeLayout(False)
         Me.TableLayoutPanelPessoas.PerformLayout()
+        CType(Me.bsEndereco, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxPessoa.ResumeLayout(False)
         Me.TableLayoutPanelMVVM.ResumeLayout(False)
         Me.GroupBoxComandos.ResumeLayout(False)
         Me.TableLayoutPanelComandos.ResumeLayout(False)
+        Me.TableLayoutPanelComandos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -384,4 +398,5 @@ Partial Class frmPessoa
   Friend WithEvents ButtonCancelar As Button
   Friend WithEvents ButtonAdicionarEndereco As Button
     Friend WithEvents cmbEndereco As ComboBox
+    Friend WithEvents bsEndereco As BindingSource
 End Class

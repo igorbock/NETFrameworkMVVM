@@ -1,8 +1,17 @@
-﻿Imports VisualBasicLib.ViewModels
+﻿Imports EntityFrameworkLib.Models
+Imports VisualBasicLib.ViewModels
 Imports WindowsFormsCRUD.Navigator
 
 Public Class frmPessoa
   Private ReadOnly Property _viewModelPessoa As PessoaViewModel
+  Public Property Enderecos As Object
+    Get
+      Return bsEndereco.DataSource
+    End Get
+    Set(value As Object)
+      bsEndereco.DataSource = value
+    End Set
+  End Property
 
   Public Sub New()
     InitializeComponent()
@@ -16,7 +25,8 @@ Public Class frmPessoa
     DateTimePickerNascimento.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.Nascimento), True, DataSourceUpdateMode.OnPropertyChanged)
     UscDataGridViewPessoas.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.ListTypeT), True, DataSourceUpdateMode.OnPropertyChanged)
     UscDataGridViewPessoas.DataBindings.Add("Pessoa", _viewModelPessoa, NameOf(_viewModelPessoa.CurrentItem), True, DataSourceUpdateMode.OnPropertyChanged)
-    cmbEndereco.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.Enderecos), True, DataSourceUpdateMode.Never)
+    DataBindings.Add("Enderecos", _viewModelPessoa, NameOf(_viewModelPessoa.Enderecos), True, DataSourceUpdateMode.Never)
+    cmbEndereco.DataBindings.Add("SelectedItem", _viewModelPessoa, NameOf(_viewModelPessoa.Endereco), True, DataSourceUpdateMode.OnPropertyChanged)
 
     ButtonNovo.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonInsertVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     ButtonEditar.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonEditVisible), True, DataSourceUpdateMode.OnPropertyChanged)

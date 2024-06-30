@@ -1,4 +1,5 @@
-﻿Imports System.Windows.Input
+﻿Imports System.Collections.ObjectModel
+Imports System.Windows.Input
 Imports EntityFrameworkLib.Models
 Imports VisualBasicLib.Abstracts
 Imports VisualBasicLib.Classes
@@ -15,7 +16,7 @@ Namespace ViewModels
       MyBase.New(New PessoaRepository(), navManager)
 
       _enderecoRepository = New EnderecoRepository()
-      Enderecos = _enderecoRepository.GetAll.Select(Function(a) $"{a.Rua}, {If(a.Numero IsNot Nothing, a.Numero.ToString, "S/N")} / {a.Cidade} - {a.Estado}").ToList
+      Enderecos = _enderecoRepository.GetAll
     End Sub
 
     Public Property Nome() As String
@@ -54,26 +55,35 @@ Namespace ViewModels
         OnPropertyChanged(NameOf(Nascimento))
       End Set
     End Property
-    Private _endereco As String
-    Public Property Endereco() As String
+    'Private _endereco As String
+    'Public Property Endereco() As String
+    '  Get
+    '    If CurrentItem.IdEndereco Is Nothing Then
+    '      Return _endereco
+    '    Else
+    '      Return _enderecoRepository.GetById(CurrentItem.IdEndereco).ToString
+    '    End If
+    '  End Get
+    '  Set(value As String)
+    '    _endereco = value
+    '    OnPropertyChanged(NameOf(Endereco))
+    '  End Set
+    'End Property
+    Public Property Endereco As Integer?
       Get
-        If CurrentItem.IdEndereco Is Nothing Then
-          Return _endereco
-        Else
-          Return _enderecoRepository.GetById(CurrentItem.IdEndereco).ToString
-        End If
+        Return CurrentItem.IdEndereco
       End Get
-      Set(value As String)
-        _endereco = value
+      Set(value As Integer?)
+        CurrentItem.IdEndereco = value
         OnPropertyChanged(NameOf(Endereco))
       End Set
     End Property
-    Private _enderecos As List(Of String)
-    Public Property Enderecos() As List(Of String)
+    Private _enderecos As ObservableCollection(Of Endereco)
+    Public Property Enderecos() As ObservableCollection(Of Endereco)
       Get
         Return _enderecos
       End Get
-      Set(value As List(Of String))
+      Set(value As ObservableCollection(Of Endereco))
         _enderecos = value
       End Set
     End Property
