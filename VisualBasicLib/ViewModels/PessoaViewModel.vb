@@ -16,7 +16,6 @@ Namespace ViewModels
       MyBase.New(New PessoaRepository(), navManager)
 
       _enderecoRepository = New EnderecoRepository()
-      Enderecos = _enderecoRepository.GetAll
     End Sub
 
     Public Property Nome() As String
@@ -71,11 +70,24 @@ Namespace ViewModels
       End Get
       Set(value As ObservableCollection(Of Endereco))
         _enderecos = value
+        OnPropertyChanged(NameOf(Enderecos))
       End Set
     End Property
+    Private Sub Load()
+      Try
+        Enderecos = _enderecoRepository.GetAll
+      Catch ex As Exception
+        OnErrorOcurred(ex)
+      End Try
+    End Sub
     Public ReadOnly Property AddEnderecoCommand As ICommand
       Get
         Return New RelayCommand(Sub() _navigationManager.ShowPage("frmEndereco"))
+      End Get
+    End Property
+    Public ReadOnly Property LoadCommand As ICommand
+      Get
+        Return New RelayCommand(Sub() Load())
       End Get
     End Property
   End Class

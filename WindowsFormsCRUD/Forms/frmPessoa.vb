@@ -40,6 +40,10 @@ Public Class frmPessoa
     AddHandler ButtonSalvar.Click, Sub() _viewModelPessoa.SaveCommand.Execute(Nothing)
     AddHandler ButtonEditar.Click, Sub() _viewModelPessoa.UpdateCommand.Execute(Nothing)
     AddHandler ButtonCancelar.Click, Sub() _viewModelPessoa.CancelCommand.Execute(Nothing)
-    AddHandler ButtonAdicionarEndereco.Click, Sub() _viewModelPessoa.AddEnderecoCommand.Execute(Nothing)
+    AddHandler ButtonAdicionarEndereco.Click, Sub() AdicionarEndereco()
+  End Sub
+  Private Sub AdicionarEndereco()
+    _viewModelPessoa.AddEnderecoCommand.Execute(Nothing)
+    _viewModelPessoa.LoadCommand.Execute(Nothing)
   End Sub
 End Class
