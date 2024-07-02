@@ -73,6 +73,10 @@ Namespace ViewModels
         OnPropertyChanged(NameOf(Enderecos))
       End Set
     End Property
+    Private Sub AddEndereco()
+      _navigationManager.ShowPage("frmEndereco")
+      Load()
+    End Sub
     Private Sub Load()
       Try
         Enderecos = _enderecoRepository.GetAll
@@ -82,7 +86,7 @@ Namespace ViewModels
     End Sub
     Public ReadOnly Property AddEnderecoCommand As ICommand
       Get
-        Return New RelayCommand(Sub() _navigationManager.ShowPage("frmEndereco"))
+        Return New RelayCommand(Sub() AddEndereco())
       End Get
     End Property
     Public ReadOnly Property LoadCommand As ICommand

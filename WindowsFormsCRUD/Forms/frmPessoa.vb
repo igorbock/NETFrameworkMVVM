@@ -35,15 +35,13 @@ Public Class frmPessoa
     UscDataGridViewPessoas.DataGridViewPessoas.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableListView), True, DataSourceUpdateMode.OnPropertyChanged)
 
     AddHandler _viewModelPessoa.ErrorOcurred, AddressOf Classes.FormUtils.ShowError
+    AddHandler _viewModelPessoa.QuestionOcurred, Sub(sender, e) e.Iteration = Classes.FormUtils.ShowYesNoQuestion(sender, e)
+    AddHandler Load, Sub() _viewModelPessoa.LoadCommand.Execute(Nothing)
     AddHandler ButtonNovo.Click, Sub() _viewModelPessoa.CreateCommand.Execute(Nothing)
     AddHandler ButtonExcluir.Click, Sub() _viewModelPessoa.DeleteCommand.Execute(Nothing)
     AddHandler ButtonSalvar.Click, Sub() _viewModelPessoa.SaveCommand.Execute(Nothing)
     AddHandler ButtonEditar.Click, Sub() _viewModelPessoa.UpdateCommand.Execute(Nothing)
     AddHandler ButtonCancelar.Click, Sub() _viewModelPessoa.CancelCommand.Execute(Nothing)
-    AddHandler ButtonAdicionarEndereco.Click, Sub() AdicionarEndereco()
-  End Sub
-  Private Sub AdicionarEndereco()
-    _viewModelPessoa.AddEnderecoCommand.Execute(Nothing)
-    _viewModelPessoa.LoadCommand.Execute(Nothing)
+    AddHandler ButtonAdicionarEndereco.Click, Sub() _viewModelPessoa.AddEnderecoCommand.Execute(Nothing)
   End Sub
 End Class

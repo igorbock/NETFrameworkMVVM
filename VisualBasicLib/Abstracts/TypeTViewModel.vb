@@ -4,6 +4,7 @@ Imports System.IO
 Imports System.Windows.Input
 Imports EntityFrameworkLib.Interfaces
 Imports VisualBasicLib.Classes
+Imports VisualBasicLib.Events
 Imports VisualBasicLib.Interfaces
 
 Namespace Abstracts
@@ -90,10 +91,6 @@ Namespace Abstracts
         OnPropertyChanged(NameOf(ButtonCancelVisible))
       End Set
     End Property
-    Public Event ErrorOcurred As EventHandler(Of ErrorEventArgs)
-    Protected Sub OnErrorOcurred(exception As Exception)
-      RaiseEvent ErrorOcurred(Me, New ErrorEventArgs(exception))
-    End Sub
     Private _enableControl As Boolean
     Public Property EnableControl() As Boolean
       Get
@@ -114,6 +111,14 @@ Namespace Abstracts
         OnPropertyChanged(NameOf(EnableListView))
       End Set
     End Property
+    Public Event ErrorOcurred As EventHandler(Of ErrorEventArgs)
+    Protected Sub OnErrorOcurred(exception As Exception)
+      RaiseEvent ErrorOcurred(Me, New ErrorEventArgs(exception))
+    End Sub
+    Public Event QuestionOcurred As EventHandler(Of IterationEventArgs)
+    Protected Sub OnQuestionOcurred(e As IterationEventArgs)
+      RaiseEvent QuestionOcurred(Me, e)
+    End Sub
 
     Public Overridable ReadOnly Property SaveCommand As ICommand
       Get
@@ -194,8 +199,15 @@ Namespace Abstracts
       Try
         If _currentItem.Id = 0 Then Throw New ArgumentNullException(GetType(TypeT).Name)
 
-        _typeTRepository.Delete(_currentItem.Id)
-        _typeTRepository.Save()
+        Dim eventArgs As New IterationEventArgs("Você deseja realmente excluir o registro selecionado?")
+        OnQuestionOcurred(eventArgs)
+
+        If eventArgs.Iteration.HasValue Then
+          If eventArgs.Iteration = True Then
+            _typeTRepository.Delete(_currentItem.Id)
+            _typeTRepository.Save()
+          End If
+        End If
 
         ListTypeT = _typeTRepository.GetAll()
         CurrentItem = Activator.CreateInstance(Of TypeT)
@@ -203,7 +215,6 @@ Namespace Abstracts
         OnErrorOcurred(ex)
       End Try
     End Sub
-
     Private Sub EditMode()
       ButtonInsertVisible = False
       ButtonEditVisible = False
@@ -213,7 +224,6 @@ Namespace Abstracts
       EnableControl = True
       EnableListView = False
     End Sub
-
     Private Sub ReadMode()
       ButtonInsertVisible = True
       ButtonEditVisible = True

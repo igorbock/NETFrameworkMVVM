@@ -29,6 +29,7 @@ Public Class frmEndereco
     gEnderecos.DataBindings.Add("Enabled", _viewModelEndereco, NameOf(_viewModelEndereco.EnableListView), True, DataSourceUpdateMode.OnPropertyChanged)
 
     AddHandler _viewModelEndereco.ErrorOcurred, AddressOf Classes.FormUtils.ShowError
+    AddHandler _viewModelEndereco.QuestionOcurred, Sub(sender, e) e.Iteration = Classes.FormUtils.ShowYesNoQuestion(sender, e)
     AddHandler btnNovo.Click, Sub() _viewModelEndereco.CreateCommand.Execute(Nothing)
     AddHandler btnExcluir.Click, Sub() _viewModelEndereco.DeleteCommand.Execute(Nothing)
     AddHandler btnSalvar.Click, Sub() _viewModelEndereco.SaveCommand.Execute(Nothing)
