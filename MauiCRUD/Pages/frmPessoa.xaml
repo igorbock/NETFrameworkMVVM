@@ -3,15 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:VisualBasicLib.ViewModels;assembly=VisualBasicLib"
              xmlns:model="clr-namespace:MauiCRUD.Navigator"
+             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid.Internal;assembly=DevExpress.Maui.DataGrid"
              x:Class="MauiCRUD.Pages.frmPessoa"
-             Title="frmPessoa">
-    <!--<ContentPage.BindingContext>
-        <vm:PessoaViewModel>
-            <vm:PessoaViewModel.NavigationManager>
-                <model:NavigatorMAUI PageName="frmEndereco"/>
-            </vm:PessoaViewModel.NavigationManager>
-        </vm:PessoaViewModel>
-    </ContentPage.BindingContext>-->
+             Title="Cadastro de Pessoa">
     <VerticalStackLayout>
         <Label 
             Text="Cadastro de Pessoa"
@@ -33,5 +27,11 @@
             Text="{Binding RG}"/>
         <Entry
             Placeholder="Endereço"/>
+
+        <dxg:DataGridView ItemsSource="{Binding ListTypeT}">
+            <dxg:DataGridView.Columns>
+                <dxg:TextColumn FieldName="Nome"/>
+            </dxg:DataGridView.Columns>
+        </dxg:DataGridView>
     </VerticalStackLayout>
 </ContentPage>

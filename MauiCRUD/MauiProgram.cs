@@ -1,5 +1,6 @@
 ﻿using MauiCRUD.Pages;
 using Microsoft.Extensions.Logging;
+using DevExpress.Maui;
 
 namespace MauiCRUD
 {
@@ -10,6 +11,11 @@ namespace MauiCRUD
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseDevExpress()
+                .UseDevExpressCollectionView()
+                .UseDevExpressControls()
+                .UseDevExpressEditors()
+                .UseDevExpressDataGrid()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
