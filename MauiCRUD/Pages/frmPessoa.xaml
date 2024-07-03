@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:VisualBasicLib.ViewModels;assembly=VisualBasicLib"
              xmlns:model="clr-namespace:MauiCRUD.Navigator"
-             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid.Internal;assembly=DevExpress.Maui.DataGrid"
+             xmlns:dxg="http://schemas.devexpress.com/maui"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="MauiCRUD.Pages.frmPessoa"
              Title="Cadastro de Pessoa">
     <VerticalStackLayout>
+        <dxe:TextEdit Text="{Binding Nome}"
+                      LabelText="Nome"/>
+        <dxe:TextEdit Text="{Binding Nascimento}"
+                      LabelText="Nascimento"/>
+        <dxe:TextEdit Text="{Binding CPF}"
+                      LabelText="CPF"/>
+        <dxe:TextEdit Text="{Binding RG}"
+                      LabelText="RG"/>
+
+        <dxg:DataGridView ItemsSource="{Binding ListTypeT}">
+            <dxg:DataGridView.Columns>
+                <dxg:TextColumn FieldName="Nome"/>
+            </dxg:DataGridView.Columns>
+        </dxg:DataGridView>
+    </VerticalStackLayout>
+
+    <!--<VerticalStackLayout>
         <Label 
             Text="Cadastro de Pessoa"
             VerticalOptions="Center" 
@@ -28,10 +45,6 @@
         <Entry
             Placeholder="Endereço"/>
 
-        <dxg:DataGridView ItemsSource="{Binding ListTypeT}">
-            <dxg:DataGridView.Columns>
-                <dxg:TextColumn FieldName="Nome"/>
-            </dxg:DataGridView.Columns>
-        </dxg:DataGridView>
-    </VerticalStackLayout>
+        
+    </VerticalStackLayout>-->
 </ContentPage>
