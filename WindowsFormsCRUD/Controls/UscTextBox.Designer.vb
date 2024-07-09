@@ -29,12 +29,14 @@ Partial Class UscTextBox
         'TextBox
         '
         Me.TextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox.Font = New System.Drawing.Font("Cascadia Mono", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox.ForeColor = System.Drawing.Color.Black
         Me.TextBox.Location = New System.Drawing.Point(8, 12)
         Me.TextBox.Margin = New System.Windows.Forms.Padding(5, 1, 1, 1)
         Me.TextBox.Name = "TextBox"
+        Me.TextBox.ReadOnly = True
         Me.TextBox.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TextBox.Size = New System.Drawing.Size(191, 13)
         Me.TextBox.TabIndex = 0
@@ -56,7 +58,7 @@ Partial Class UscTextBox
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Controls.Add(Me.Label)
         Me.Controls.Add(Me.TextBox)

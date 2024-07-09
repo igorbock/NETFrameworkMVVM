@@ -18,6 +18,7 @@ Namespace Abstracts
     Public MustOverride Sub Insert(entity As TypeT)
     Public MustOverride Sub Update(entity As TypeT)
     Public MustOverride Sub Delete(id As Integer)
+    Public MustOverride Sub Cancel(entity As TypeT)
     Public MustOverride Function GetAll() As ObservableCollection(Of TypeT)
     Public MustOverride Function GetById(id As Integer) As TypeT
     Public Overridable Sub Begin()

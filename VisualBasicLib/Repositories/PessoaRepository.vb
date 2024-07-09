@@ -23,6 +23,10 @@ Namespace Repositories
       End If
     End Sub
 
+    Public Overrides Sub Cancel(entity As Pessoa)
+      _dbContext.Entry(entity).Reload()
+    End Sub
+
     Public Overrides Function GetAll() As ObservableCollection(Of Pessoa)
       Return New ObservableCollection(Of Pessoa)(_dbContext.Pessoas.ToList().OrderBy(Function(a) a.Id))
     End Function

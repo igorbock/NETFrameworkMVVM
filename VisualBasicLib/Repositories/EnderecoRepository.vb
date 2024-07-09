@@ -23,6 +23,10 @@ Namespace Repositories
       End If
     End Sub
 
+    Public Overrides Sub Cancel(entity As Endereco)
+      _dbContext.Entry(entity).Reload()
+    End Sub
+
     Public Overrides Function GetAll() As ObservableCollection(Of Endereco)
       Return New ObservableCollection(Of Endereco)(_dbContext.Enderecos.ToList().OrderBy(Function(a) a.Id))
     End Function

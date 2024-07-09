@@ -165,12 +165,17 @@ Namespace Abstracts
     End Sub
     Protected Overridable Sub CancelTypeT()
       Try
+        Dim eventArgs As New IterationEventArgs("Você deseja realmente cancelar?")
+        OnQuestionOcurred(eventArgs)
+
+        If eventArgs.Iteration = False Then Exit Sub
+
         _typeTRepository.Rollback()
         ReadMode()
 
-        If _currentItem.Id = 0 Then
-          CurrentItem = Activator.CreateInstance(Of TypeT)
-        End If
+        _typeTRepository.Cancel(CurrentItem)
+
+        If _currentItem.Id = 0 Then CurrentItem = Activator.CreateInstance(Of TypeT)
       Catch ex As Exception
         OnErrorOcurred(ex)
       End Try

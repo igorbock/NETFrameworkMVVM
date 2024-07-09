@@ -41,6 +41,7 @@ Public Class frmEndereco
   Private Sub SelectCurrentItem()
     Try
       _viewModelEndereco.CurrentItem = Classes.FormUtils.SelectTypeT(Of Endereco)(gEnderecos)
+
     Catch ex As Exception
     End Try
   End Sub
@@ -49,6 +50,10 @@ Public Class frmEndereco
       Dim linhaSelecionada As DataGridViewRow = grid.Rows(e.RowIndex)
       Dim typeTInstance As Endereco = linhaSelecionada.DataBoundItem
       _viewModelEndereco.CurrentItem = typeTInstance
+      txtCidade.Refresh()
+      txtEstado.Refresh()
+      txtNumero.Refresh()
+      txtRua.Refresh()
     End If
   End Sub
 End Class
