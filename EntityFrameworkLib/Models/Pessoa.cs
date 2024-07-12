@@ -26,6 +26,7 @@ namespace EntityFrameworkLib.Models
         public string RG { get; set; }
 
         [ForeignKey("Endereco")]
+        [Browsable(false)]
         public int? IdEndereco { get; set; }
 
         [Browsable(false)]

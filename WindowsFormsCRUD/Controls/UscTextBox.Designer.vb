@@ -33,11 +33,11 @@ Partial Class UscTextBox
         Me.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox.Font = New System.Drawing.Font("Cascadia Mono", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox.ForeColor = System.Drawing.Color.Black
-        Me.TextBox.Location = New System.Drawing.Point(8, 12)
+        Me.TextBox.Location = New System.Drawing.Point(2, 12)
         Me.TextBox.Margin = New System.Windows.Forms.Padding(5, 1, 1, 1)
         Me.TextBox.Name = "TextBox"
         Me.TextBox.ReadOnly = True
-        Me.TextBox.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TextBox.Size = New System.Drawing.Size(191, 13)
         Me.TextBox.TabIndex = 0
         '

@@ -40,7 +40,7 @@ Partial Class UscDataGridViewPessoas
         Me.DataGridViewPessoas.AllowUserToDeleteRows = False
         Me.DataGridViewPessoas.AllowUserToResizeColumns = False
         Me.DataGridViewPessoas.AllowUserToResizeRows = False
-        Me.DataGridViewPessoas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridViewPessoas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewPessoas.BackgroundColor = System.Drawing.SystemColors.ControlLight
         Me.DataGridViewPessoas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridViewPessoas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
@@ -53,8 +53,7 @@ Partial Class UscDataGridViewPessoas
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewPessoas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewPessoas.ColumnHeadersHeight = 30
-        Me.DataGridViewPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DataGridViewPessoas.ColumnHeadersHeight = 24
         Me.DataGridViewPessoas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colId, Me.colNome, Me.colNascimento, Me.colCPF, Me.colRG})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -87,47 +86,47 @@ Partial Class UscDataGridViewPessoas
         'colId
         '
         Me.colId.DataPropertyName = "Id"
+        Me.colId.FillWeight = 40.0!
         Me.colId.HeaderText = "Id"
         Me.colId.Name = "colId"
         Me.colId.ReadOnly = True
         Me.colId.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colId.Width = 44
         '
         'colNome
         '
         Me.colNome.DataPropertyName = "Nome"
+        Me.colNome.FillWeight = 120.0!
         Me.colNome.HeaderText = "Nome"
         Me.colNome.Name = "colNome"
         Me.colNome.ReadOnly = True
         Me.colNome.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colNome.Width = 64
         '
         'colNascimento
         '
         Me.colNascimento.DataPropertyName = "Nascimento"
+        Me.colNascimento.FillWeight = 80.0!
         Me.colNascimento.HeaderText = "Nascimento"
         Me.colNascimento.Name = "colNascimento"
         Me.colNascimento.ReadOnly = True
         Me.colNascimento.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colNascimento.Width = 98
         '
         'colCPF
         '
         Me.colCPF.DataPropertyName = "CPF"
+        Me.colCPF.FillWeight = 99.61929!
         Me.colCPF.HeaderText = "CPF"
         Me.colCPF.Name = "colCPF"
         Me.colCPF.ReadOnly = True
         Me.colCPF.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colCPF.Width = 52
         '
         'colRG
         '
         Me.colRG.DataPropertyName = "RG"
+        Me.colRG.FillWeight = 99.61929!
         Me.colRG.HeaderText = "RG"
         Me.colRG.Name = "colRG"
         Me.colRG.ReadOnly = True
         Me.colRG.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.colRG.Width = 48
         '
         'UscDataGridViewPessoas
         '

@@ -35,6 +35,7 @@ Partial Class frmEndereco
         Me.colNumero = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colCidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEnderecoCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtRua = New WindowsFormsCRUD.UscTextBox()
         Me.txtNumero = New WindowsFormsCRUD.UscTextBox()
         Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
@@ -145,7 +146,6 @@ Partial Class frmEndereco
         Me.gEnderecos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.gEnderecos.BackgroundColor = System.Drawing.SystemColors.ControlLight
         Me.gEnderecos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        Me.gEnderecos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Cascadia Mono SemiBold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -154,9 +154,8 @@ Partial Class frmEndereco
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.gEnderecos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.gEnderecos.ColumnHeadersHeight = 30
-        Me.gEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.gEnderecos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colId, Me.colRua, Me.colNumero, Me.colCidade, Me.colEstado})
+        Me.gEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gEnderecos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colId, Me.colRua, Me.colNumero, Me.colCidade, Me.colEstado, Me.colEnderecoCompleto})
         Me.TableLayoutPanelEndereco.SetColumnSpan(Me.gEnderecos, 6)
         Me.gEnderecos.DataMember = "Endereco"
         Me.gEnderecos.Dock = System.Windows.Forms.DockStyle.Fill
@@ -165,6 +164,7 @@ Partial Class frmEndereco
         Me.gEnderecos.MultiSelect = False
         Me.gEnderecos.Name = "gEnderecos"
         Me.gEnderecos.ReadOnly = True
+        Me.gEnderecos.RowHeadersVisible = False
         Me.gEnderecos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gEnderecos.Size = New System.Drawing.Size(498, 227)
         Me.gEnderecos.TabIndex = 17
@@ -213,6 +213,14 @@ Partial Class frmEndereco
         Me.colEstado.Name = "colEstado"
         Me.colEstado.ReadOnly = True
         Me.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'colEnderecoCompleto
+        '
+        Me.colEnderecoCompleto.DataPropertyName = "EnderecoCompleto"
+        Me.colEnderecoCompleto.HeaderText = "Endereço Completo"
+        Me.colEnderecoCompleto.Name = "colEnderecoCompleto"
+        Me.colEnderecoCompleto.ReadOnly = True
+        Me.colEnderecoCompleto.Visible = False
         '
         'txtRua
         '
@@ -307,4 +315,5 @@ Partial Class frmEndereco
     Friend WithEvents colNumero As DataGridViewTextBoxColumn
     Friend WithEvents colCidade As DataGridViewTextBoxColumn
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
+    Friend WithEvents colEnderecoCompleto As DataGridViewTextBoxColumn
 End Class
