@@ -71,6 +71,16 @@ Namespace Abstracts
         OnPropertyChanged(NameOf(ButtonDeleteVisible))
       End Set
     End Property
+    Private _buttonCloseVisible As Boolean
+    Public Property ButtonCloseVisible() As Boolean
+      Get
+        Return _buttonCloseVisible
+      End Get
+      Set(value As Boolean)
+        _buttonCloseVisible = value
+        OnPropertyChanged(NameOf(ButtonCloseVisible))
+      End Set
+    End Property
     Private _buttonSaveVisible As Boolean
     Public Property ButtonSaveVisible() As Boolean
       Get
@@ -153,8 +163,8 @@ Namespace Abstracts
           _typeTRepository.Update(_currentItem)
         End If
 
-        _typeTRepository.Commit()
         _typeTRepository.Save()
+        _typeTRepository.Commit()
         ReadMode()
 
         ListTypeT = _typeTRepository.GetAll()
@@ -224,6 +234,7 @@ Namespace Abstracts
       ButtonInsertVisible = False
       ButtonEditVisible = False
       ButtonDeleteVisible = False
+      ButtonCloseVisible = False
       ButtonSaveVisible = True
       ButtonCancelVisible = True
       EnableControl = True
@@ -233,6 +244,7 @@ Namespace Abstracts
       ButtonInsertVisible = True
       ButtonEditVisible = True
       ButtonDeleteVisible = True
+      ButtonCloseVisible = True
       ButtonSaveVisible = False
       ButtonCancelVisible = False
       EnableControl = False

@@ -7,7 +7,7 @@ public partial class frmPessoa : ContentPage
 {
 	public frmPessoa()
 	{
-		InitializeComponent();
+        InitializeComponent();
 		var navigationManager = new NavigatorMAUI();
 		BindingContext = new PessoaViewModel(navigationManager);
 	}
