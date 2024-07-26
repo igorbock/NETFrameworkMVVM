@@ -17,6 +17,15 @@ Public Class frmPessoa
 
     _viewModelPessoa = New PessoaViewModel(New NavigatorWindowsForm())
 
+    btnCRUD.DataBindings.Add("NewEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonInsertVisible), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("EditEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonEditVisible), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("RemoveEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonDeleteVisible), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("SaveEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonSaveVisible), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("CancelEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonCancelVisible), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("PrintEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("PreviousEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("NextEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
+
     TextBoxNome.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.Nome), True, DataSourceUpdateMode.OnPropertyChanged)
     MaskedTextBoxCPF.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.CPF), True, DataSourceUpdateMode.OnPropertyChanged)
     MaskedTextBoxRG.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.RG), True, DataSourceUpdateMode.OnPropertyChanged)
@@ -43,5 +52,11 @@ Public Class frmPessoa
     AddHandler ButtonEditar.Click, Sub() _viewModelPessoa.UpdateCommand.Execute(Nothing)
     AddHandler ButtonCancelar.Click, Sub() _viewModelPessoa.CancelCommand.Execute(Nothing)
     AddHandler ButtonAdicionarEndereco.Click, Sub() _viewModelPessoa.AddEnderecoCommand.Execute(Nothing)
+
+    AddHandler btnCRUD.NewEvent, Sub() _viewModelPessoa.CreateCommand.Execute(Nothing)
+    AddHandler btnCRUD.EditEvent, Sub() _viewModelPessoa.UpdateCommand.Execute(Nothing)
+    AddHandler btnCRUD.RemoveEvent, Sub() _viewModelPessoa.DeleteCommand.Execute(Nothing)
+    AddHandler btnCRUD.SaveEvent, Sub() _viewModelPessoa.SaveCommand.Execute(Nothing)
+    AddHandler btnCRUD.CancelEvent, Sub() _viewModelPessoa.CancelCommand.Execute(Nothing)
   End Sub
 End Class

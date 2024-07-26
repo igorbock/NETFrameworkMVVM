@@ -47,6 +47,7 @@ Partial Class frmPessoa
         Me.TableLayoutPanelComandos = New System.Windows.Forms.TableLayoutPanel()
         Me.ButtonEditar = New System.Windows.Forms.Button()
         Me.ButtonCancelar = New System.Windows.Forms.Button()
+        Me.btnCRUD = New WindowsFormsCRUD.UscCRUD()
         Me.TableLayoutPanelPessoas.SuspendLayout()
         CType(Me.bsEndereco, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxPessoa.SuspendLayout()
@@ -267,14 +268,16 @@ Partial Class frmPessoa
         Me.TableLayoutPanelMVVM.Controls.Add(Me.GroupBoxPessoa, 0, 0)
         Me.TableLayoutPanelMVVM.Controls.Add(Me.UscDataGridViewPessoas, 0, 1)
         Me.TableLayoutPanelMVVM.Controls.Add(Me.GroupBoxComandos, 0, 2)
+        Me.TableLayoutPanelMVVM.Controls.Add(Me.btnCRUD, 0, 3)
         Me.TableLayoutPanelMVVM.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanelMVVM.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanelMVVM.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanelMVVM.Name = "TableLayoutPanelMVVM"
-        Me.TableLayoutPanelMVVM.RowCount = 3
+        Me.TableLayoutPanelMVVM.RowCount = 4
         Me.TableLayoutPanelMVVM.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanelMVVM.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanelMVVM.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanelMVVM.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanelMVVM.Size = New System.Drawing.Size(554, 418)
         Me.TableLayoutPanelMVVM.TabIndex = 0
         '
@@ -285,13 +288,13 @@ Partial Class frmPessoa
         Me.UscDataGridViewPessoas.Location = New System.Drawing.Point(3, 137)
         Me.UscDataGridViewPessoas.Name = "UscDataGridViewPessoas"
         Me.UscDataGridViewPessoas.Pessoa = Nothing
-        Me.UscDataGridViewPessoas.Size = New System.Drawing.Size(550, 232)
+        Me.UscDataGridViewPessoas.Size = New System.Drawing.Size(550, 202)
         Me.UscDataGridViewPessoas.TabIndex = 3
         '
         'GroupBoxComandos
         '
         Me.GroupBoxComandos.Controls.Add(Me.TableLayoutPanelComandos)
-        Me.GroupBoxComandos.Location = New System.Drawing.Point(1, 373)
+        Me.GroupBoxComandos.Location = New System.Drawing.Point(1, 343)
         Me.GroupBoxComandos.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBoxComandos.Name = "GroupBoxComandos"
         Me.GroupBoxComandos.Size = New System.Drawing.Size(554, 44)
@@ -341,6 +344,22 @@ Partial Class frmPessoa
         Me.ButtonCancelar.Text = "Cancelar"
         Me.ButtonCancelar.UseVisualStyleBackColor = True
         '
+        'btnCRUD
+        '
+        Me.btnCRUD.CancelEnabled = True
+        Me.btnCRUD.EditEnabled = True
+        Me.btnCRUD.Location = New System.Drawing.Point(1, 389)
+        Me.btnCRUD.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnCRUD.Name = "btnCRUD"
+        Me.btnCRUD.NewEnabled = True
+        Me.btnCRUD.NextEnabled = True
+        Me.btnCRUD.PreviousEnabled = True
+        Me.btnCRUD.PrintEnabled = True
+        Me.btnCRUD.RemoveEnabled = True
+        Me.btnCRUD.SaveEnabled = True
+        Me.btnCRUD.Size = New System.Drawing.Size(217, 28)
+        Me.btnCRUD.TabIndex = 5
+        '
         'frmPessoa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -386,4 +405,5 @@ Partial Class frmPessoa
   Friend WithEvents ButtonAdicionarEndereco As Button
     Friend WithEvents cmbEndereco As ComboBox
     Friend WithEvents bsEndereco As BindingSource
+    Friend WithEvents btnCRUD As UscCRUD
 End Class
