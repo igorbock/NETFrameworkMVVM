@@ -26,7 +26,7 @@ jobs:
         run: cd $GITHUB_WORKSPACE
 
       - name: Restore Packages
-        run: nuget restore NETFrameworkMVVM.sln
+        run: nuget restore WindowsFormsCRUD.csproj
 
       - name: Build Solution
         run: |
