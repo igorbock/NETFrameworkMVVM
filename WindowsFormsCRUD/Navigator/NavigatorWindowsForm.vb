@@ -10,7 +10,8 @@ Namespace Navigator
         If formType IsNot Nothing Then
           Dim windowsForm As Form = TryCast(Activator.CreateInstance(formType), Form)
           If windowsForm IsNot Nothing Then
-            windowsForm.ShowDialog()
+            windowsForm.Show()
+            windowsForm.BringToFront()
           Else
             MessageBox.Show("Formulário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
           End If

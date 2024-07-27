@@ -202,10 +202,17 @@
       <DependentUpon>frmPessoa.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -234,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPessoa.resx">
       <DependentUpon>frmPessoa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -291,6 +301,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\proximo-botao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homem-de-negocios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homem-de-negocios1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localizador-de-mapa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

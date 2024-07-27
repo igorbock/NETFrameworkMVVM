@@ -113,9 +113,39 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property homem_de_negocios() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("homem-de-negocios", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property homem_de_negocios1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("homem-de-negocios1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property impressora() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("impressora", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property localizador_de_mapa() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("localizador-de-mapa", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
