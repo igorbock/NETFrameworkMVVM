@@ -1,41 +1,38 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Home
-  Inherits System.Windows.Forms.Form
+    Inherits System.Windows.Forms.Form
 
-  'Descartar substituições de formulário para limpar a lista de componentes.
-  <System.Diagnostics.DebuggerNonUserCode()> _
-  Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-    Try
-      If disposing AndAlso components IsNot Nothing Then
-        components.Dispose()
-      End If
-    Finally
-      MyBase.Dispose(disposing)
-    End Try
-  End Sub
+    'Descartar substituições de formulário para limpar a lista de componentes.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
 
-  'Exigido pelo Windows Form Designer
-  Private components As System.ComponentModel.IContainer
+    'Exigido pelo Windows Form Designer
+    Private components As System.ComponentModel.IContainer
 
-  'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
-  'Pode ser modificado usando o Windows Form Designer.  
-  'Não o modifique usando o editor de códigos.
-  <System.Diagnostics.DebuggerStepThrough()> _
-  Private Sub InitializeComponent()
+    'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
+    'Pode ser modificado usando o Windows Form Designer.  
+    'Não o modifique usando o editor de códigos.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.btnPessoa = New System.Windows.Forms.ToolStripButton()
+        Me.btnEndereco = New System.Windows.Forms.ToolStripButton()
         Me.tbcWindowsCRUD = New System.Windows.Forms.TabControl()
         Me.tbpCadastros = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnPessoa = New System.Windows.Forms.ToolStripButton()
-        Me.btnEndereco = New System.Windows.Forms.ToolStripButton()
         Me.tbcPages = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.ToolStrip.SuspendLayout()
         Me.tbcWindowsCRUD.SuspendLayout()
         Me.tbpCadastros.SuspendLayout()
-        Me.tbcPages.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip
@@ -48,6 +45,26 @@ Partial Class Home
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(786, 60)
         Me.ToolStrip.TabIndex = 0
+        '
+        'btnPessoa
+        '
+        Me.btnPessoa.Image = Global.WindowsFormsCRUD.My.Resources.Resources.homem_de_negocios1
+        Me.btnPessoa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.btnPessoa.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnPessoa.Name = "btnPessoa"
+        Me.btnPessoa.Size = New System.Drawing.Size(47, 57)
+        Me.btnPessoa.Text = "Pessoa"
+        Me.btnPessoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'btnEndereco
+        '
+        Me.btnEndereco.Image = Global.WindowsFormsCRUD.My.Resources.Resources.localizador_de_mapa
+        Me.btnEndereco.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.btnEndereco.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnEndereco.Name = "btnEndereco"
+        Me.btnEndereco.Size = New System.Drawing.Size(60, 57)
+        Me.btnEndereco.Text = "Endereço"
+        Me.btnEndereco.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'tbcWindowsCRUD
         '
@@ -82,30 +99,8 @@ Partial Class Home
         Me.TabPage2.Text = "Teste"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'btnPessoa
-        '
-        Me.btnPessoa.Image = Global.WindowsFormsCRUD.My.Resources.Resources.homem_de_negocios1
-        Me.btnPessoa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.btnPessoa.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnPessoa.Name = "btnPessoa"
-        Me.btnPessoa.Size = New System.Drawing.Size(47, 57)
-        Me.btnPessoa.Text = "Pessoa"
-        Me.btnPessoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'btnEndereco
-        '
-        Me.btnEndereco.Image = Global.WindowsFormsCRUD.My.Resources.Resources.localizador_de_mapa
-        Me.btnEndereco.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.btnEndereco.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnEndereco.Name = "btnEndereco"
-        Me.btnEndereco.Size = New System.Drawing.Size(60, 57)
-        Me.btnEndereco.Text = "Endereço"
-        Me.btnEndereco.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'tbcPages
         '
-        Me.tbcPages.Controls.Add(Me.TabPage1)
-        Me.tbcPages.Controls.Add(Me.TabPage3)
         Me.tbcPages.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbcPages.Location = New System.Drawing.Point(0, 90)
         Me.tbcPages.Margin = New System.Windows.Forms.Padding(1)
@@ -113,26 +108,6 @@ Partial Class Home
         Me.tbcPages.SelectedIndex = 0
         Me.tbcPages.Size = New System.Drawing.Size(800, 360)
         Me.tbcPages.TabIndex = 2
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(792, 334)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(192, 74)
-        Me.TabPage3.TabIndex = 1
-        Me.TabPage3.Text = "TabPage3"
-        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'Home
         '
@@ -149,7 +124,6 @@ Partial Class Home
         Me.ToolStrip.PerformLayout()
         Me.tbcWindowsCRUD.ResumeLayout(False)
         Me.tbpCadastros.ResumeLayout(False)
-        Me.tbcPages.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -161,6 +135,4 @@ Partial Class Home
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btnEndereco As ToolStripButton
     Friend WithEvents tbcPages As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage3 As TabPage
 End Class

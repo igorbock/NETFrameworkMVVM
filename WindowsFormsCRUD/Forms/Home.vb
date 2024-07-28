@@ -10,7 +10,7 @@ Public Class Home
 
     _navigator = New NavigatorWindowsForm()
 
-    AddHandler btnPessoa.Click, Sub() _navigator.ShowPage("frmPessoa")
-    AddHandler btnEndereco.Click, Sub() _navigator.ShowPage("frmEndereco")
+    AddHandler btnPessoa.Click, Sub() _navigator.ShowInTab("frmPessoa")
+    AddHandler btnEndereco.Click, Sub() _navigator.ShowInTab("frmEndereco")
   End Sub
 End Class
