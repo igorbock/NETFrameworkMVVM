@@ -12,7 +12,7 @@ Public Class frmEndereco
     _viewModelEndereco = New EnderecoViewModel(New NavigatorWindowsForm)
 
     txtRua.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Rua", True, DataSourceUpdateMode.OnPropertyChanged)
-    txtNumero.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Numero", True, DataSourceUpdateMode.OnPropertyChanged)
+    txtNumero.NumericBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Numero", True, DataSourceUpdateMode.OnPropertyChanged)
     txtCidade.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Cidade", True, DataSourceUpdateMode.OnPropertyChanged)
     txtEstado.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Estado", True, DataSourceUpdateMode.OnPropertyChanged)
     gEnderecos.DataBindings.Add("DataSource", _viewModelEndereco, "ListTypeT", True, DataSourceUpdateMode.OnPropertyChanged)

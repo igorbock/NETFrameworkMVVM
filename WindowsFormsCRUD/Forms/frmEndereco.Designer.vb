@@ -25,7 +25,6 @@ Partial Class frmEndereco
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanelEndereco = New System.Windows.Forms.TableLayoutPanel()
         Me.txtRua = New WindowsFormsCRUD.UscTextBox()
-        Me.txtNumero = New WindowsFormsCRUD.UscTextBox()
         Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
         Me.txtEstado = New WindowsFormsCRUD.UscTextBox()
         Me.btnNovo = New System.Windows.Forms.Button()
@@ -40,6 +39,7 @@ Partial Class frmEndereco
         Me.colCidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEnderecoCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtNumero = New WindowsFormsCRUD.UscNumeric()
         Me.TableLayoutPanelEndereco.SuspendLayout()
         CType(Me.gEnderecos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,7 +54,6 @@ Partial Class frmEndereco
         Me.TableLayoutPanelEndereco.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
         Me.TableLayoutPanelEndereco.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
         Me.TableLayoutPanelEndereco.Controls.Add(Me.txtRua, 0, 0)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtNumero, 0, 1)
         Me.TableLayoutPanelEndereco.Controls.Add(Me.txtCidade, 0, 2)
         Me.TableLayoutPanelEndereco.Controls.Add(Me.txtEstado, 0, 3)
         Me.TableLayoutPanelEndereco.Controls.Add(Me.btnNovo, 0, 5)
@@ -63,6 +62,7 @@ Partial Class frmEndereco
         Me.TableLayoutPanelEndereco.Controls.Add(Me.btnSalvar, 4, 5)
         Me.TableLayoutPanelEndereco.Controls.Add(Me.btnCancelar, 5, 5)
         Me.TableLayoutPanelEndereco.Controls.Add(Me.gEnderecos, 0, 4)
+        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtNumero, 0, 1)
         Me.TableLayoutPanelEndereco.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanelEndereco.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanelEndereco.Margin = New System.Windows.Forms.Padding(1)
@@ -91,21 +91,6 @@ Partial Class frmEndereco
         Me.txtRua.Name = "txtRua"
         Me.txtRua.Size = New System.Drawing.Size(502, 33)
         Me.txtRua.TabIndex = 8
-        '
-        'txtNumero
-        '
-        Me.txtNumero.AutoSize = True
-        Me.txtNumero.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtNumero, 6)
-        Me.txtNumero.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtNumero.EditValue = ""
-        Me.txtNumero.LabelText = "Número"
-        Me.txtNumero.Location = New System.Drawing.Point(1, 36)
-        Me.txtNumero.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtNumero.Name = "txtNumero"
-        Me.txtNumero.Size = New System.Drawing.Size(502, 33)
-        Me.txtNumero.TabIndex = 9
         '
         'txtCidade
         '
@@ -282,6 +267,20 @@ Partial Class frmEndereco
         Me.colEnderecoCompleto.ReadOnly = True
         Me.colEnderecoCompleto.Visible = False
         '
+        'txtNumero
+        '
+        Me.txtNumero.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtNumero, 6)
+        Me.txtNumero.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtNumero.EditValue = ""
+        Me.txtNumero.LabelText = "Valor"
+        Me.txtNumero.Location = New System.Drawing.Point(1, 36)
+        Me.txtNumero.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(502, 33)
+        Me.txtNumero.TabIndex = 18
+        '
         'frmEndereco
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -301,7 +300,6 @@ Partial Class frmEndereco
 
     Friend WithEvents TableLayoutPanelEndereco As TableLayoutPanel
     Friend WithEvents txtRua As UscTextBox
-    Friend WithEvents txtNumero As UscTextBox
     Friend WithEvents txtCidade As UscTextBox
     Friend WithEvents txtEstado As UscTextBox
     Friend WithEvents btnNovo As Button
@@ -316,4 +314,5 @@ Partial Class frmEndereco
     Friend WithEvents colCidade As DataGridViewTextBoxColumn
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
     Friend WithEvents colEnderecoCompleto As DataGridViewTextBoxColumn
+    Friend WithEvents txtNumero As UscNumeric
 End Class

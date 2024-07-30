@@ -201,7 +201,7 @@ Namespace Abstracts
     End Sub
     Protected Overridable Sub UpdateTypeT()
       Try
-        If _currentItem.Id = 0 Then Throw New ArgumentNullException(GetType(TypeT).Name)
+        If CurrentItem Is Nothing OrElse CurrentItem.Id = 0 Then Throw New Exception("Selecione um registro")
 
         CurrentItem = _typeTRepository.GetById(_currentItem.Id)
         _typeTRepository.Begin()
