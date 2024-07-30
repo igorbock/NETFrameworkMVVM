@@ -291,7 +291,7 @@ Partial Class frmEndereco
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmEndereco"
-        Me.Text = "Cadastro de Endereço"
+        Me.Text = "Endereço"
         Me.TableLayoutPanelEndereco.ResumeLayout(False)
         Me.TableLayoutPanelEndereco.PerformLayout()
         CType(Me.gEnderecos, System.ComponentModel.ISupportInitialize).EndInit()

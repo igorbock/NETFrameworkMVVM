@@ -371,7 +371,7 @@ Partial Class frmPessoa
         Me.MinimizeBox = False
         Me.Name = "frmPessoa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "MVVM"
+        Me.Text = "Pessoa"
         Me.TableLayoutPanelPessoas.ResumeLayout(False)
         Me.TableLayoutPanelPessoas.PerformLayout()
         CType(Me.bsEndereco, System.ComponentModel.ISupportInitialize).EndInit()

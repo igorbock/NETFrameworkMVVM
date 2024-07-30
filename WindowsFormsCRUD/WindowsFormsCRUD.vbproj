@@ -50,6 +50,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -171,6 +174,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\FormUtils.vb" />
+    <Compile Include="Controls\SplashScreenApp.Designer.vb">
+      <DependentUpon>SplashScreenApp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplashScreenApp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SplashScreenLoad.Designer.vb">
+      <DependentUpon>SplashScreenLoad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplashScreenLoad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controls\UscCRUD.Designer.vb">
       <DependentUpon>UscCRUD.vb</DependentUpon>
     </Compile>
@@ -227,6 +242,12 @@
     <Compile Include="Navigator\NavigatorWindowsForm.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\SplashScreenApp.resx">
+      <DependentUpon>SplashScreenApp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SplashScreenLoad.resx">
+      <DependentUpon>SplashScreenLoad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UscCRUD.resx">
       <DependentUpon>UscCRUD.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +275,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -310,6 +332,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\localizador-de-mapa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppCRUD.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

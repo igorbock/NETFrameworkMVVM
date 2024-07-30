@@ -1,30 +1,14 @@
-﻿Imports VisualBasicLib.Interfaces
+﻿Imports System.Threading
+Imports VisualBasicLib.Interfaces
+Imports WindowsFormsCRUD.Classes
 
 Namespace Navigator
   Public Class NavigatorWindowsForm
     Implements INavigationManager
     Public Sub ShowPage(pageName As String) Implements INavigationManager.ShowPage
+      Dim thr As New Thread(New ThreadStart(Sub() FormUtils.StartSplashScreenLoad($"Carregando '{pageName}'...")))
       Try
-        Dim formName As String = $"WindowsFormsCRUD.{pageName}"
-        Dim formType As Type = Type.[GetType](formName)
-        If formType IsNot Nothing Then
-          Dim windowsForm As Form = TryCast(Activator.CreateInstance(formType), Form)
-          If windowsForm IsNot Nothing Then
-            windowsForm.Show()
-            windowsForm.BringToFront()
-          Else
-            MessageBox.Show("Formulário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-          End If
-        Else
-          MessageBox.Show("Formulário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
-      Catch ex As Exception
-        MessageBox.Show(ex.StackTrace, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      End Try
-    End Sub
-
-    Public Sub ShowInTab(pageName As String) Implements INavigationManager.ShowInTab
-      Try
+        thr.Start()
         Dim form As Form = GetPage(pageName)
         form.TopLevel = False
         form.FormBorderStyle = FormBorderStyle.None
@@ -43,26 +27,24 @@ Namespace Navigator
         Home.tbcPages.SelectedTab = newTabPage
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+      Finally
+        thr.Abort()
       End Try
     End Sub
 
     Private Function GetPage(pageName As String) As Form
-      Try
-        Dim formName As String = $"WindowsFormsCRUD.{pageName}"
-        Dim formType As Type = Type.[GetType](formName)
-        If formType IsNot Nothing Then
-          Dim windowsForm As Form = TryCast(Activator.CreateInstance(formType), Form)
-          If windowsForm IsNot Nothing Then
-            Return windowsForm
-          Else
-            Throw New Exception("Formulário não encontrado.")
-          End If
+      Dim formName As String = $"WindowsFormsCRUD.{pageName}"
+      Dim formType As Type = Type.[GetType](formName)
+      If formType IsNot Nothing Then
+        Dim windowsForm As Form = TryCast(Activator.CreateInstance(formType), Form)
+        If windowsForm IsNot Nothing Then
+          Return windowsForm
         Else
           Throw New Exception("Formulário não encontrado.")
         End If
-      Catch ex As Exception
+      Else
         Throw New Exception("Formulário não encontrado.")
-      End Try
+      End If
     End Function
   End Class
 End Namespace

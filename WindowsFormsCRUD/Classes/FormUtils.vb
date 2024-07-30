@@ -16,5 +16,11 @@ Namespace Classes
       Dim retorno As TypeT = CType(grid.Rows(row).DataBoundItem, TypeT)
       Return retorno
     End Function
+    Public Shared Sub StartSplashScreen()
+      Application.Run(New SplashScreenApp())
+    End Sub
+    Public Shared Sub StartSplashScreenLoad(message As String)
+      Application.Run(New SplashScreenLoad(message))
+    End Sub
   End Class
 End Namespace
