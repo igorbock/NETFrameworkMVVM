@@ -347,6 +347,8 @@ Partial Class frmPessoa
         'btnCRUD
         '
         Me.btnCRUD.CancelEnabled = True
+        Me.btnCRUD.CloseEnabled = True
+        Me.btnCRUD.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCRUD.EditEnabled = True
         Me.btnCRUD.Location = New System.Drawing.Point(1, 389)
         Me.btnCRUD.Margin = New System.Windows.Forms.Padding(1)
@@ -357,7 +359,7 @@ Partial Class frmPessoa
         Me.btnCRUD.PrintEnabled = True
         Me.btnCRUD.RemoveEnabled = True
         Me.btnCRUD.SaveEnabled = True
-        Me.btnCRUD.Size = New System.Drawing.Size(217, 28)
+        Me.btnCRUD.Size = New System.Drawing.Size(554, 28)
         Me.btnCRUD.TabIndex = 5
         '
         'frmPessoa

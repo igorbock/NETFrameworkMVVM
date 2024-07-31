@@ -25,6 +25,7 @@ Public Class frmPessoa
     btnCRUD.DataBindings.Add("PrintEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("PreviousEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("NextEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("CloseEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonCloseVisible), True, DataSourceUpdateMode.OnPropertyChanged)
 
     TextBoxNome.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.Nome), True, DataSourceUpdateMode.OnPropertyChanged)
     MaskedTextBoxCPF.DataBindings.Add("Text", _viewModelPessoa, NameOf(_viewModelPessoa.CPF), True, DataSourceUpdateMode.OnPropertyChanged)
@@ -58,5 +59,6 @@ Public Class frmPessoa
     AddHandler btnCRUD.RemoveEvent, Sub() _viewModelPessoa.DeleteCommand.Execute(Nothing)
     AddHandler btnCRUD.SaveEvent, Sub() _viewModelPessoa.SaveCommand.Execute(Nothing)
     AddHandler btnCRUD.CancelEvent, Sub() _viewModelPessoa.CancelCommand.Execute(Nothing)
+    AddHandler btnCRUD.CloseEvent, Sub() _viewModelPessoa.CloseCommand.Execute(Nothing)
   End Sub
 End Class

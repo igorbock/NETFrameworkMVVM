@@ -22,6 +22,7 @@ Partial Class UscCRUD
   'Não o modifique usando o editor de códigos.
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.btnPrint = New System.Windows.Forms.Button()
@@ -31,6 +32,16 @@ Partial Class UscCRUD
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnNew = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'btnClose
+        '
+        Me.btnClose.Image = Global.WindowsFormsCRUD.My.Resources.Resources.porta
+        Me.btnClose.Location = New System.Drawing.Point(216, 0)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(28, 28)
+        Me.btnClose.TabIndex = 8
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'btnNext
         '
@@ -116,6 +127,7 @@ Partial Class UscCRUD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.btnPrint)
@@ -126,7 +138,7 @@ Partial Class UscCRUD
         Me.Controls.Add(Me.btnNew)
         Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "UscCRUD"
-        Me.Size = New System.Drawing.Size(217, 28)
+        Me.Size = New System.Drawing.Size(244, 28)
         Me.ResumeLayout(False)
 
     End Sub
@@ -139,4 +151,5 @@ Partial Class UscCRUD
     Friend WithEvents btnPrint As Button
     Friend WithEvents btnPrevious As Button
     Friend WithEvents btnNext As Button
+    Friend WithEvents btnClose As Button
 End Class

@@ -155,6 +155,11 @@ Namespace Abstracts
         Return New RelayCommand(Sub() DeleteTypeT())
       End Get
     End Property
+    Public Overridable ReadOnly Property CloseCommand As ICommand
+      Get
+        Return New RelayCommand(Sub() _navigationManager.ClosePage())
+      End Get
+    End Property
     Protected Overridable Sub SaveTypeT()
       Try
         If _currentItem.Id = 0 Then

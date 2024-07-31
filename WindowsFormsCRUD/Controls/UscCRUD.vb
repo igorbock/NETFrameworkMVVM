@@ -7,6 +7,7 @@
   Public Event PrintEvent As EventHandler
   Public Event PreviousEvent As EventHandler
   Public Event NextEvent As EventHandler
+  Public Event CloseEvent As EventHandler
 
   Public Property NewEnabled() As Boolean
     Get
@@ -72,6 +73,14 @@
       btnNext.Enabled = value
     End Set
   End Property
+  Public Property CloseEnabled() As Boolean
+    Get
+      Return btnClose.Enabled
+    End Get
+    Set(value As Boolean)
+      btnClose.Enabled = value
+    End Set
+  End Property
 
   Public Sub New()
     InitializeComponent()
@@ -84,5 +93,6 @@
     AddHandler btnPrint.Click, Sub(sender, e) RaiseEvent PrintEvent(sender, e)
     AddHandler btnPrevious.Click, Sub(sender, e) RaiseEvent PreviousEvent(sender, e)
     AddHandler btnNext.Click, Sub(sender, e) RaiseEvent NextEvent(sender, e)
+    AddHandler btnClose.Click, Sub(sender, e) RaiseEvent CloseEvent(sender, e)
   End Sub
 End Class

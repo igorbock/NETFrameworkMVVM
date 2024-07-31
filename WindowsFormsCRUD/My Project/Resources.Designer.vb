@@ -163,6 +163,16 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property porta() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("porta", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property proximo_botao() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("proximo-botao", resourceCulture)

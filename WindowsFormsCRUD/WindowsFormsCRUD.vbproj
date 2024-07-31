@@ -345,6 +345,9 @@
   <ItemGroup>
     <None Include="Resources\AppCRUD.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\porta.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
