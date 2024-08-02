@@ -37,7 +37,8 @@ jobs:
 
       - name: Install B2 CLI
         run: |
-          curl -L https://github.com/Blackblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux | sudo install -o root -g root -m 0755 /dev/stdin/local/bin/b2
+          Invoke-WebRequest -Uri "https://github.com/Blackblaze/B2_Command_Line_Tool/releases/latest/download/b2-windows.exe" -OutFile "b2.exe"
+          Move-Item -Path "b2.exe" -Destination "C:\ProgramFiles\B2" -Force
       
       - name: Authorize B2
         env:
