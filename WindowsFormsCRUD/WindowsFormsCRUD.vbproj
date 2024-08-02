@@ -321,16 +321,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityFrameworkLib\EntityFrameworkLib.csproj">
-      <Project>{0953044a-9ecf-41d3-9240-76773294d9c9}</Project>
-      <Name>EntityFrameworkLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VisualBasicLib\VisualBasicLib.vbproj">
-      <Project>{5e606570-0c6a-4d38-8ac8-a216dfd2595a}</Project>
-      <Name>VisualBasicLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add.png" />
   </ItemGroup>
   <ItemGroup>
