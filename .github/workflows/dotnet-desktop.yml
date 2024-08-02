@@ -38,15 +38,16 @@ jobs:
       - name: Install B2 CLI
         run: |
           Invoke-WebRequest -Uri "https://github.com/Backblaze/B2_Command_Line_Tool/releases/download/v4.1.0/b2-windows.exe" -OutFile "b2.exe"
-          Move-Item -Path "b2.exe" -Destination "C:\ProgramFiles\B2" -Force
       
       - name: Authorize B2
         env:
           B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
           B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
-        run: b2 authorize-account $B2_KEY_ID $B2_APPLICATION_KEY
+        run: |
+          .\b2 authorize-account $B2_KEY_ID $B2_APPLICATION_KEY
 
       - name: Upload to B2
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
-        run: b2 sync --replaceNewer ./output b2://$B2_BUCKET_NAME/
+        run: |
+          .\b2.exe sync --replaceNewer ./output b2://$B2_BUCKET_NAME/
