@@ -16,14 +16,9 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '4.7.2'
       
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1.0.3
+        uses: microsoft/setup-msbuild@v1
 
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1.0.5
