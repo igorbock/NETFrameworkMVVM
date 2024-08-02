@@ -33,4 +33,19 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe NETFrameworkMVVM.sln /p:platform="Any CPU" /p:configuration="Release"
+          msbuild.exe NETFrameworkMVVM.sln /p:platform="Any CPU" /p:configuration="Release" /p:OutputPath=.\output\
+
+      - name: Install B2 CLI
+        run: |
+          curl -L https://github.com/Blackblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux | sudo install -o root -g root -m 0755 /dev/stdin/local/bin/b2
+      
+      - name: Authorize B2
+        env:
+          B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
+          B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
+        run: b2 authorize-account $B2_KEY_ID $B2_APPLICATION_KEY
+
+      - name: Upload to B2
+        env:
+          B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
+        run: b2 sync --replaceNewer ./output b2://$B2_BUCKET_NAME/
