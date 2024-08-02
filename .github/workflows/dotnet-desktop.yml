@@ -44,10 +44,10 @@ jobs:
           B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
           B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
         run: |
-          .\b2 authorize-account $B2_KEY_ID $B2_APPLICATION_KEY
+          .\b2 authorize-account $env:B2_KEY_ID $env:B2_APPLICATION_KEY
 
       - name: Upload to B2
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe sync --replaceNewer ./output b2://$B2_BUCKET_NAME/
+          .\b2.exe sync --replaceNewer ./output b2://$env:B2_BUCKET_NAME/
