@@ -173,6 +173,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AbstractForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Classes\FormUtils.vb" />
     <Compile Include="Controls\SplashScreenApp.Designer.vb">
       <DependentUpon>SplashScreenApp.vb</DependentUpon>
@@ -210,6 +213,12 @@
     <Compile Include="Controls\UscTextBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\BaseForm.Designer.vb">
+      <DependentUpon>BaseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmEndereco.Designer.vb">
       <DependentUpon>frmEndereco.vb</DependentUpon>
     </Compile>
@@ -221,6 +230,12 @@
     </Compile>
     <Compile Include="Forms\frmPessoa.Designer.vb">
       <DependentUpon>frmPessoa.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVeiculo.Designer.vb">
+      <DependentUpon>frmVeiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVeiculo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Home.Designer.vb">
@@ -266,11 +281,17 @@
     <EmbeddedResource Include="Controls\UscTextBox.resx">
       <DependentUpon>UscTextBox.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEndereco.resx">
       <DependentUpon>frmEndereco.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPessoa.resx">
       <DependentUpon>frmPessoa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVeiculo.resx">
+      <DependentUpon>frmVeiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
