@@ -359,6 +359,16 @@
   <ItemGroup>
     <None Include="Resources\porta.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NETLibMVVM\EntityFrameworkLib\EntityFrameworkLib.csproj">
+      <Project>{cc7e567e-3e34-46aa-a835-61e53e37d14d}</Project>
+      <Name>EntityFrameworkLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NETLibMVVM\VisualBasicLib\VisualBasicLib.vbproj">
+      <Project>{1b5adf9a-d240-456f-92f5-87dbae5bee74}</Project>
+      <Name>VisualBasicLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
