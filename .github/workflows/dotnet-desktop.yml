@@ -33,7 +33,11 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe NETFrameworkMVVM.sln /p:platform="Any CPU" /p:configuration="Release" /p:OutputPath=.\output\
+          msbuild.exe NETFrameworkMVVM.sln /p:platform="Any CPU" /p:configuration="Release"
+
+      - name: Publish
+        run: |
+          msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:PublishUrl="C:\publish\output"
 
       - name: Install B2 CLI
         run: |
@@ -44,10 +48,10 @@ jobs:
           B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
           B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
         run: |
-          .\b2 authorize-account $env:B2_KEY_ID $env:B2_APPLICATION_KEY
+          .\b2.exe authorize-account $env:B2_KEY_ID $env:B2_APPLICATION_KEY
 
       - name: Upload to B2
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe sync ./output b2://$env:B2_BUCKET_NAME/
+          .\b2.exe sync C:\publish\output b2://$env:B2_BUCKET_NAME/
