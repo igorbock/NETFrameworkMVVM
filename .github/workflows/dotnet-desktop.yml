@@ -44,10 +44,10 @@ jobs:
           B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
           B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
         run: |
-          .\b2.exe authorize-account $env:B2_KEY_ID $env:B2_APPLICATION_KEY
+          .\b2.exe account authorize $env:B2_KEY_ID $env:B2_APPLICATION_KEY
 
       - name: Upload to B2
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe sync --allow-empty-source ${{ github.workspace }}\WindowsFormsCRUD\bin\Release b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
+          .\b2.exe sync --replaceNewer --allow-empty-source ${{ github.workspace }}\WindowsFormsCRUD\bin\Release b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
