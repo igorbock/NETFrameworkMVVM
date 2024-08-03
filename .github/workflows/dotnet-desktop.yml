@@ -50,4 +50,4 @@ jobs:
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe upload_file windowsFormsTest ${{ github.workspace }}\WindowsFormsCRUD\bin\Release\WindowsFormsCRUD.exe b2://$env:B2_BUCKET_NAME/windowsFormsCRUD/WindowsFormsCRUD.exe
+          .\b2.exe file upload windowsFormsTest ${{ github.workspace }}\WindowsFormsCRUD\bin\Release\WindowsFormsCRUD.exe b2:/$env:B2_BUCKET_NAME/windowsFormsCRUD/WindowsFormsCRUD.exe
