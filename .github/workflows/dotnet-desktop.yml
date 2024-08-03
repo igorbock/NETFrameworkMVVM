@@ -31,13 +31,16 @@ jobs:
       - name: Restore Packages
         run: nuget restore NETFrameworkMVVM.sln
 
+      - name: Create publish directory
+        run: mkdir -p ${{ github.workspace }}/publish/output
+
       - name: Build Solution
         run: |
           msbuild.exe NETFrameworkMVVM.sln /p:platform="Any CPU" /p:configuration="Release"
 
       - name: Publish
         run: |
-          msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:PublishUrl="${{ github.workspace }}\output"
+          msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:PublishUrl="${{ github.workspace }}\publish\output"
 
       - name: Install B2 CLI
         run: |
@@ -54,4 +57,4 @@ jobs:
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe sync ${{ github.workspace }}\bin\release b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
+          .\b2.exe sync ${{ github.workspace }}\publish\output b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
