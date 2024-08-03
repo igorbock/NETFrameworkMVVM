@@ -21,9 +21,6 @@ jobs:
 
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1.0.5
-        
-      - name: Setup VSTest
-        uses: darenm/Setup-VSTest@v1
 
       - name: Navigate to Workspace
         run: cd $GITHUB_WORKSPACE
@@ -34,6 +31,12 @@ jobs:
       - name: Publish
         run: |
           msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+
+      - name: Install InnoSetup
+        run: choco install innosetup --version=6.2.0
+
+      - name: Create Installer w/ Inno Setup
+        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "D:\Alpha\NETFrameworkMVVM\TesteWindowsCRUD.iss"'
 
       - name: Install B2 CLI
         run: |
