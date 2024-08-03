@@ -32,11 +32,8 @@ jobs:
         run: |
           msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 
-      - name: Install InnoSetup
-        run: choco install innosetup --version=6.3.3
-
       - name: Create Installer w/ Inno Setup
-        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "D:\Alpha\NETFrameworkMVVM\TesteWindowsCRUD.iss"'
+        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "D:\a\NETFrameworkMVVM\TesteWindowsCRUD.iss"'
 
       - name: Install B2 CLI
         run: |
