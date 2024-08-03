@@ -37,7 +37,7 @@ jobs:
 
       - name: Publish
         run: |
-          msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:PublishUrl="C:\publish\output"
+          msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:PublishUrl="$(Build.ArtifactStagingDirectory)\output"
 
       - name: Install B2 CLI
         run: |
@@ -54,4 +54,4 @@ jobs:
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe sync D:\Alpha\NETFrameworkMVVM\WindowsFormsCRUD\bin\Release b2://$env:B2_BUCKET_NAME/
+          .\b2.exe sync $(Build.ArtifactStagingDirectory)\output b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
