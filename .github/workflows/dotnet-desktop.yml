@@ -34,10 +34,6 @@ jobs:
       - name: Create publish directory
         run: mkdir -p ${{ github.workspace }}/publish/output
 
-      - name: Build Solution
-        run: |
-          msbuild.exe NETFrameworkMVVM.sln /p:platform="Any CPU" /p:configuration="Release"
-
       - name: Publish
         run: |
           msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:PublishUrl="${{ github.workspace }}\publish\output"
