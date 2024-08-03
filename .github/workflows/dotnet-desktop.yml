@@ -50,4 +50,4 @@ jobs:
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe sync --replaceNewer --allow-empty-source ${{ github.workspace }}\WindowsFormsCRUD\bin\Release b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
+          .\b2.exe sync --allow-empty-source ${{ github.workspace }}\WindowsFormsCRUD\bin\Release b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
