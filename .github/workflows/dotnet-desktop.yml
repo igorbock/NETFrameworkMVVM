@@ -54,4 +54,4 @@ jobs:
         env:
           B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
         run: |
-          .\b2.exe sync ${{ github.workspace }}\output b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
+          .\b2.exe sync ${{ github.workspace }}\bin\release b2://$env:B2_BUCKET_NAME/windowsFormsCRUD
