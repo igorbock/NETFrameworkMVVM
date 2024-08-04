@@ -37,7 +37,7 @@ jobs:
           echo "ISS File Path: ${{ github.workspace }}\TesteWindowsCRUD.iss"
           dir ${{ github.workspace }}
 
-      - uses: zhuzicho520/inno-setup-action@v1.0.0
+      - uses: zhuzichu520/inno-setup-action@v1.0.0
         with:
             filepath: '${{ github.workspace }}\TesteWindowsCRUD.iss'
 
