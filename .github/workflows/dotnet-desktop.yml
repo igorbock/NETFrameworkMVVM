@@ -10,24 +10,49 @@ jobs:
   build:    
     runs-on: windows-latest
     
-    steps:      
-      - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
       
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1.0.5
-        
-      - name: Setup VSTest
-        uses: darenm/Setup-VSTest@v1
 
       - name: Navigate to Workspace
         run: cd $GITHUB_WORKSPACE
 
       - name: Restore Packages
-        run: nuget restore WindowsFormsCRUD.csproj
+        run: nuget restore NETFrameworkMVVM.sln
 
-      - name: Build Solution
+      - name: Publish
         run: |
-          msbuild.exe NETFrameworkMVVM.sln /p:platform="Any CPU" /p:configuration="Release"
+          msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+
+      - name: Verify ISS File Path
+        run: |
+          echo "ISS File Path: ${{ github.workspace }}\TesteWindowsCRUD.iss"
+          dir ${{ github.workspace }}
+
+      - name: Create Installer w/ Inno Setup
+        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "${{ github.workspace }}\TesteWindowsCRUD.iss"'
+
+      - name: Install B2 CLI
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/Backblaze/B2_Command_Line_Tool/releases/download/v4.1.0/b2-windows.exe" -OutFile "b2.exe"
+      
+      - name: Authorize B2
+        env:
+          B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
+          B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
+        run: |
+          .\b2.exe account authorize $env:B2_KEY_ID $env:B2_APPLICATION_KEY
+
+      - name: Upload to B2
+        env:
+          B2_BUCKET_NAME: ${{ secrets.B2_BUCKET_NAME }}
+        run: |
+          .\b2.exe file upload windowsFormsTest ${{ github.workspace }}\WindowsFormsCRUD\bin\Release\WindowsFormsCRUD.exe b2:/$env:B2_BUCKET_NAME/windowsFormsCRUD/WindowsFormsCRUD.exe
