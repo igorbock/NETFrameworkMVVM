@@ -32,8 +32,13 @@ jobs:
         run: |
           msbuild.exe NETFrameworkMVVM.sln /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 
+      - name: Verify ISS File Path
+        run: |
+          echo "ISS File Path: ${{ github.workspace }}\TesteWindowsCRUD.iss"
+          dir ${{ github.workspace }}
+
       - name: Create Installer w/ Inno Setup
-        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "$GITHUB_WORKSPACE\TesteWindowsCRUD.iss"'
+        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "${{ github.workspace }}\TesteWindowsCRUD.iss"'
 
       - name: Install B2 CLI
         run: |
