@@ -37,8 +37,9 @@ jobs:
           echo "ISS File Path: ${{ github.workspace }}\TesteWindowsCRUD.iss"
           dir ${{ github.workspace }}
 
-      - name: Create Installer w/ Inno Setup
-        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "${{ github.workspace }}\TesteWindowsCRUD.iss"'
+      - uses: zhuzichu520/inno-setup-action@v1.0.0
+        with:
+            filepath: '${{ github.workspace }}\TesteWindowsCRUD.iss'
 
       - name: Install B2 CLI
         run: |
