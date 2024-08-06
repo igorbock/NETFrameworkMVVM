@@ -38,13 +38,6 @@ Public Class frmEndereco
     AddHandler gEnderecos.CellClick, Sub(sender, e) CellClick(e, gEnderecos)
   End Sub
 
-  Private Sub SelectCurrentItem()
-    Try
-      _viewModelEndereco.CurrentItem = Classes.FormUtils.SelectTypeT(Of Endereco)(gEnderecos)
-
-    Catch ex As Exception
-    End Try
-  End Sub
   Private Sub CellClick(e As DataGridViewCellEventArgs, grid As DataGridView)
     If e.RowIndex >= 0 Then
       Dim linhaSelecionada As DataGridViewRow = grid.Rows(e.RowIndex)

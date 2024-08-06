@@ -216,6 +216,12 @@
     <Compile Include="Controls\UscDataGridViewPessoas.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\UscMaskedTextBox.Designer.vb">
+      <DependentUpon>UscMaskedTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UscMaskedTextBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\UscNumeric.Designer.vb">
       <DependentUpon>UscNumeric.vb</DependentUpon>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UscDataGridViewPessoas.resx">
       <DependentUpon>UscDataGridViewPessoas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UscMaskedTextBox.resx">
+      <DependentUpon>UscMaskedTextBox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UscNumeric.resx">
       <DependentUpon>UscNumeric.vb</DependentUpon>
