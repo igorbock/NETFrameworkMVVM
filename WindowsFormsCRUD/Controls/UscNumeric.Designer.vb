@@ -24,6 +24,8 @@ Partial Class UscNumeric
   Private Sub InitializeComponent()
         Me.NumericBox = New System.Windows.Forms.TextBox()
         Me.Label = New System.Windows.Forms.Label()
+        Me.tbpNumeric = New System.Windows.Forms.TableLayoutPanel()
+        Me.tbpNumeric.SuspendLayout()
         Me.SuspendLayout()
         '
         'NumericBox
@@ -31,24 +33,43 @@ Partial Class UscNumeric
         Me.NumericBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NumericBox.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.NumericBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NumericBox.Font = New System.Drawing.Font("Leelawadee", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NumericBox.Font = New System.Drawing.Font("Bahnschrift SemiBold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NumericBox.ForeColor = System.Drawing.Color.Black
-        Me.NumericBox.Location = New System.Drawing.Point(54, 9)
-        Me.NumericBox.Margin = New System.Windows.Forms.Padding(5, 1, 10, 1)
+        Me.NumericBox.Location = New System.Drawing.Point(101, 8)
+        Me.NumericBox.Margin = New System.Windows.Forms.Padding(1)
         Me.NumericBox.Name = "NumericBox"
-        Me.NumericBox.Size = New System.Drawing.Size(205, 14)
+        Me.NumericBox.Size = New System.Drawing.Size(160, 17)
         Me.NumericBox.TabIndex = 0
-        Me.NumericBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label
         '
+        Me.Label.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label.AutoSize = True
         Me.Label.Font = New System.Drawing.Font("Leelawadee", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label.Location = New System.Drawing.Point(8, 10)
+        Me.Label.Location = New System.Drawing.Point(1, 9)
+        Me.Label.Margin = New System.Windows.Forms.Padding(1)
         Me.Label.Name = "Label"
-        Me.Label.Size = New System.Drawing.Size(34, 14)
+        Me.Label.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Label.Size = New System.Drawing.Size(98, 14)
         Me.Label.TabIndex = 1
         Me.Label.Text = "Valor"
+        Me.Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'tbpNumeric
+        '
+        Me.tbpNumeric.ColumnCount = 2
+        Me.tbpNumeric.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.tbpNumeric.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tbpNumeric.Controls.Add(Me.Label, 0, 0)
+        Me.tbpNumeric.Controls.Add(Me.NumericBox, 1, 0)
+        Me.tbpNumeric.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbpNumeric.Location = New System.Drawing.Point(0, 0)
+        Me.tbpNumeric.Margin = New System.Windows.Forms.Padding(1)
+        Me.tbpNumeric.Name = "tbpNumeric"
+        Me.tbpNumeric.RowCount = 1
+        Me.tbpNumeric.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tbpNumeric.Size = New System.Drawing.Size(262, 33)
+        Me.tbpNumeric.TabIndex = 2
         '
         'UscNumeric
         '
@@ -56,16 +77,17 @@ Partial Class UscNumeric
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Controls.Add(Me.Label)
-        Me.Controls.Add(Me.NumericBox)
+        Me.Controls.Add(Me.tbpNumeric)
         Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "UscNumeric"
-        Me.Size = New System.Drawing.Size(262, 29)
+        Me.Size = New System.Drawing.Size(262, 33)
+        Me.tbpNumeric.ResumeLayout(False)
+        Me.tbpNumeric.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents NumericBox As TextBox
     Friend WithEvents Label As Label
+    Friend WithEvents tbpNumeric As TableLayoutPanel
 End Class

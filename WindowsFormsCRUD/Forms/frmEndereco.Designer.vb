@@ -24,11 +24,9 @@ Partial Class frmEndereco
   Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanelEndereco = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnNovo = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnExcluir = New System.Windows.Forms.Button()
-        Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.txtRua = New WindowsFormsCRUD.UscTextBox()
+        Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
+        Me.txtEstado = New WindowsFormsCRUD.UscTextBox()
         Me.gEnderecos = New System.Windows.Forms.DataGridView()
         Me.colId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colRua = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,10 +34,8 @@ Partial Class frmEndereco
         Me.colCidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEnderecoCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtRua = New WindowsFormsCRUD.UscTextBox()
-        Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
-        Me.txtEstado = New WindowsFormsCRUD.UscTextBox()
         Me.txtNumero = New WindowsFormsCRUD.UscNumeric()
+        Me.btnCRUD = New WindowsFormsCRUD.UscCRUD()
         Me.TableLayoutPanelEndereco.SuspendLayout()
         CType(Me.gEnderecos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,89 +49,70 @@ Partial Class frmEndereco
         Me.TableLayoutPanelEndereco.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanelEndereco.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
         Me.TableLayoutPanelEndereco.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtRua, 0, 0)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtCidade, 0, 2)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtEstado, 0, 3)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.btnNovo, 0, 5)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.btnEditar, 1, 5)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.btnExcluir, 2, 5)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.btnSalvar, 4, 5)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.btnCancelar, 5, 5)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.gEnderecos, 0, 4)
-        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtNumero, 0, 1)
+        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtRua, 0, 1)
+        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtCidade, 0, 3)
+        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtEstado, 0, 4)
+        Me.TableLayoutPanelEndereco.Controls.Add(Me.gEnderecos, 0, 5)
+        Me.TableLayoutPanelEndereco.Controls.Add(Me.txtNumero, 0, 2)
+        Me.TableLayoutPanelEndereco.Controls.Add(Me.btnCRUD, 0, 0)
         Me.TableLayoutPanelEndereco.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanelEndereco.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanelEndereco.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanelEndereco.Name = "TableLayoutPanelEndereco"
         Me.TableLayoutPanelEndereco.RowCount = 6
+        Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanelEndereco.Size = New System.Drawing.Size(504, 408)
         Me.TableLayoutPanelEndereco.TabIndex = 0
         '
-        'btnNovo
+        'txtRua
         '
-        Me.btnNovo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnNovo.Font = New System.Drawing.Font("Leelawadee", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNovo.Location = New System.Drawing.Point(1, 374)
-        Me.btnNovo.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnNovo.Name = "btnNovo"
-        Me.btnNovo.Size = New System.Drawing.Size(87, 33)
-        Me.btnNovo.TabIndex = 12
-        Me.btnNovo.Text = "Novo"
-        Me.btnNovo.UseVisualStyleBackColor = True
+        Me.txtRua.AutoSize = True
+        Me.txtRua.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtRua, 6)
+        Me.txtRua.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtRua.EditValue = ""
+        Me.txtRua.LabelText = "Rua"
+        Me.txtRua.Location = New System.Drawing.Point(1, 31)
+        Me.txtRua.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtRua.Name = "txtRua"
+        Me.txtRua.Size = New System.Drawing.Size(502, 33)
+        Me.txtRua.TabIndex = 8
         '
-        'btnEditar
+        'txtCidade
         '
-        Me.btnEditar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnEditar.Font = New System.Drawing.Font("Leelawadee", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditar.Location = New System.Drawing.Point(90, 374)
-        Me.btnEditar.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(87, 33)
-        Me.btnEditar.TabIndex = 13
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.UseVisualStyleBackColor = True
+        Me.txtCidade.AutoSize = True
+        Me.txtCidade.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtCidade, 6)
+        Me.txtCidade.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCidade.EditValue = ""
+        Me.txtCidade.LabelText = "Cidade"
+        Me.txtCidade.Location = New System.Drawing.Point(1, 101)
+        Me.txtCidade.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtCidade.Name = "txtCidade"
+        Me.txtCidade.Size = New System.Drawing.Size(502, 33)
+        Me.txtCidade.TabIndex = 10
         '
-        'btnExcluir
+        'txtEstado
         '
-        Me.btnExcluir.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnExcluir.Font = New System.Drawing.Font("Leelawadee", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExcluir.Location = New System.Drawing.Point(179, 374)
-        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(87, 33)
-        Me.btnExcluir.TabIndex = 14
-        Me.btnExcluir.Text = "Excluir"
-        Me.btnExcluir.UseVisualStyleBackColor = True
-        '
-        'btnSalvar
-        '
-        Me.btnSalvar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSalvar.Font = New System.Drawing.Font("Leelawadee", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalvar.Location = New System.Drawing.Point(327, 374)
-        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(87, 33)
-        Me.btnSalvar.TabIndex = 15
-        Me.btnSalvar.Text = "Salvar"
-        Me.btnSalvar.UseVisualStyleBackColor = True
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCancelar.Font = New System.Drawing.Font("Leelawadee", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(416, 374)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(87, 33)
-        Me.btnCancelar.TabIndex = 16
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.txtEstado.AutoSize = True
+        Me.txtEstado.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtEstado, 6)
+        Me.txtEstado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtEstado.EditValue = ""
+        Me.txtEstado.LabelText = "Estado"
+        Me.txtEstado.Location = New System.Drawing.Point(1, 136)
+        Me.txtEstado.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtEstado.Name = "txtEstado"
+        Me.txtEstado.Size = New System.Drawing.Size(502, 33)
+        Me.txtEstado.TabIndex = 11
         '
         'gEnderecos
         '
@@ -160,14 +137,14 @@ Partial Class frmEndereco
         Me.gEnderecos.DataMember = "Endereco"
         Me.gEnderecos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gEnderecos.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.gEnderecos.Location = New System.Drawing.Point(1, 141)
+        Me.gEnderecos.Location = New System.Drawing.Point(1, 171)
         Me.gEnderecos.Margin = New System.Windows.Forms.Padding(1)
         Me.gEnderecos.MultiSelect = False
         Me.gEnderecos.Name = "gEnderecos"
         Me.gEnderecos.ReadOnly = True
         Me.gEnderecos.RowHeadersVisible = False
         Me.gEnderecos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gEnderecos.Size = New System.Drawing.Size(502, 231)
+        Me.gEnderecos.Size = New System.Drawing.Size(502, 236)
         Me.gEnderecos.TabIndex = 17
         '
         'colId
@@ -223,51 +200,6 @@ Partial Class frmEndereco
         Me.colEnderecoCompleto.ReadOnly = True
         Me.colEnderecoCompleto.Visible = False
         '
-        'txtRua
-        '
-        Me.txtRua.AutoSize = True
-        Me.txtRua.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtRua, 6)
-        Me.txtRua.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtRua.EditValue = ""
-        Me.txtRua.LabelText = "Rua"
-        Me.txtRua.Location = New System.Drawing.Point(1, 1)
-        Me.txtRua.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtRua.Name = "txtRua"
-        Me.txtRua.Size = New System.Drawing.Size(502, 33)
-        Me.txtRua.TabIndex = 8
-        '
-        'txtCidade
-        '
-        Me.txtCidade.AutoSize = True
-        Me.txtCidade.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtCidade, 6)
-        Me.txtCidade.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtCidade.EditValue = ""
-        Me.txtCidade.LabelText = "Cidade"
-        Me.txtCidade.Location = New System.Drawing.Point(1, 71)
-        Me.txtCidade.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtCidade.Name = "txtCidade"
-        Me.txtCidade.Size = New System.Drawing.Size(502, 33)
-        Me.txtCidade.TabIndex = 10
-        '
-        'txtEstado
-        '
-        Me.txtEstado.AutoSize = True
-        Me.txtEstado.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtEstado, 6)
-        Me.txtEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtEstado.EditValue = ""
-        Me.txtEstado.LabelText = "Estado"
-        Me.txtEstado.Location = New System.Drawing.Point(1, 106)
-        Me.txtEstado.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.Size = New System.Drawing.Size(502, 33)
-        Me.txtEstado.TabIndex = 11
-        '
         'txtNumero
         '
         Me.txtNumero.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -275,12 +207,31 @@ Partial Class frmEndereco
         Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtNumero, 6)
         Me.txtNumero.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNumero.EditValue = ""
-        Me.txtNumero.LabelText = "Valor"
-        Me.txtNumero.Location = New System.Drawing.Point(1, 36)
+        Me.txtNumero.LabelText = "Número"
+        Me.txtNumero.Location = New System.Drawing.Point(1, 66)
         Me.txtNumero.Margin = New System.Windows.Forms.Padding(1)
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(502, 33)
         Me.txtNumero.TabIndex = 18
+        '
+        'btnCRUD
+        '
+        Me.btnCRUD.CancelEnabled = True
+        Me.btnCRUD.CloseEnabled = True
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.btnCRUD, 6)
+        Me.btnCRUD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCRUD.EditEnabled = True
+        Me.btnCRUD.Location = New System.Drawing.Point(1, 1)
+        Me.btnCRUD.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnCRUD.Name = "btnCRUD"
+        Me.btnCRUD.NewEnabled = True
+        Me.btnCRUD.NextEnabled = True
+        Me.btnCRUD.PreviousEnabled = True
+        Me.btnCRUD.PrintEnabled = True
+        Me.btnCRUD.RemoveEnabled = True
+        Me.btnCRUD.SaveEnabled = True
+        Me.btnCRUD.Size = New System.Drawing.Size(502, 28)
+        Me.btnCRUD.TabIndex = 19
         '
         'frmEndereco
         '
@@ -303,11 +254,6 @@ Partial Class frmEndereco
     Friend WithEvents txtRua As UscTextBox
     Friend WithEvents txtCidade As UscTextBox
     Friend WithEvents txtEstado As UscTextBox
-    Friend WithEvents btnNovo As Button
-    Friend WithEvents btnEditar As Button
-    Friend WithEvents btnExcluir As Button
-    Friend WithEvents btnSalvar As Button
-    Friend WithEvents btnCancelar As Button
     Friend WithEvents gEnderecos As DataGridView
     Friend WithEvents colId As DataGridViewTextBoxColumn
     Friend WithEvents colRua As DataGridViewTextBoxColumn
@@ -316,4 +262,5 @@ Partial Class frmEndereco
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
     Friend WithEvents colEnderecoCompleto As DataGridViewTextBoxColumn
     Friend WithEvents txtNumero As UscNumeric
+    Friend WithEvents btnCRUD As UscCRUD
 End Class

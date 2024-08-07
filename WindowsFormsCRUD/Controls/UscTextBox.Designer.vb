@@ -24,6 +24,8 @@ Partial Class UscTextBox
   Private Sub InitializeComponent()
         Me.TextBox = New System.Windows.Forms.TextBox()
         Me.Label = New System.Windows.Forms.Label()
+        Me.tbpTextBox = New System.Windows.Forms.TableLayoutPanel()
+        Me.tbpTextBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBox
@@ -32,26 +34,44 @@ Partial Class UscTextBox
         Me.TextBox.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox.Font = New System.Drawing.Font("Leelawadee", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox.Font = New System.Drawing.Font("Bahnschrift SemiBold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox.ForeColor = System.Drawing.Color.Black
-        Me.TextBox.Location = New System.Drawing.Point(54, 10)
-        Me.TextBox.Margin = New System.Windows.Forms.Padding(5, 1, 10, 1)
+        Me.TextBox.Location = New System.Drawing.Point(101, 8)
+        Me.TextBox.Margin = New System.Windows.Forms.Padding(1)
         Me.TextBox.Name = "TextBox"
-        Me.TextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TextBox.Size = New System.Drawing.Size(207, 14)
+        Me.TextBox.Size = New System.Drawing.Size(164, 17)
         Me.TextBox.TabIndex = 0
         '
         'Label
         '
+        Me.Label.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label.AutoSize = True
         Me.Label.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label.Font = New System.Drawing.Font("Leelawadee", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label.Location = New System.Drawing.Point(8, 10)
+        Me.Label.Location = New System.Drawing.Point(1, 9)
         Me.Label.Margin = New System.Windows.Forms.Padding(1)
         Me.Label.Name = "Label"
-        Me.Label.Size = New System.Drawing.Size(36, 14)
+        Me.Label.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Label.Size = New System.Drawing.Size(98, 14)
         Me.Label.TabIndex = 1
         Me.Label.Text = "Texto"
+        Me.Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'tbpTextBox
+        '
+        Me.tbpTextBox.ColumnCount = 2
+        Me.tbpTextBox.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.tbpTextBox.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tbpTextBox.Controls.Add(Me.Label, 0, 0)
+        Me.tbpTextBox.Controls.Add(Me.TextBox, 1, 0)
+        Me.tbpTextBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbpTextBox.Location = New System.Drawing.Point(0, 0)
+        Me.tbpTextBox.Margin = New System.Windows.Forms.Padding(1)
+        Me.tbpTextBox.Name = "tbpTextBox"
+        Me.tbpTextBox.RowCount = 1
+        Me.tbpTextBox.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tbpTextBox.Size = New System.Drawing.Size(266, 33)
+        Me.tbpTextBox.TabIndex = 2
         '
         'UscTextBox
         '
@@ -60,16 +80,17 @@ Partial Class UscTextBox
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Controls.Add(Me.Label)
-        Me.Controls.Add(Me.TextBox)
+        Me.Controls.Add(Me.tbpTextBox)
         Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "UscTextBox"
-        Me.Size = New System.Drawing.Size(266, 31)
+        Me.Size = New System.Drawing.Size(266, 33)
+        Me.tbpTextBox.ResumeLayout(False)
+        Me.tbpTextBox.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents TextBox As TextBox
     Friend WithEvents Label As Label
+    Friend WithEvents tbpTextBox As TableLayoutPanel
 End Class

@@ -16,6 +16,11 @@ Namespace Classes
       Dim retorno As TypeT = CType(grid.Rows(row).DataBoundItem, TypeT)
       Return retorno
     End Function
+    Public Shared Sub RefreshControls(form As Form)
+      For Each control As Control In form.Controls.Find("Usc", True)
+        control.Refresh()
+      Next
+    End Sub
     Public Shared Sub StartSplashScreen()
       Application.Run(New SplashScreenApp())
     End Sub

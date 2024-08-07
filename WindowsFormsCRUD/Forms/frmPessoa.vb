@@ -1,6 +1,7 @@
-﻿Imports EntityFrameworkLib.Models
+﻿Imports EntityFrameworkLib.Models.DTOs
 Imports VisualBasicLib.ViewModels
 Imports WindowsFormsCRUD.Navigator
+Imports VisualBasicLib.Extensions.PessoaExtensions
 
 Public Class frmPessoa
   Private ReadOnly Property _viewModelPessoa As PessoaViewModel
@@ -21,16 +22,16 @@ Public Class frmPessoa
     txtNome.TextBox.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.Nome", True, DataSourceUpdateMode.OnPropertyChanged)
     txtCPF.MaskedTextBox.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.CPF", True, DataSourceUpdateMode.OnPropertyChanged)
     txtRG.MaskedTextBox.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.RG", True, DataSourceUpdateMode.OnPropertyChanged)
-    dteNascimento.DataBindings.Add("Value", _viewModelPessoa, "CurrentItem.Nascimento", True, DataSourceUpdateMode.OnPropertyChanged)
-    cmbEndereco.DataBindings.Add("SelectedValue", _viewModelPessoa, NameOf(_viewModelPessoa.Endereco), True, DataSourceUpdateMode.OnPropertyChanged)
-    cmbEndereco.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.Enderecos), True, DataSourceUpdateMode.OnPropertyChanged)
-    gPessoas.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.ListTypeT), True, DataSourceUpdateMode.OnPropertyChanged)
-    'DataBindings.Add("Enderecos", _viewModelPessoa, NameOf(_viewModelPessoa.Enderecos), True, DataSourceUpdateMode.OnPropertyChanged)
+    txtNascimento.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.Nascimento", True, DataSourceUpdateMode.OnPropertyChanged)
+    cmbEndereco.DataBindings.Add("SelectedValue", _viewModelPessoa, "CurrentItem.IdEndereco", True, DataSourceUpdateMode.OnPropertyChanged)
+    cmbEndereco.DataBindings.Add("DataSource", _viewModelPessoa, "Enderecos", True, DataSourceUpdateMode.OnPropertyChanged)
+    gPessoas.DataBindings.Add("DataSource", _viewModelPessoa, NameOf(_viewModelPessoa.Pessoas), True, DataSourceUpdateMode.OnPropertyChanged)
 
     txtNome.TextBox.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     txtCPF.MaskedTextBox.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     txtRG.MaskedTextBox.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
-    dteNascimento.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
+    txtNascimento.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
+    cmbEndereco.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     gPessoas.DataBindings.Add("Enabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableListView), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("NewEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonInsertVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("EditEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonEditVisible), True, DataSourceUpdateMode.OnPropertyChanged)
@@ -58,12 +59,12 @@ Public Class frmPessoa
   Private Sub CellClick(e As DataGridViewCellEventArgs, grid As DataGridView)
     If e.RowIndex >= 0 Then
       Dim linhaSelecionada As DataGridViewRow = grid.Rows(e.RowIndex)
-      Dim typeTInstance As Pessoa = linhaSelecionada.DataBoundItem
-      _viewModelPessoa.CurrentItem = typeTInstance
+      Dim typeTInstance As PessoaDTO = linhaSelecionada.DataBoundItem
+      _viewModelPessoa.CurrentItem = typeTInstance.ToPessoa()
       txtNome.Refresh()
       txtCPF.Refresh()
       txtRG.Refresh()
-      dteNascimento.Refresh()
+      txtNascimento.Refresh()
       cmbEndereco.Refresh()
     End If
   End Sub
