@@ -6,11 +6,18 @@ Namespace Navigator
   Public Class NavigatorWindowsForm
     Implements INavigationManager
 
-    Private ReadOnly Property _homePage As Home
+    Private Property _homePage As Home
+    Public Property HomePage As Home
       Get
-        Return GetHomePage("Home")
+        Return _homePage
       End Get
+      Set(value As Home)
+        _homePage = value
+      End Set
     End Property
+    Public Sub New()
+      HomePage = GetOpenedOrCreatePage("Home")
+    End Sub
 
     Public Sub ShowPage(pageName As String) Implements INavigationManager.ShowPage
       Dim thr As New Thread(New ThreadStart(Sub() FormUtils.StartSplashScreenLoad($"Carregando '{pageName}'...")))
@@ -18,9 +25,9 @@ Namespace Navigator
         thr.Start()
         Dim form As Form = GetOpenedOrCreatePage(pageName)
 
-        For Each tab As TabPage In _homePage.tbcPages.TabPages
+        For Each tab As TabPage In HomePage.tbcPages.TabPages
           If tab.Text = form.Text Then
-            _homePage.tbcPages.SelectedTab = tab
+            HomePage.tbcPages.SelectedTab = tab
             Exit Sub
           End If
         Next
@@ -28,8 +35,8 @@ Namespace Navigator
         Dim newTabPage As TabPage = New TabPage
         newTabPage.Controls.Add(form)
         newTabPage.Text = form.Text
-        _homePage.tbcPages.TabPages.Add(newTabPage)
-        _homePage.tbcPages.SelectedTab = newTabPage
+        HomePage.tbcPages.TabPages.Add(newTabPage)
+        HomePage.tbcPages.SelectedTab = newTabPage
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Finally
@@ -39,9 +46,9 @@ Namespace Navigator
 
     Public Sub ClosePage() Implements INavigationManager.ClosePage
       Try
-        Dim form As Form = GetOpenedOrCreatePage(_homePage.tbcPages.SelectedTab.Text)
+        Dim form As Form = GetOpenedOrCreatePage(HomePage.tbcPages.SelectedTab.Text)
         form.Close()
-        _homePage.tbcPages.TabPages.Remove(_homePage.tbcPages.SelectedTab)
+        HomePage.tbcPages.TabPages.Remove(HomePage.tbcPages.SelectedTab)
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
       End Try

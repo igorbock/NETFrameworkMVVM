@@ -1,20 +1,16 @@
-﻿Imports System.Threading
-Imports VisualBasicLib.Interfaces
-Imports WindowsFormsCRUD.Classes
-Imports WindowsFormsCRUD.Navigator
+﻿Imports VisualBasicLib.Interfaces
 
 Public Class Home
 
   Private ReadOnly Property _navigator As INavigationManager
 
   Public Sub New()
-    Dim thr As New Thread(New ThreadStart(AddressOf FormUtils.StartSplashScreen))
-    thr.Start()
-    Thread.Sleep(3000)
     InitializeComponent()
-    thr.Abort()
+  End Sub
 
-    _navigator = New NavigatorWindowsForm()
+  Public Sub New(navigator As INavigationManager)
+    InitializeComponent()
+    _navigator = navigator 'New NavigatorWindowsForm()
 
     AddHandler btnPessoa.Click, Sub() _navigator.ShowPage("frmPessoa")
     AddHandler btnEndereco.Click, Sub() _navigator.ShowPage("frmEndereco")
