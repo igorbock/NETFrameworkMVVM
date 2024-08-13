@@ -16,7 +16,7 @@ Public Class frmVeiculo
     Me.New()
 
     _formNumber = number
-    _viewModel = New PessoaViewModel(New NavigatorWindowsForm)
+    '_viewModel = New PessoaViewModel(New NavigatorWindowsForm)
 
     navigator.DataBindings.Add("NewEnabled", _viewModel, NameOf(_viewModel.ButtonInsertVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     navigator.DataBindings.Add("EditEnabled", _viewModel, NameOf(_viewModel.ButtonEditVisible), True, DataSourceUpdateMode.OnPropertyChanged)

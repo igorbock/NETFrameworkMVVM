@@ -9,7 +9,7 @@ Public Class frmEndereco
   Public Sub New()
     InitializeComponent()
 
-    _viewModelEndereco = New EnderecoViewModel(New NavigatorWindowsForm)
+    '_viewModelEndereco = New EnderecoViewModel(New NavigatorWindowsForm)
 
     txtRua.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Rua", True, DataSourceUpdateMode.OnPropertyChanged)
     txtNumero.NumericBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Numero", True, DataSourceUpdateMode.OnPropertyChanged)

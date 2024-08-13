@@ -1,4 +1,5 @@
 ﻿Imports System.Threading
+Imports Ninject
 Imports VisualBasicLib.Interfaces
 Imports WindowsFormsCRUD.Classes
 
@@ -6,17 +7,20 @@ Namespace Navigator
   Public Class NavigatorWindowsForm
     Implements INavigationManager
 
+    Private ReadOnly _kernel As IKernel
+
     Private Property _homePage As Home
     Public Property HomePage As Home
       Get
+        If _homePage Is Nothing Then Me.HomePage = GetHomePage("Home")
         Return _homePage
       End Get
       Set(value As Home)
         _homePage = value
       End Set
     End Property
-    Public Sub New()
-      HomePage = GetOpenedOrCreatePage("Home")
+    Public Sub New(kernel As IKernel)
+      _kernel = kernel
     End Sub
 
     Public Sub ShowPage(pageName As String) Implements INavigationManager.ShowPage
@@ -61,15 +65,15 @@ Namespace Navigator
         Return form
       Next
 
+
       Dim formName As String = $"WindowsFormsCRUD.{pageName}"
       Dim formType As Type = Type.[GetType](formName)
       If formType IsNot Nothing Then
-        Dim windowsForm As Form = TryCast(Activator.CreateInstance(formType), Form)
+        Dim windowsForm As Form = _kernel.Get(formType)
         If windowsForm IsNot Nothing Then
           windowsForm.TopLevel = False
           windowsForm.FormBorderStyle = FormBorderStyle.None
           windowsForm.Dock = DockStyle.Fill
-          windowsForm.Visible = True
           Return windowsForm
         Else
           Throw New Exception("Formulário não encontrado.")
@@ -80,7 +84,7 @@ Namespace Navigator
     End Function
     Private Function GetHomePage(homePageName As String) As Form
       For i As Integer = 0 To Application.OpenForms.Count - 1
-        Dim form As Form = TryCast(Application.OpenForms.Item(i), Form)
+        Dim form As Form = Application.OpenForms.Item(i)
         If form Is Nothing OrElse form.Text <> homePageName Then Continue For
         Return form
       Next

@@ -1,7 +1,8 @@
 ﻿Imports EntityFrameworkLib.Models.DTOs
 Imports VisualBasicLib.ViewModels
-Imports WindowsFormsCRUD.Navigator
 Imports VisualBasicLib.Extensions.PessoaExtensions
+Imports VisualBasicLib.Abstracts
+Imports EntityFrameworkLib.Models
 
 Public Class frmPessoa
   Private ReadOnly Property _viewModelPessoa As PessoaViewModel
@@ -14,10 +15,10 @@ Public Class frmPessoa
     End Set
   End Property
 
-  Public Sub New()
+  Public Sub New(viewModelPessoa As TypeTViewModel(Of Pessoa))
     InitializeComponent()
 
-    _viewModelPessoa = New PessoaViewModel(New NavigatorWindowsForm())
+    _viewModelPessoa = viewModelPessoa
 
     txtNome.TextBox.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.Nome", True, DataSourceUpdateMode.OnPropertyChanged)
     txtCPF.MaskedTextBox.DataBindings.Add("Text", _viewModelPessoa, "CurrentItem.CPF", True, DataSourceUpdateMode.OnPropertyChanged)
@@ -45,7 +46,6 @@ Public Class frmPessoa
 
     AddHandler _viewModelPessoa.ErrorOcurred, AddressOf Classes.FormUtils.ShowError
     AddHandler _viewModelPessoa.QuestionOcurred, Sub(sender, e) e.Iteration = Classes.FormUtils.ShowYesNoQuestion(sender, e)
-    AddHandler Load, Sub() _viewModelPessoa.LoadCommand.Execute(Nothing)
 
     AddHandler btnCRUD.NewEvent, Sub() _viewModelPessoa.CreateCommand.Execute(Nothing)
     AddHandler btnCRUD.EditEvent, Sub() _viewModelPessoa.UpdateCommand.Execute(Nothing)
@@ -54,6 +54,8 @@ Public Class frmPessoa
     AddHandler btnCRUD.CancelEvent, Sub() _viewModelPessoa.CancelCommand.Execute(Nothing)
     AddHandler btnCRUD.CloseEvent, Sub() _viewModelPessoa.CloseCommand.Execute(Nothing)
     AddHandler gPessoas.CellClick, Sub(sender, e) CellClick(e, gPessoas)
+
+    Visible = True
   End Sub
 
   Private Sub CellClick(e As DataGridViewCellEventArgs, grid As DataGridView)
@@ -67,5 +69,8 @@ Public Class frmPessoa
       txtNascimento.Refresh()
       cmbEndereco.Refresh()
     End If
+  End Sub
+  Private Sub LoadForm(sender As Object, e As EventArgs) Handles Me.Load
+    _viewModelPessoa.LoadCommand.Execute(Nothing)
   End Sub
 End Class
