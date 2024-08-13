@@ -1,4 +1,5 @@
-﻿Imports EntityFrameworkLib.Models
+﻿Imports EntityFrameworkLib.Context
+Imports EntityFrameworkLib.Models
 Imports Ninject.Modules
 Imports VisualBasicLib.Abstracts
 Imports VisualBasicLib.Interfaces
@@ -10,6 +11,7 @@ Public Class Ninject
   Inherits NinjectModule
 
   Public Overrides Sub Load()
+    Bind(Of LibDbContext).ToSelf()
     Bind(Of RepositoryAbstract(Of Pessoa)).To(Of PessoaRepository)()
     Bind(Of RepositoryAbstract(Of Endereco)).To(Of EnderecoRepository)()
     Bind(Of TypeTViewModel(Of Pessoa)).To(Of PessoaViewModel)()

@@ -1,15 +1,14 @@
 ﻿Imports EntityFrameworkLib.Models
 Imports VisualBasicLib.Abstracts
-Imports VisualBasicLib.ViewModels
-Imports WindowsFormsCRUD.Navigator
 
 Public Class frmEndereco
   Private ReadOnly Property _viewModelEndereco As TypeTViewModel(Of Endereco)
 
-  Public Sub New()
+  Public Sub New(viewModel As TypeTViewModel(Of Endereco))
     InitializeComponent()
 
-    '_viewModelEndereco = New EnderecoViewModel(New NavigatorWindowsForm)
+    _viewModelEndereco = viewModel
+    Me.Visible = True
 
     txtRua.TextBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Rua", True, DataSourceUpdateMode.OnPropertyChanged)
     txtNumero.NumericBox.DataBindings.Add("Text", _viewModelEndereco, "CurrentItem.Numero", True, DataSourceUpdateMode.OnPropertyChanged)
@@ -55,5 +54,8 @@ Public Class frmEndereco
       txtNumero.Refresh()
       txtRua.Refresh()
     End If
+  End Sub
+  Private Sub LoadForm(sender As Object, e As EventArgs) Handles Me.Load
+    _viewModelEndereco.LoadCommand.Execute(Nothing)
   End Sub
 End Class

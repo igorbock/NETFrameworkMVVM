@@ -80,9 +80,10 @@ Partial Class frmEndereco
         Me.txtRua.LabelText = "Rua"
         Me.txtRua.Location = New System.Drawing.Point(1, 31)
         Me.txtRua.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtRua.MaxLength = 50
         Me.txtRua.Name = "txtRua"
         Me.txtRua.Size = New System.Drawing.Size(502, 33)
-        Me.txtRua.TabIndex = 8
+        Me.txtRua.TabIndex = 1
         '
         'txtCidade
         '
@@ -95,9 +96,10 @@ Partial Class frmEndereco
         Me.txtCidade.LabelText = "Cidade"
         Me.txtCidade.Location = New System.Drawing.Point(1, 101)
         Me.txtCidade.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtCidade.MaxLength = 30
         Me.txtCidade.Name = "txtCidade"
         Me.txtCidade.Size = New System.Drawing.Size(502, 33)
-        Me.txtCidade.TabIndex = 10
+        Me.txtCidade.TabIndex = 3
         '
         'txtEstado
         '
@@ -110,9 +112,10 @@ Partial Class frmEndereco
         Me.txtEstado.LabelText = "Estado"
         Me.txtEstado.Location = New System.Drawing.Point(1, 136)
         Me.txtEstado.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtEstado.MaxLength = 2
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(502, 33)
-        Me.txtEstado.TabIndex = 11
+        Me.txtEstado.TabIndex = 4
         '
         'gEnderecos
         '
@@ -145,7 +148,7 @@ Partial Class frmEndereco
         Me.gEnderecos.RowHeadersVisible = False
         Me.gEnderecos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gEnderecos.Size = New System.Drawing.Size(502, 236)
-        Me.gEnderecos.TabIndex = 17
+        Me.gEnderecos.TabIndex = 5
         '
         'colId
         '
@@ -212,7 +215,7 @@ Partial Class frmEndereco
         Me.txtNumero.Margin = New System.Windows.Forms.Padding(1)
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(502, 33)
-        Me.txtNumero.TabIndex = 18
+        Me.txtNumero.TabIndex = 2
         '
         'btnCRUD
         '
@@ -231,7 +234,7 @@ Partial Class frmEndereco
         Me.btnCRUD.RemoveEnabled = True
         Me.btnCRUD.SaveEnabled = True
         Me.btnCRUD.Size = New System.Drawing.Size(502, 28)
-        Me.btnCRUD.TabIndex = 19
+        Me.btnCRUD.TabIndex = 0
         '
         'frmEndereco
         '
