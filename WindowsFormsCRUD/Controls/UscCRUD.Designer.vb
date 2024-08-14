@@ -22,6 +22,7 @@ Partial Class UscCRUD
   'Não o modifique usando o editor de códigos.
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
@@ -31,6 +32,7 @@ Partial Class UscCRUD
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnNew = New System.Windows.Forms.Button()
+        Me.tipCRUD = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'btnClose
@@ -41,6 +43,7 @@ Partial Class UscCRUD
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(28, 28)
         Me.btnClose.TabIndex = 8
+        Me.tipCRUD.SetToolTip(Me.btnClose, "Sair/Fechar")
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'btnNext
@@ -51,6 +54,7 @@ Partial Class UscCRUD
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(28, 28)
         Me.btnNext.TabIndex = 7
+        Me.tipCRUD.SetToolTip(Me.btnNext, "Próximo")
         Me.btnNext.UseVisualStyleBackColor = True
         '
         'btnPrevious
@@ -61,6 +65,7 @@ Partial Class UscCRUD
         Me.btnPrevious.Name = "btnPrevious"
         Me.btnPrevious.Size = New System.Drawing.Size(28, 28)
         Me.btnPrevious.TabIndex = 6
+        Me.tipCRUD.SetToolTip(Me.btnPrevious, "Anterior")
         Me.btnPrevious.UseVisualStyleBackColor = True
         '
         'btnPrint
@@ -71,6 +76,7 @@ Partial Class UscCRUD
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(28, 28)
         Me.btnPrint.TabIndex = 5
+        Me.tipCRUD.SetToolTip(Me.btnPrint, "Imprimir")
         Me.btnPrint.UseVisualStyleBackColor = True
         '
         'btnCancel
@@ -81,6 +87,7 @@ Partial Class UscCRUD
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(28, 28)
         Me.btnCancel.TabIndex = 4
+        Me.tipCRUD.SetToolTip(Me.btnCancel, "Cancelar")
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnSave
@@ -91,6 +98,7 @@ Partial Class UscCRUD
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(28, 28)
         Me.btnSave.TabIndex = 3
+        Me.tipCRUD.SetToolTip(Me.btnSave, "Salvar")
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'btnDelete
@@ -101,6 +109,7 @@ Partial Class UscCRUD
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(28, 28)
         Me.btnDelete.TabIndex = 2
+        Me.tipCRUD.SetToolTip(Me.btnDelete, "Remover")
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnEdit
@@ -111,6 +120,7 @@ Partial Class UscCRUD
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(28, 28)
         Me.btnEdit.TabIndex = 1
+        Me.tipCRUD.SetToolTip(Me.btnEdit, "Editar")
         Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnNew
@@ -121,7 +131,15 @@ Partial Class UscCRUD
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(28, 28)
         Me.btnNew.TabIndex = 0
+        Me.tipCRUD.SetToolTip(Me.btnNew, "Adicionar")
         Me.btnNew.UseVisualStyleBackColor = True
+        '
+        'tipCRUD
+        '
+        Me.tipCRUD.AutoPopDelay = 5000
+        Me.tipCRUD.InitialDelay = 300
+        Me.tipCRUD.ReshowDelay = 100
+        Me.tipCRUD.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
         'UscCRUD
         '
@@ -152,4 +170,5 @@ Partial Class UscCRUD
     Friend WithEvents btnPrevious As Button
     Friend WithEvents btnNext As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents tipCRUD As ToolTip
 End Class
