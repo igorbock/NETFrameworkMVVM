@@ -1,12 +1,6 @@
 ﻿Imports System.Threading
-Imports EntityFrameworkLib.Models
 Imports Ninject
-Imports VisualBasicLib.Abstracts
-Imports VisualBasicLib.Interfaces
-Imports VisualBasicLib.Repositories
-Imports VisualBasicLib.ViewModels
 Imports WindowsFormsCRUD.Classes
-Imports WindowsFormsCRUD.Navigator
 
 Public Module Program
   Private kernel As IKernel

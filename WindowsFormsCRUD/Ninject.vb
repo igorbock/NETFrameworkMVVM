@@ -5,6 +5,7 @@ Imports VisualBasicLib.Abstracts
 Imports VisualBasicLib.Interfaces
 Imports VisualBasicLib.Repositories
 Imports VisualBasicLib.ViewModels
+Imports WindowsFormsCRUD.Classes
 Imports WindowsFormsCRUD.Navigator
 
 Public Class Ninject
@@ -17,6 +18,7 @@ Public Class Ninject
     Bind(Of TypeTViewModel(Of Pessoa)).To(Of PessoaViewModel)()
     Bind(Of TypeTViewModel(Of Endereco)).To(Of EnderecoViewModel)()
     Bind(Of INavigationManager).To(Of NavigatorWindowsForm)()
+    Bind(Of LoginAbstract).To(Of UserService).InSingletonScope()
 
     Bind(Of Home).ToSelf()
     Bind(Of frmPessoa).ToSelf()
