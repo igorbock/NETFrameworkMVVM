@@ -22,5 +22,7 @@ Public Class Ninject
 
     Bind(Of Home).ToSelf()
     Bind(Of frmPessoa).ToSelf()
+    Bind(Of frmEndereco).ToSelf()
+    Bind(Of frmLogin).ToSelf()
   End Sub
 End Class

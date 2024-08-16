@@ -22,6 +22,11 @@ Namespace Navigator
     Public Sub New(kernel As IKernel)
       _kernel = kernel
     End Sub
+    Public Sub StartHomePage() Implements INavigationManager.StartHomePage
+      GetOpenedOrCreatePage("Home").Show()
+
+      GetOpenedOrCreatePage("frmLogin").Close()
+    End Sub
 
     Public Sub ShowPage(pageName As String) Implements INavigationManager.ShowPage
       Dim thr As New Thread(New ThreadStart(Sub() FormUtils.StartSplashScreenLoad($"Carregando '{pageName}'...")))
@@ -61,7 +66,7 @@ Namespace Navigator
     Private Function GetOpenedOrCreatePage(pageName As String) As Form
       For i As Integer = 0 To Application.OpenForms.Count - 1
         Dim form As Form = TryCast(Application.OpenForms.Item(i), Form)
-        If form Is Nothing OrElse form.Text <> pageName Then Continue For
+        If form Is Nothing OrElse form.Name <> pageName Then Continue For
         Return form
       Next
 

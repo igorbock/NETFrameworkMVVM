@@ -265,6 +265,12 @@
     <Compile Include="Forms\frmEndereco.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmPessoa.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEndereco.resx">
       <DependentUpon>frmEndereco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPessoa.resx">
       <DependentUpon>frmPessoa.vb</DependentUpon>

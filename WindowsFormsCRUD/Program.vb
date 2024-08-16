@@ -16,6 +16,11 @@ Public Module Program
 
     kernel = New StandardKernel(New Ninject())
     thr.Abort()
-    Application.Run(kernel.Get(Of Home))
+    '#If DEBUG Then
+    '    Application.Run(kernel.Get(Of Home))
+    '#Else
+    '    Application.Run(kernel.Get(Of frmLogin))
+    '#End If
+    Application.Run(kernel.Get(Of frmLogin))
   End Sub
 End Module

@@ -24,4 +24,12 @@ Public Class UscTextBox
       TextBox.MaxLength = value
     End Set
   End Property
+  Public Property IsPassword As Boolean
+    Get
+      Return TextBox.UseSystemPasswordChar
+    End Get
+    Set(value As Boolean)
+      TextBox.UseSystemPasswordChar = value
+    End Set
+  End Property
 End Class
