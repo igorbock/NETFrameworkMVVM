@@ -13,9 +13,9 @@ Public Module Program
     Dim thr As New Thread(New ThreadStart(AddressOf FormUtils.StartSplashScreen))
     thr.Start()
     Thread.Sleep(3000)
+    thr.Abort()
 
     kernel = New StandardKernel(New Ninject())
-    thr.Abort()
 #If DEBUG Then
     Application.Run(kernel.Get(Of Home))
 #Else

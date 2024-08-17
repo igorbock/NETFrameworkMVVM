@@ -29,13 +29,15 @@ Partial Class Home
         Me.tbcWindowsCRUD = New System.Windows.Forms.TabControl()
         Me.tbpCadastros = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.sttLogin = New System.Windows.Forms.StatusStrip()
+        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblExpiracao = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.btnLogout = New System.Windows.Forms.ToolStripSplitButton()
         Me.tbcPages = New System.Windows.Forms.TabControl()
-        Me.ToolStripContainer = New System.Windows.Forms.ToolStripContainer()
         Me.ToolStrip.SuspendLayout()
         Me.tbcWindowsCRUD.SuspendLayout()
         Me.tbpCadastros.SuspendLayout()
-        Me.ToolStripContainer.ContentPanel.SuspendLayout()
-        Me.ToolStripContainer.SuspendLayout()
+        Me.sttLogin.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip
@@ -104,35 +106,57 @@ Partial Class Home
         Me.TabPage2.Text = "Teste"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'sttLogin
+        '
+        Me.sttLogin.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnLogout, Me.lblExpiracao, Me.lblUsuario})
+        Me.sttLogin.Location = New System.Drawing.Point(0, 428)
+        Me.sttLogin.Name = "sttLogin"
+        Me.sttLogin.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.sttLogin.Size = New System.Drawing.Size(800, 22)
+        Me.sttLogin.TabIndex = 2
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblUsuario.Size = New System.Drawing.Size(56, 17)
+        Me.lblUsuario.Text = "Usuário |"
+        '
+        'lblExpiracao
+        '
+        Me.lblExpiracao.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblExpiracao.Name = "lblExpiracao"
+        Me.lblExpiracao.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblExpiracao.Size = New System.Drawing.Size(69, 17)
+        Me.lblExpiracao.Text = "Expira em |"
+        '
+        'btnLogout
+        '
+        Me.btnLogout.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic)
+        Me.btnLogout.Image = Global.WindowsFormsCRUD.My.Resources.Resources.porta
+        Me.btnLogout.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnLogout.Size = New System.Drawing.Size(75, 20)
+        Me.btnLogout.Text = "Logout"
+        '
         'tbcPages
         '
         Me.tbcPages.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbcPages.Location = New System.Drawing.Point(0, 0)
-        Me.tbcPages.Margin = New System.Windows.Forms.Padding(1)
+        Me.tbcPages.Location = New System.Drawing.Point(0, 90)
         Me.tbcPages.Name = "tbcPages"
         Me.tbcPages.SelectedIndex = 0
-        Me.tbcPages.Size = New System.Drawing.Size(800, 360)
-        Me.tbcPages.TabIndex = 2
-        '
-        'ToolStripContainer
-        '
-        '
-        'ToolStripContainer.ContentPanel
-        '
-        Me.ToolStripContainer.ContentPanel.Controls.Add(Me.tbcPages)
-        Me.ToolStripContainer.ContentPanel.Size = New System.Drawing.Size(800, 360)
-        Me.ToolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ToolStripContainer.Location = New System.Drawing.Point(0, 90)
-        Me.ToolStripContainer.Name = "ToolStripContainer"
-        Me.ToolStripContainer.Size = New System.Drawing.Size(800, 360)
-        Me.ToolStripContainer.TabIndex = 4
+        Me.tbcPages.Size = New System.Drawing.Size(800, 338)
+        Me.tbcPages.TabIndex = 3
         '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ToolStripContainer)
+        Me.Controls.Add(Me.tbcPages)
+        Me.Controls.Add(Me.sttLogin)
         Me.Controls.Add(Me.tbcWindowsCRUD)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Home"
@@ -142,10 +166,10 @@ Partial Class Home
         Me.ToolStrip.PerformLayout()
         Me.tbcWindowsCRUD.ResumeLayout(False)
         Me.tbpCadastros.ResumeLayout(False)
-        Me.ToolStripContainer.ContentPanel.ResumeLayout(False)
-        Me.ToolStripContainer.ResumeLayout(False)
-        Me.ToolStripContainer.PerformLayout()
+        Me.sttLogin.ResumeLayout(False)
+        Me.sttLogin.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -155,6 +179,9 @@ Partial Class Home
     Friend WithEvents tbpCadastros As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btnEndereco As ToolStripButton
+    Friend WithEvents sttLogin As StatusStrip
+    Friend WithEvents lblUsuario As ToolStripStatusLabel
+    Friend WithEvents lblExpiracao As ToolStripStatusLabel
+    Friend WithEvents btnLogout As ToolStripSplitButton
     Friend WithEvents tbcPages As TabControl
-    Friend WithEvents ToolStripContainer As ToolStripContainer
 End Class

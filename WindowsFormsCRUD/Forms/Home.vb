@@ -14,8 +14,14 @@ Public Class Home
     AddHandler btnPessoa.Click, Sub() _navigator.ShowPage("frmPessoa")
     AddHandler btnEndereco.Click, Sub() _navigator.ShowPage("frmEndereco")
     AddHandler Load, AddressOf VerifyLogin
+    AddHandler btnLogout.Click, AddressOf _login.SignOut
   End Sub
   Private Sub VerifyLogin()
     _login.IsAuthenticated()
+    If String.IsNullOrEmpty(_login.User.Nome) Then
+      lblUsuario.Text = "Usuário |"
+    Else
+      lblUsuario.Text = $"Usuário | {_login.User.Nome}"
+    End If
   End Sub
 End Class

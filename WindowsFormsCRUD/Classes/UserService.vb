@@ -46,15 +46,26 @@ Namespace Classes
       If String.IsNullOrWhiteSpace(Token) Then
         MessageBox.Show("Usuário ou senha incorretos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
       Else
-        Navigation.ShowPage("Home")
+        Navigation.ClosePage("frmLogin")
       End If
     End Sub
-
+    Public Overrides Sub SignOut()
+      Try
+        Token = String.Empty
+        User = Nothing
+        IsAuthenticated()
+      Catch ex As Exception
+        MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+      End Try
+    End Sub
     Public Overrides Sub IsAuthenticated()
       If String.IsNullOrEmpty(Token) Then
         Navigation.ShowDialog("frmLogin")
       Else
-
+        Dim tokenHandler As New JwtSecurityTokenHandler
+        Dim jwt As JwtSecurityToken = tokenHandler.ReadJwtToken(Token)
+        User = New Usuario()
+        User.Nome = jwt.Subject
       End If
     End Sub
   End Class

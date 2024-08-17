@@ -27,6 +27,7 @@ Namespace Navigator
         Dim form As Form = GetOpenedOrCreatePage(pageName)
         form.TopLevel = True
         form.ShowDialog()
+        form.BringToFront()
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
       End Try
@@ -62,6 +63,15 @@ Namespace Navigator
         Dim form As Form = GetOpenedOrCreatePage(HomePage.tbcPages.SelectedTab.Text)
         form.Close()
         HomePage.tbcPages.TabPages.Remove(HomePage.tbcPages.SelectedTab)
+      Catch ex As Exception
+        MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+      End Try
+    End Sub
+
+    Public Sub ClosePage(pageName As String) Implements INavigationManager.ClosePage
+      Try
+        Dim form As Form = GetOpenedOrCreatePage(pageName)
+        form.Close()
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
       End Try
