@@ -22,10 +22,14 @@ Namespace Navigator
     Public Sub New(kernel As IKernel)
       _kernel = kernel
     End Sub
-    Public Sub StartHomePage() Implements INavigationManager.StartHomePage
-      GetOpenedOrCreatePage("Home").Show()
-
-      GetOpenedOrCreatePage("frmLogin").Close()
+    Public Sub ShowDialog(pageName As String) Implements INavigationManager.ShowDialog
+      Try
+        Dim form As Form = GetOpenedOrCreatePage(pageName)
+        form.TopLevel = True
+        form.ShowDialog()
+      Catch ex As Exception
+        MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+      End Try
     End Sub
 
     Public Sub ShowPage(pageName As String) Implements INavigationManager.ShowPage

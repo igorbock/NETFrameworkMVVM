@@ -46,7 +46,15 @@ Namespace Classes
       If String.IsNullOrWhiteSpace(Token) Then
         MessageBox.Show("Usuário ou senha incorretos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
       Else
-        Navigation.StartHomePage()
+        Navigation.ShowPage("Home")
+      End If
+    End Sub
+
+    Public Overrides Sub IsAuthenticated()
+      If String.IsNullOrEmpty(Token) Then
+        Navigation.ShowDialog("frmLogin")
+      Else
+
       End If
     End Sub
   End Class
