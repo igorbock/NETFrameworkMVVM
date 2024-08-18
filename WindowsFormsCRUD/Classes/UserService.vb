@@ -52,7 +52,7 @@ Namespace Classes
     Public Overrides Sub SignOut()
       Try
         Token = String.Empty
-        User = Nothing
+        User = New Usuario With {.Nome = String.Empty}
         IsAuthenticated()
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information)
