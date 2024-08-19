@@ -21,8 +21,8 @@ Namespace Classes
         .Audience = "WindowsFormsCRUD",
         .IssuedDay = Date.Now,
         .IssuedTime = Date.Now,
-        .ExpirationDay = Date.Now.AddDays(10),
-        .ExpirationTime = Date.Now.AddDays(10),
+        .ExpirationDay = Date.Now.AddHours(2),
+        .ExpirationTime = Date.Now.AddHours(2),
         .Subject = User.Nome,
         .Claims = New ObjectModel.ObservableCollection(Of Claim)
       }
@@ -42,6 +42,8 @@ Namespace Classes
 
       Dim tokenHandler As New JwtSecurityTokenHandler
       Token = tokenHandler.WriteToken(jwt)
+      Jwtoken = tokenHandler.CreateJwtSecurityToken()
+      UserName = User.Nome
 
       If String.IsNullOrWhiteSpace(Token) Then
         MessageBox.Show("Usuário ou senha incorretos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -51,8 +53,11 @@ Namespace Classes
     End Sub
     Public Overrides Sub SignOut()
       Try
+        Dim result As DialogResult = MessageBox.Show("Deseja realmente sair?", "Confirma", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then Exit Sub
         Token = String.Empty
         User = New Usuario With {.Nome = String.Empty}
+        UserName = String.Empty
         IsAuthenticated()
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -63,9 +68,10 @@ Namespace Classes
         Navigation.ShowDialog("frmLogin")
       Else
         Dim tokenHandler As New JwtSecurityTokenHandler
-        Dim jwt As JwtSecurityToken = tokenHandler.ReadJwtToken(Token)
-        User = New Usuario()
-        User.Nome = jwt.Subject
+        Jwtoken = tokenHandler.ReadJwtToken(Token)
+        User = New Usuario With {
+          .Nome = Jwtoken.Subject
+        }
       End If
     End Sub
   End Class
