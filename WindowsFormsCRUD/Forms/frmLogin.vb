@@ -1,5 +1,4 @@
-﻿Imports EntityFrameworkLib.Models
-Imports VisualBasicLib.Abstracts
+﻿Imports VisualBasicLib.Abstracts
 
 Public Class frmLogin
   Private ReadOnly Property _login As LoginAbstract
@@ -10,8 +9,9 @@ Public Class frmLogin
     _login = login
 
     txtUser.TextBox.DataBindings.Add("Text", _login, "User.Nome", True, DataSourceUpdateMode.OnPropertyChanged)
-    txtSenha.TextBox.DataBindings.Add("Text", _login, "User.Senha", True, DataSourceUpdateMode.OnPropertyChanged)
+    txtSenha.TextBox.DataBindings.Add("Text", _login, "User.HashSenha", True, DataSourceUpdateMode.OnPropertyChanged)
 
+    AddHandler Load, AddressOf _login.HasUserInDatabase
     AddHandler btnEntrar.Click, AddressOf _login.SignIn
     AddHandler btnSair.Click, AddressOf CloseApp
   End Sub

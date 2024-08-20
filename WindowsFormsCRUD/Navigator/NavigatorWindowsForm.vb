@@ -49,6 +49,7 @@ Namespace Navigator
         Dim newTabPage As TabPage = New TabPage
         newTabPage.Controls.Add(form)
         newTabPage.Text = form.Text
+        newTabPage.Name = pageName
         HomePage.tbcPages.TabPages.Add(newTabPage)
         HomePage.tbcPages.SelectedTab = newTabPage
       Catch ex As Exception
@@ -110,5 +111,21 @@ Namespace Navigator
 
       Throw New Exception("Home page não encontrada.")
     End Function
+
+    Public Sub CloseAllPages() Implements INavigationManager.CloseAllPages
+      'Dim tabCount As Integer = HomePage.tbcPages.TabCount - 1
+      'For count = 0 To tabCount
+      '  Dim formName As String = HomePage.tbcPages.TabPages(count).Name
+      '  HomePage.tbcPages.TabPages.RemoveByKey(formName)
+      '  Dim form As Form = GetOpenedOrCreatePage(formName)
+      '  form.Close()
+      'Next
+      For Each tab As TabPage In HomePage.tbcPages.TabPages
+        Dim formName As String = tab.Name
+        Dim form As Form = GetOpenedOrCreatePage(formName)
+        form.Close()
+        HomePage.tbcPages.TabPages.RemoveByKey(formName)
+      Next
+    End Sub
   End Class
 End Namespace
