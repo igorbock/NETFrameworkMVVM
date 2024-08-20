@@ -23,11 +23,11 @@ Partial Class frmNovoUsuario
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
         Me.tbpRegistro = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnConfirmar = New System.Windows.Forms.Button()
+        Me.btnSair = New System.Windows.Forms.Button()
         Me.txtNome = New WindowsFormsCRUD.UscTextBox()
         Me.txtSenha = New WindowsFormsCRUD.UscTextBox()
         Me.txtConfirmaSenha = New WindowsFormsCRUD.UscTextBox()
-        Me.btnConfirmar = New System.Windows.Forms.Button()
-        Me.btnSair = New System.Windows.Forms.Button()
         Me.tbpRegistro.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,54 +53,6 @@ Partial Class frmNovoUsuario
         Me.tbpRegistro.Size = New System.Drawing.Size(302, 132)
         Me.tbpRegistro.TabIndex = 0
         '
-        'txtNome
-        '
-        Me.txtNome.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbpRegistro.SetColumnSpan(Me.txtNome, 2)
-        Me.txtNome.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtNome.EditValue = ""
-        Me.txtNome.IsPassword = False
-        Me.txtNome.LabelText = "Nome"
-        Me.txtNome.Location = New System.Drawing.Point(1, 1)
-        Me.txtNome.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtNome.MaxLength = 255
-        Me.txtNome.Name = "txtNome"
-        Me.txtNome.Size = New System.Drawing.Size(300, 33)
-        Me.txtNome.TabIndex = 0
-        '
-        'txtSenha
-        '
-        Me.txtSenha.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbpRegistro.SetColumnSpan(Me.txtSenha, 2)
-        Me.txtSenha.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtSenha.EditValue = ""
-        Me.txtSenha.IsPassword = True
-        Me.txtSenha.LabelText = "Senha"
-        Me.txtSenha.Location = New System.Drawing.Point(1, 36)
-        Me.txtSenha.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtSenha.MaxLength = 255
-        Me.txtSenha.Name = "txtSenha"
-        Me.txtSenha.Size = New System.Drawing.Size(300, 33)
-        Me.txtSenha.TabIndex = 1
-        '
-        'txtConfirmaSenha
-        '
-        Me.txtConfirmaSenha.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtConfirmaSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbpRegistro.SetColumnSpan(Me.txtConfirmaSenha, 2)
-        Me.txtConfirmaSenha.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtConfirmaSenha.EditValue = ""
-        Me.txtConfirmaSenha.IsPassword = True
-        Me.txtConfirmaSenha.LabelText = "Confirma Senha"
-        Me.txtConfirmaSenha.Location = New System.Drawing.Point(1, 71)
-        Me.txtConfirmaSenha.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtConfirmaSenha.MaxLength = 32767
-        Me.txtConfirmaSenha.Name = "txtConfirmaSenha"
-        Me.txtConfirmaSenha.Size = New System.Drawing.Size(300, 33)
-        Me.txtConfirmaSenha.TabIndex = 2
-        '
         'btnConfirmar
         '
         Me.btnConfirmar.Dock = System.Windows.Forms.DockStyle.Fill
@@ -123,6 +75,57 @@ Partial Class frmNovoUsuario
         Me.btnSair.Text = "Sair"
         Me.btnSair.UseVisualStyleBackColor = True
         '
+        'txtNome
+        '
+        Me.txtNome.AutoSize = True
+        Me.txtNome.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbpRegistro.SetColumnSpan(Me.txtNome, 2)
+        Me.txtNome.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtNome.EditValue = ""
+        Me.txtNome.IsPassword = False
+        Me.txtNome.LabelText = "Nome"
+        Me.txtNome.Location = New System.Drawing.Point(1, 1)
+        Me.txtNome.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtNome.MaxLength = 255
+        Me.txtNome.Name = "txtNome"
+        Me.txtNome.Size = New System.Drawing.Size(300, 33)
+        Me.txtNome.TabIndex = 0
+        '
+        'txtSenha
+        '
+        Me.txtSenha.AutoSize = True
+        Me.txtSenha.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbpRegistro.SetColumnSpan(Me.txtSenha, 2)
+        Me.txtSenha.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtSenha.EditValue = ""
+        Me.txtSenha.IsPassword = True
+        Me.txtSenha.LabelText = "Senha"
+        Me.txtSenha.Location = New System.Drawing.Point(1, 36)
+        Me.txtSenha.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtSenha.MaxLength = 255
+        Me.txtSenha.Name = "txtSenha"
+        Me.txtSenha.Size = New System.Drawing.Size(300, 33)
+        Me.txtSenha.TabIndex = 1
+        '
+        'txtConfirmaSenha
+        '
+        Me.txtConfirmaSenha.AutoSize = True
+        Me.txtConfirmaSenha.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtConfirmaSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbpRegistro.SetColumnSpan(Me.txtConfirmaSenha, 2)
+        Me.txtConfirmaSenha.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtConfirmaSenha.EditValue = ""
+        Me.txtConfirmaSenha.IsPassword = True
+        Me.txtConfirmaSenha.LabelText = "Confirma Senha"
+        Me.txtConfirmaSenha.Location = New System.Drawing.Point(1, 71)
+        Me.txtConfirmaSenha.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtConfirmaSenha.MaxLength = 32767
+        Me.txtConfirmaSenha.Name = "txtConfirmaSenha"
+        Me.txtConfirmaSenha.Size = New System.Drawing.Size(300, 33)
+        Me.txtConfirmaSenha.TabIndex = 2
+        '
         'frmNovoUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -131,9 +134,14 @@ Partial Class frmNovoUsuario
         Me.ControlBox = False
         Me.Controls.Add(Me.tbpRegistro)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmNovoUsuario"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registro de usuário"
         Me.tbpRegistro.ResumeLayout(False)
+        Me.tbpRegistro.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

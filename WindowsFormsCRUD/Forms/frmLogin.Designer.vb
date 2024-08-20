@@ -23,10 +23,10 @@ Partial Class frmLogin
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
         Me.tbpLogin = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnEntrar = New System.Windows.Forms.Button()
-        Me.btnSair = New System.Windows.Forms.Button()
         Me.txtUser = New WindowsFormsCRUD.UscTextBox()
         Me.txtSenha = New WindowsFormsCRUD.UscTextBox()
+        Me.btnEntrar = New System.Windows.Forms.Button()
+        Me.btnSair = New System.Windows.Forms.Button()
         Me.tbpLogin.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,28 +51,6 @@ Partial Class frmLogin
         Me.tbpLogin.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tbpLogin.Size = New System.Drawing.Size(302, 97)
         Me.tbpLogin.TabIndex = 0
-        '
-        'btnEntrar
-        '
-        Me.btnEntrar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnEntrar.Location = New System.Drawing.Point(1, 71)
-        Me.btnEntrar.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnEntrar.Name = "btnEntrar"
-        Me.btnEntrar.Size = New System.Drawing.Size(148, 23)
-        Me.btnEntrar.TabIndex = 2
-        Me.btnEntrar.Text = "Entrar"
-        Me.btnEntrar.UseVisualStyleBackColor = True
-        '
-        'btnSair
-        '
-        Me.btnSair.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSair.Location = New System.Drawing.Point(151, 71)
-        Me.btnSair.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnSair.Name = "btnSair"
-        Me.btnSair.Size = New System.Drawing.Size(148, 23)
-        Me.btnSair.TabIndex = 3
-        Me.btnSair.Text = "Sair"
-        Me.btnSair.UseVisualStyleBackColor = True
         '
         'txtUser
         '
@@ -108,6 +86,28 @@ Partial Class frmLogin
         Me.txtSenha.Size = New System.Drawing.Size(300, 33)
         Me.txtSenha.TabIndex = 1
         '
+        'btnEntrar
+        '
+        Me.btnEntrar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnEntrar.Location = New System.Drawing.Point(1, 71)
+        Me.btnEntrar.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnEntrar.Name = "btnEntrar"
+        Me.btnEntrar.Size = New System.Drawing.Size(148, 23)
+        Me.btnEntrar.TabIndex = 2
+        Me.btnEntrar.Text = "Entrar"
+        Me.btnEntrar.UseVisualStyleBackColor = True
+        '
+        'btnSair
+        '
+        Me.btnSair.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSair.Location = New System.Drawing.Point(151, 71)
+        Me.btnSair.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnSair.Name = "btnSair"
+        Me.btnSair.Size = New System.Drawing.Size(148, 23)
+        Me.btnSair.TabIndex = 3
+        Me.btnSair.Text = "Sair"
+        Me.btnSair.UseVisualStyleBackColor = True
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -117,6 +117,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.tbpLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmLogin"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.tbpLogin.ResumeLayout(False)
