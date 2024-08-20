@@ -72,6 +72,7 @@ Namespace Classes
         Token = String.Empty
         User = New Usuario With {.Nome = String.Empty}
         UserName = String.Empty
+        Jwtoken = Nothing
         IsAuthenticated()
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information)

@@ -35,10 +35,7 @@ Public Class Home
 
     AddHandler btnPessoa.Click, Sub() _navigator.ShowPage("frmPessoa")
     AddHandler btnEndereco.Click, Sub() _navigator.ShowPage("frmEndereco")
-    AddHandler Load, AddressOf VerifyLogin
+    AddHandler Load, AddressOf _login.IsAuthenticated
     AddHandler btnLogout.Click, AddressOf _login.SignOut
-  End Sub
-  Private Sub VerifyLogin()
-    _login.IsAuthenticated()
   End Sub
 End Class
