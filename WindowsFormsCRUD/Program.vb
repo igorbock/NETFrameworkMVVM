@@ -1,5 +1,6 @@
 ﻿Imports System.Threading
 Imports Ninject
+Imports VisualBasicLib.Classes
 Imports WindowsFormsCRUD.Classes
 
 Public Module Program
@@ -15,7 +16,7 @@ Public Module Program
     Thread.Sleep(3000)
     thr.Abort()
 
-    kernel = New StandardKernel(New Ninject())
+    kernel = New StandardKernel(New WindowsFormsDI(), New NinjectDI())
 #If DEBUG Then
     Application.Run(kernel.Get(Of Home))
 #Else
