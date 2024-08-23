@@ -23,6 +23,8 @@ Partial Class UscCRUD
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Me.tipCRUD = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
@@ -32,13 +34,31 @@ Partial Class UscCRUD
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnNew = New System.Windows.Forms.Button()
-        Me.tipCRUD = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tbpCRUD = New System.Windows.Forms.TableLayoutPanel()
+        Me.tbpCRUD.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'tipCRUD
+        '
+        Me.tipCRUD.AutoPopDelay = 5000
+        Me.tipCRUD.InitialDelay = 300
+        Me.tipCRUD.ReshowDelay = 100
+        Me.tipCRUD.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Image = Global.WindowsFormsCRUD.My.Resources.Resources.atualizar
+        Me.btnRefresh.Location = New System.Drawing.Point(151, 1)
+        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(28, 28)
+        Me.btnRefresh.TabIndex = 9
+        Me.btnRefresh.UseVisualStyleBackColor = True
         '
         'btnClose
         '
         Me.btnClose.Image = Global.WindowsFormsCRUD.My.Resources.Resources.porta
-        Me.btnClose.Location = New System.Drawing.Point(216, 0)
+        Me.btnClose.Location = New System.Drawing.Point(271, 1)
         Me.btnClose.Margin = New System.Windows.Forms.Padding(1)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(28, 28)
@@ -49,7 +69,7 @@ Partial Class UscCRUD
         'btnNext
         '
         Me.btnNext.Image = Global.WindowsFormsCRUD.My.Resources.Resources.proximo_botao
-        Me.btnNext.Location = New System.Drawing.Point(189, 0)
+        Me.btnNext.Location = New System.Drawing.Point(241, 1)
         Me.btnNext.Margin = New System.Windows.Forms.Padding(1)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(28, 28)
@@ -60,7 +80,7 @@ Partial Class UscCRUD
         'btnPrevious
         '
         Me.btnPrevious.Image = Global.WindowsFormsCRUD.My.Resources.Resources.anterior
-        Me.btnPrevious.Location = New System.Drawing.Point(162, 0)
+        Me.btnPrevious.Location = New System.Drawing.Point(211, 1)
         Me.btnPrevious.Margin = New System.Windows.Forms.Padding(1)
         Me.btnPrevious.Name = "btnPrevious"
         Me.btnPrevious.Size = New System.Drawing.Size(28, 28)
@@ -71,7 +91,7 @@ Partial Class UscCRUD
         'btnPrint
         '
         Me.btnPrint.Image = Global.WindowsFormsCRUD.My.Resources.Resources.impressora
-        Me.btnPrint.Location = New System.Drawing.Point(135, 0)
+        Me.btnPrint.Location = New System.Drawing.Point(181, 1)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(1)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(28, 28)
@@ -82,7 +102,7 @@ Partial Class UscCRUD
         'btnCancel
         '
         Me.btnCancel.Image = Global.WindowsFormsCRUD.My.Resources.Resources.recarregar
-        Me.btnCancel.Location = New System.Drawing.Point(108, 0)
+        Me.btnCancel.Location = New System.Drawing.Point(121, 1)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(1)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(28, 28)
@@ -93,7 +113,7 @@ Partial Class UscCRUD
         'btnSave
         '
         Me.btnSave.Image = Global.WindowsFormsCRUD.My.Resources.Resources.disquete
-        Me.btnSave.Location = New System.Drawing.Point(81, 0)
+        Me.btnSave.Location = New System.Drawing.Point(91, 1)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(1)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(28, 28)
@@ -104,7 +124,7 @@ Partial Class UscCRUD
         'btnDelete
         '
         Me.btnDelete.Image = Global.WindowsFormsCRUD.My.Resources.Resources.bin
-        Me.btnDelete.Location = New System.Drawing.Point(54, 0)
+        Me.btnDelete.Location = New System.Drawing.Point(61, 1)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(1)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(28, 28)
@@ -115,7 +135,7 @@ Partial Class UscCRUD
         'btnEdit
         '
         Me.btnEdit.Image = Global.WindowsFormsCRUD.My.Resources.Resources.editar
-        Me.btnEdit.Location = New System.Drawing.Point(27, 0)
+        Me.btnEdit.Location = New System.Drawing.Point(31, 1)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(1)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(28, 28)
@@ -126,7 +146,7 @@ Partial Class UscCRUD
         'btnNew
         '
         Me.btnNew.Image = Global.WindowsFormsCRUD.My.Resources.Resources.add
-        Me.btnNew.Location = New System.Drawing.Point(0, 0)
+        Me.btnNew.Location = New System.Drawing.Point(1, 1)
         Me.btnNew.Margin = New System.Windows.Forms.Padding(1)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(28, 28)
@@ -134,29 +154,47 @@ Partial Class UscCRUD
         Me.tipCRUD.SetToolTip(Me.btnNew, "Adicionar")
         Me.btnNew.UseVisualStyleBackColor = True
         '
-        'tipCRUD
+        'tbpCRUD
         '
-        Me.tipCRUD.AutoPopDelay = 5000
-        Me.tipCRUD.InitialDelay = 300
-        Me.tipCRUD.ReshowDelay = 100
-        Me.tipCRUD.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.tbpCRUD.ColumnCount = 10
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.Controls.Add(Me.btnClose, 9, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnNew, 0, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnEdit, 1, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnDelete, 2, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnSave, 3, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnCancel, 4, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnRefresh, 5, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnNext, 8, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnPrint, 6, 0)
+        Me.tbpCRUD.Controls.Add(Me.btnPrevious, 7, 0)
+        Me.tbpCRUD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbpCRUD.Location = New System.Drawing.Point(0, 0)
+        Me.tbpCRUD.Margin = New System.Windows.Forms.Padding(1)
+        Me.tbpCRUD.Name = "tbpCRUD"
+        Me.tbpCRUD.RowCount = 1
+        Me.tbpCRUD.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tbpCRUD.Size = New System.Drawing.Size(300, 30)
+        Me.tbpCRUD.TabIndex = 10
         '
         'UscCRUD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.btnNext)
-        Me.Controls.Add(Me.btnPrevious)
-        Me.Controls.Add(Me.btnPrint)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.btnNew)
+        Me.Controls.Add(Me.tbpCRUD)
         Me.Margin = New System.Windows.Forms.Padding(1)
         Me.Name = "UscCRUD"
-        Me.Size = New System.Drawing.Size(244, 28)
+        Me.Size = New System.Drawing.Size(300, 30)
+        Me.tbpCRUD.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -171,4 +209,6 @@ Partial Class UscCRUD
     Friend WithEvents btnNext As Button
     Friend WithEvents btnClose As Button
     Friend WithEvents tipCRUD As ToolTip
+    Friend WithEvents btnRefresh As Button
+    Friend WithEvents tbpCRUD As TableLayoutPanel
 End Class

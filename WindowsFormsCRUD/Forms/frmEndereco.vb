@@ -27,6 +27,7 @@ Public Class frmEndereco
     btnCRUD.DataBindings.Add("RemoveEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.ButtonDeleteVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("SaveEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.ButtonSaveVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("CancelEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.ButtonCancelVisible), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("RefreshEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.ButtonRefreshVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("PrintEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("PreviousEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("NextEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)

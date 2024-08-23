@@ -49,6 +49,14 @@
       btnCancel.Enabled = value
     End Set
   End Property
+  Public Property RefreshEnabled() As Boolean
+    Get
+      Return btnRefresh.Enabled
+    End Get
+    Set(value As Boolean)
+      btnRefresh.Enabled = value
+    End Set
+  End Property
   Public Property PrintEnabled() As Boolean
     Get
       Return btnPrint.Enabled
@@ -81,6 +89,15 @@
       btnClose.Enabled = value
     End Set
   End Property
+  Private Property _dataGridView As DataGridView
+  Public Property DataGridView() As DataGridView
+    Get
+      Return _dataGridView
+    End Get
+    Set(value As DataGridView)
+      _dataGridView = value
+    End Set
+  End Property
 
   Public Sub New()
     InitializeComponent()
@@ -94,5 +111,6 @@
     AddHandler btnPrevious.Click, Sub(sender, e) RaiseEvent PreviousEvent(sender, e)
     AddHandler btnNext.Click, Sub(sender, e) RaiseEvent NextEvent(sender, e)
     AddHandler btnClose.Click, Sub(sender, e) RaiseEvent CloseEvent(sender, e)
+    AddHandler btnRefresh.Click, Sub() DataGridView.Refresh()
   End Sub
 End Class

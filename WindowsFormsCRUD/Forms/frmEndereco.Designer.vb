@@ -24,9 +24,6 @@ Partial Class frmEndereco
   Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanelEndereco = New System.Windows.Forms.TableLayoutPanel()
-        Me.txtRua = New WindowsFormsCRUD.UscTextBox()
-        Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
-        Me.txtEstado = New WindowsFormsCRUD.UscTextBox()
         Me.gEnderecos = New System.Windows.Forms.DataGridView()
         Me.colId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colRua = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,6 +31,9 @@ Partial Class frmEndereco
         Me.colCidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEnderecoCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtRua = New WindowsFormsCRUD.UscTextBox()
+        Me.txtCidade = New WindowsFormsCRUD.UscTextBox()
+        Me.txtEstado = New WindowsFormsCRUD.UscTextBox()
         Me.txtNumero = New WindowsFormsCRUD.UscNumeric()
         Me.btnCRUD = New WindowsFormsCRUD.UscCRUD()
         Me.TableLayoutPanelEndereco.SuspendLayout()
@@ -68,54 +68,6 @@ Partial Class frmEndereco
         Me.TableLayoutPanelEndereco.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanelEndereco.Size = New System.Drawing.Size(504, 408)
         Me.TableLayoutPanelEndereco.TabIndex = 0
-        '
-        'txtRua
-        '
-        Me.txtRua.AutoSize = True
-        Me.txtRua.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtRua, 6)
-        Me.txtRua.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtRua.EditValue = ""
-        Me.txtRua.LabelText = "Rua"
-        Me.txtRua.Location = New System.Drawing.Point(1, 31)
-        Me.txtRua.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtRua.MaxLength = 50
-        Me.txtRua.Name = "txtRua"
-        Me.txtRua.Size = New System.Drawing.Size(502, 33)
-        Me.txtRua.TabIndex = 1
-        '
-        'txtCidade
-        '
-        Me.txtCidade.AutoSize = True
-        Me.txtCidade.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtCidade, 6)
-        Me.txtCidade.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtCidade.EditValue = ""
-        Me.txtCidade.LabelText = "Cidade"
-        Me.txtCidade.Location = New System.Drawing.Point(1, 101)
-        Me.txtCidade.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtCidade.MaxLength = 30
-        Me.txtCidade.Name = "txtCidade"
-        Me.txtCidade.Size = New System.Drawing.Size(502, 33)
-        Me.txtCidade.TabIndex = 3
-        '
-        'txtEstado
-        '
-        Me.txtEstado.AutoSize = True
-        Me.txtEstado.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtEstado, 6)
-        Me.txtEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtEstado.EditValue = ""
-        Me.txtEstado.LabelText = "Estado"
-        Me.txtEstado.Location = New System.Drawing.Point(1, 136)
-        Me.txtEstado.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtEstado.MaxLength = 2
-        Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.Size = New System.Drawing.Size(502, 33)
-        Me.txtEstado.TabIndex = 4
         '
         'gEnderecos
         '
@@ -203,6 +155,57 @@ Partial Class frmEndereco
         Me.colEnderecoCompleto.ReadOnly = True
         Me.colEnderecoCompleto.Visible = False
         '
+        'txtRua
+        '
+        Me.txtRua.AutoSize = True
+        Me.txtRua.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtRua, 6)
+        Me.txtRua.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtRua.EditValue = ""
+        Me.txtRua.IsPassword = False
+        Me.txtRua.LabelText = "Rua"
+        Me.txtRua.Location = New System.Drawing.Point(1, 31)
+        Me.txtRua.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtRua.MaxLength = 50
+        Me.txtRua.Name = "txtRua"
+        Me.txtRua.Size = New System.Drawing.Size(502, 33)
+        Me.txtRua.TabIndex = 1
+        '
+        'txtCidade
+        '
+        Me.txtCidade.AutoSize = True
+        Me.txtCidade.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtCidade, 6)
+        Me.txtCidade.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCidade.EditValue = ""
+        Me.txtCidade.IsPassword = False
+        Me.txtCidade.LabelText = "Cidade"
+        Me.txtCidade.Location = New System.Drawing.Point(1, 101)
+        Me.txtCidade.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtCidade.MaxLength = 30
+        Me.txtCidade.Name = "txtCidade"
+        Me.txtCidade.Size = New System.Drawing.Size(502, 33)
+        Me.txtCidade.TabIndex = 3
+        '
+        'txtEstado
+        '
+        Me.txtEstado.AutoSize = True
+        Me.txtEstado.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanelEndereco.SetColumnSpan(Me.txtEstado, 6)
+        Me.txtEstado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtEstado.EditValue = ""
+        Me.txtEstado.IsPassword = False
+        Me.txtEstado.LabelText = "Estado"
+        Me.txtEstado.Location = New System.Drawing.Point(1, 136)
+        Me.txtEstado.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtEstado.MaxLength = 2
+        Me.txtEstado.Name = "txtEstado"
+        Me.txtEstado.Size = New System.Drawing.Size(502, 33)
+        Me.txtEstado.TabIndex = 4
+        '
         'txtNumero
         '
         Me.txtNumero.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -222,6 +225,7 @@ Partial Class frmEndereco
         Me.btnCRUD.CancelEnabled = True
         Me.btnCRUD.CloseEnabled = True
         Me.TableLayoutPanelEndereco.SetColumnSpan(Me.btnCRUD, 6)
+        Me.btnCRUD.DataGridView = Me.gEnderecos
         Me.btnCRUD.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCRUD.EditEnabled = True
         Me.btnCRUD.Location = New System.Drawing.Point(1, 1)
@@ -231,6 +235,7 @@ Partial Class frmEndereco
         Me.btnCRUD.NextEnabled = True
         Me.btnCRUD.PreviousEnabled = True
         Me.btnCRUD.PrintEnabled = True
+        Me.btnCRUD.RefreshEnabled = True
         Me.btnCRUD.RemoveEnabled = True
         Me.btnCRUD.SaveEnabled = True
         Me.btnCRUD.Size = New System.Drawing.Size(502, 28)

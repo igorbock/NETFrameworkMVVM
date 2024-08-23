@@ -39,6 +39,7 @@ Public Class frmPessoa
     btnCRUD.DataBindings.Add("RemoveEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonDeleteVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("SaveEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonSaveVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("CancelEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonCancelVisible), True, DataSourceUpdateMode.OnPropertyChanged)
+    btnCRUD.DataBindings.Add("RefreshEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonRefreshVisible), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("PrintEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("PreviousEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("NextEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)

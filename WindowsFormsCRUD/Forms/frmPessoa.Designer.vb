@@ -81,6 +81,7 @@ Partial Class frmPessoa
         '
         Me.btnCRUD.CancelEnabled = True
         Me.btnCRUD.CloseEnabled = True
+        Me.btnCRUD.DataGridView = Me.gPessoas
         Me.btnCRUD.EditEnabled = True
         Me.btnCRUD.Location = New System.Drawing.Point(1, 1)
         Me.btnCRUD.Margin = New System.Windows.Forms.Padding(1)
@@ -89,6 +90,7 @@ Partial Class frmPessoa
         Me.btnCRUD.NextEnabled = True
         Me.btnCRUD.PreviousEnabled = True
         Me.btnCRUD.PrintEnabled = True
+        Me.btnCRUD.RefreshEnabled = True
         Me.btnCRUD.RemoveEnabled = True
         Me.btnCRUD.SaveEnabled = True
         Me.btnCRUD.Size = New System.Drawing.Size(554, 28)
@@ -101,9 +103,11 @@ Partial Class frmPessoa
         Me.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNome.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNome.EditValue = ""
+        Me.txtNome.IsPassword = False
         Me.txtNome.LabelText = "Nome"
         Me.txtNome.Location = New System.Drawing.Point(1, 31)
         Me.txtNome.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtNome.MaxLength = 32767
         Me.txtNome.Name = "txtNome"
         Me.txtNome.Size = New System.Drawing.Size(554, 33)
         Me.txtNome.TabIndex = 6
