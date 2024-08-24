@@ -1,4 +1,9 @@
-﻿Public Class UscCRUD
+﻿Imports System.ComponentModel
+Imports System.Drawing.Design
+Imports EntityFrameworkLib.Interfaces
+Imports VisualBasicLib.Classes
+
+Public Class UscCRUD
   Public Event NewEvent As EventHandler
   Public Event EditEvent As EventHandler
   Public Event RemoveEvent As EventHandler
@@ -96,6 +101,16 @@
     End Get
     Set(value As DataGridView)
       _dataGridView = value
+    End Set
+  End Property
+  Private _modelType As Type
+  <Description("Selecione o modelo associado ao CRUD"), Category("Model"), TypeConverter(GetType(EntityTypeConverter)), Browsable(True)>
+  Public Property ModelType() As Type
+    Get
+      Return _modelType
+    End Get
+    Set(value As Type)
+      _modelType = value
     End Set
   End Property
 
