@@ -30,10 +30,13 @@ Partial Class Home
         Me.tbpCadastros = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.sttLogin = New System.Windows.Forms.StatusStrip()
-        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblExpiracao = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnLogout = New System.Windows.Forms.ToolStripSplitButton()
+        Me.lblExpiracao = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tbcPages = New System.Windows.Forms.TabControl()
+        Me.btnVersao = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.btnAtualizar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnAtualizarRecente = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip.SuspendLayout()
         Me.tbcWindowsCRUD.SuspendLayout()
         Me.tbpCadastros.SuspendLayout()
@@ -108,28 +111,12 @@ Partial Class Home
         '
         'sttLogin
         '
-        Me.sttLogin.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnLogout, Me.lblExpiracao, Me.lblUsuario})
+        Me.sttLogin.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnLogout, Me.lblExpiracao, Me.lblUsuario, Me.btnVersao})
         Me.sttLogin.Location = New System.Drawing.Point(0, 428)
         Me.sttLogin.Name = "sttLogin"
         Me.sttLogin.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.sttLogin.Size = New System.Drawing.Size(800, 22)
         Me.sttLogin.TabIndex = 2
-        '
-        'lblUsuario
-        '
-        Me.lblUsuario.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblUsuario.Size = New System.Drawing.Size(56, 17)
-        Me.lblUsuario.Text = "Usuário |"
-        '
-        'lblExpiracao
-        '
-        Me.lblExpiracao.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblExpiracao.Name = "lblExpiracao"
-        Me.lblExpiracao.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblExpiracao.Size = New System.Drawing.Size(69, 17)
-        Me.lblExpiracao.Text = "Expira em |"
         '
         'btnLogout
         '
@@ -141,6 +128,22 @@ Partial Class Home
         Me.btnLogout.Size = New System.Drawing.Size(75, 20)
         Me.btnLogout.Text = "Logout"
         '
+        'lblExpiracao
+        '
+        Me.lblExpiracao.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblExpiracao.Name = "lblExpiracao"
+        Me.lblExpiracao.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblExpiracao.Size = New System.Drawing.Size(69, 17)
+        Me.lblExpiracao.Text = "Expira em |"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblUsuario.Size = New System.Drawing.Size(56, 17)
+        Me.lblUsuario.Text = "Usuário |"
+        '
         'tbcPages
         '
         Me.tbcPages.Dock = System.Windows.Forms.DockStyle.Fill
@@ -149,6 +152,28 @@ Partial Class Home
         Me.tbcPages.SelectedIndex = 0
         Me.tbcPages.Size = New System.Drawing.Size(800, 338)
         Me.tbcPages.TabIndex = 3
+        '
+        'btnVersao
+        '
+        Me.btnVersao.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnVersao.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnAtualizarRecente, Me.btnAtualizar})
+        Me.btnVersao.Image = CType(resources.GetObject("btnVersao.Image"), System.Drawing.Image)
+        Me.btnVersao.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnVersao.Name = "btnVersao"
+        Me.btnVersao.Size = New System.Drawing.Size(29, 20)
+        Me.btnVersao.Text = "ToolStripDropDownButton1"
+        '
+        'btnAtualizar
+        '
+        Me.btnAtualizar.Name = "btnAtualizar"
+        Me.btnAtualizar.Size = New System.Drawing.Size(216, 22)
+        Me.btnAtualizar.Text = "Atualizar"
+        '
+        'btnAtualizarRecente
+        '
+        Me.btnAtualizarRecente.Name = "btnAtualizarRecente"
+        Me.btnAtualizarRecente.Size = New System.Drawing.Size(216, 22)
+        Me.btnAtualizarRecente.Text = "Buscar versão mais recente"
         '
         'Home
         '
@@ -184,4 +209,7 @@ Partial Class Home
     Friend WithEvents lblExpiracao As ToolStripStatusLabel
     Friend WithEvents btnLogout As ToolStripSplitButton
     Friend WithEvents tbcPages As TabControl
+    Friend WithEvents btnVersao As ToolStripDropDownButton
+    Friend WithEvents btnAtualizarRecente As ToolStripMenuItem
+    Friend WithEvents btnAtualizar As ToolStripMenuItem
 End Class

@@ -124,6 +124,15 @@
     <value>117, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnVersao.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADASURBVDhPtY7dCcIwGEXvDk6hD3YRpeM4gVB3SlNBcAHr
+        z4OgGyhNCwqamMAFsfko7YMHzkPac0PQhb1iYi8Y8zgct8fdHnHjsT+NRlorrI3GI9jkKBqFOX934+PM
+        X+BEcyyZyfgojUYt6wIz5jHh2dKopWYe4y8wwuBXhYp5jDgQZB4jxZLMY6RYknmMFEsy/2IPGNkzFq8T
+        tn0Mbdhw7i8osXIl3CB3yDiXqXMklcY7aBSm/DyM5wZJkMd/AHwAL2E9DPHCVakAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAA
