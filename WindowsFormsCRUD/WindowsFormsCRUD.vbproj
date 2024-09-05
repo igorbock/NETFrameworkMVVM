@@ -447,6 +447,9 @@
   <ItemGroup>
     <None Include="Resources\atualizar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lancamento.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

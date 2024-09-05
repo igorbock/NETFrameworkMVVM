@@ -33,10 +33,10 @@ Partial Class Home
         Me.btnLogout = New System.Windows.Forms.ToolStripSplitButton()
         Me.lblExpiracao = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.tbcPages = New System.Windows.Forms.TabControl()
         Me.btnVersao = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.btnAtualizar = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnAtualizarRecente = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnAtualizar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbcPages = New System.Windows.Forms.TabControl()
         Me.ToolStrip.SuspendLayout()
         Me.tbcWindowsCRUD.SuspendLayout()
         Me.tbpCadastros.SuspendLayout()
@@ -144,15 +144,6 @@ Partial Class Home
         Me.lblUsuario.Size = New System.Drawing.Size(56, 17)
         Me.lblUsuario.Text = "Usuário |"
         '
-        'tbcPages
-        '
-        Me.tbcPages.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbcPages.Location = New System.Drawing.Point(0, 90)
-        Me.tbcPages.Name = "tbcPages"
-        Me.tbcPages.SelectedIndex = 0
-        Me.tbcPages.Size = New System.Drawing.Size(800, 338)
-        Me.tbcPages.TabIndex = 3
-        '
         'btnVersao
         '
         Me.btnVersao.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -163,17 +154,29 @@ Partial Class Home
         Me.btnVersao.Size = New System.Drawing.Size(29, 20)
         Me.btnVersao.Text = "ToolStripDropDownButton1"
         '
-        'btnAtualizar
-        '
-        Me.btnAtualizar.Name = "btnAtualizar"
-        Me.btnAtualizar.Size = New System.Drawing.Size(216, 22)
-        Me.btnAtualizar.Text = "Atualizar"
-        '
         'btnAtualizarRecente
         '
+        Me.btnAtualizarRecente.Image = Global.WindowsFormsCRUD.My.Resources.Resources.lancamento
         Me.btnAtualizarRecente.Name = "btnAtualizarRecente"
         Me.btnAtualizarRecente.Size = New System.Drawing.Size(216, 22)
-        Me.btnAtualizarRecente.Text = "Buscar versão mais recente"
+        Me.btnAtualizarRecente.Text = "&Buscar versão mais recente"
+        '
+        'btnAtualizar
+        '
+        Me.btnAtualizar.Image = Global.WindowsFormsCRUD.My.Resources.Resources.atualizar
+        Me.btnAtualizar.Name = "btnAtualizar"
+        Me.btnAtualizar.Size = New System.Drawing.Size(216, 22)
+        Me.btnAtualizar.Text = "&Atualizar"
+        Me.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'tbcPages
+        '
+        Me.tbcPages.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbcPages.Location = New System.Drawing.Point(0, 90)
+        Me.tbcPages.Name = "tbcPages"
+        Me.tbcPages.SelectedIndex = 0
+        Me.tbcPages.Size = New System.Drawing.Size(800, 338)
+        Me.tbcPages.TabIndex = 3
         '
         'Home
         '
