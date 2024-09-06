@@ -1,13 +1,14 @@
 ﻿Imports System.Threading
 Imports Ninject
 Imports VisualBasicLib.Interfaces
+Imports VisualBasicLib.Extensions.StringExtensions
 Imports WindowsFormsCRUD.Classes
 
 Namespace Navigator
   Public Class NavigatorWindowsForm
     Implements INavigationManager
 
-    Private ReadOnly _kernel As IKernel
+    Private ReadOnly Property _kernel As IKernel
 
     Private Property _homePage As Home
     Public Property HomePage As Home
@@ -61,7 +62,7 @@ Namespace Navigator
 
     Public Sub ClosePage() Implements INavigationManager.ClosePage
       Try
-        Dim form As Form = GetOpenedOrCreatePage(HomePage.tbcPages.SelectedTab.Text)
+        Dim form As Form = GetOpenedOrCreatePage(HomePage.tbcPages.SelectedTab.Text.ToFormName())
         form.Close()
         HomePage.tbcPages.TabPages.Remove(HomePage.tbcPages.SelectedTab)
       Catch ex As Exception
@@ -113,13 +114,6 @@ Namespace Navigator
     End Function
 
     Public Sub CloseAllPages() Implements INavigationManager.CloseAllPages
-      'Dim tabCount As Integer = HomePage.tbcPages.TabCount - 1
-      'For count = 0 To tabCount
-      '  Dim formName As String = HomePage.tbcPages.TabPages(count).Name
-      '  HomePage.tbcPages.TabPages.RemoveByKey(formName)
-      '  Dim form As Form = GetOpenedOrCreatePage(formName)
-      '  form.Close()
-      'Next
       For Each tab As TabPage In HomePage.tbcPages.TabPages
         Dim formName As String = tab.Name
         Dim form As Form = GetOpenedOrCreatePage(formName)
