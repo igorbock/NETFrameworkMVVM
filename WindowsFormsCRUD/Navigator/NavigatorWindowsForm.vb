@@ -57,7 +57,7 @@ Namespace Navigator
       Catch ex As Exception
         MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Finally
-        thr.Abort()
+        CloseSplashScreenLoad()
       End Try
     End Sub
 
@@ -80,7 +80,7 @@ Namespace Navigator
       End Try
     End Sub
 
-    Private Function GetOpenedOrCreatePage(pageName As String) As Form
+    Protected Function GetOpenedOrCreatePage(pageName As String) As Object Implements INavigationManager.GetOpenedOrCreatePage
       For i As Integer = 0 To Application.OpenForms.Count - 1
         Dim form As Form = Application.OpenForms.Item(i)
         If form Is Nothing OrElse form.Name <> pageName Then Continue For

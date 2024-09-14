@@ -4,7 +4,8 @@ Imports VisualBasicLib.Events
 Namespace Classes
   Public Module FormUtils
 
-    Private Property splashForm As SplashScreenApp
+    Private Property _splashForm As SplashScreenApp
+    Private Property _splashFormLoad As SplashScreenLoad
 
     Public Sub ShowError(sender As Object, e As ErrorEventArgs)
       Dim exception As Exception = e.GetException()
@@ -25,18 +26,26 @@ Namespace Classes
       Next
     End Sub
     Public Sub StartSplashScreen()
-      splashForm = New SplashScreenApp()
-      Application.Run(splashForm)
+      _splashForm = New SplashScreenApp()
+      Application.Run(_splashForm)
     End Sub
     Public Sub CloseSplashScreen()
-      If splashForm IsNot Nothing AndAlso splashForm.InvokeRequired Then
-        splashForm.Invoke(New MethodInvoker(AddressOf splashForm.Close))
-      ElseIf splashForm IsNot Nothing Then
-        splashForm.Close()
+      If _splashForm IsNot Nothing AndAlso _splashForm.InvokeRequired Then
+        _splashForm.Invoke(New MethodInvoker(AddressOf _splashForm.Close))
+      ElseIf _splashForm IsNot Nothing Then
+        _splashForm.Close()
       End If
     End Sub
     Public Sub StartSplashScreenLoad(message As String)
-      Application.Run(New SplashScreenLoad(message))
+      _splashFormLoad = New SplashScreenLoad(message)
+      Application.Run(_splashFormLoad)
+    End Sub
+    Public Sub CloseSplashScreenLoad()
+      If _splashFormLoad IsNot Nothing AndAlso _splashFormLoad.InvokeRequired Then
+        _splashFormLoad.Invoke(New MethodInvoker(AddressOf _splashFormLoad.Close))
+      ElseIf _splashFormLoad IsNot Nothing Then
+        _splashFormLoad.Close()
+      End If
     End Sub
   End Module
 End Namespace
