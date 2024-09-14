@@ -1,10 +1,6 @@
-﻿Imports EntityFrameworkLib.Context
-Imports EntityFrameworkLib.Models
-Imports Ninject.Modules
+﻿Imports Ninject.Modules
 Imports VisualBasicLib.Abstracts
 Imports VisualBasicLib.Interfaces
-Imports VisualBasicLib.Repositories
-Imports VisualBasicLib.ViewModels
 Imports WindowsFormsCRUD.Classes
 Imports WindowsFormsCRUD.Navigator
 

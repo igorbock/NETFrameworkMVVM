@@ -3,6 +3,7 @@ Imports Ninject
 Imports VisualBasicLib.Interfaces
 Imports VisualBasicLib.Extensions.StringExtensions
 Imports WindowsFormsCRUD.Classes
+Imports System.Reflection
 
 Namespace Navigator
   Public Class NavigatorWindowsForm
@@ -81,27 +82,28 @@ Namespace Navigator
 
     Private Function GetOpenedOrCreatePage(pageName As String) As Form
       For i As Integer = 0 To Application.OpenForms.Count - 1
-        Dim form As Form = TryCast(Application.OpenForms.Item(i), Form)
+        Dim form As Form = Application.OpenForms.Item(i)
         If form Is Nothing OrElse form.Name <> pageName Then Continue For
         Return form
       Next
 
+      For Each asb As Assembly In AppDomain.CurrentDomain.GetAssemblies()
+        Try
+          For Each type As Type In asb.GetTypes()
+            If GetType(Form).IsAssignableFrom(type) AndAlso type.Name = pageName Then
+              Dim form As Form = CType(_kernel.Get(type), Form)
+              form.TopLevel = False
+              form.Dock = DockStyle.Fill
+              form.FormBorderStyle = FormBorderStyle.None
+              If form IsNot Nothing Then Return form
+            End If
+          Next
+        Catch ex As ReflectionTypeLoadException
+          MessageBox.Show($"Erro ao carregar tipos do assembly {asb.FullName}: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+      Next
 
-      Dim formName As String = $"WindowsFormsCRUD.{pageName}"
-      Dim formType As Type = Type.[GetType](formName)
-      If formType IsNot Nothing Then
-        Dim windowsForm As Form = _kernel.Get(formType)
-        If windowsForm IsNot Nothing Then
-          windowsForm.TopLevel = False
-          windowsForm.FormBorderStyle = FormBorderStyle.None
-          windowsForm.Dock = DockStyle.Fill
-          Return windowsForm
-        Else
-          Throw New Exception("Formulário não encontrado.")
-        End If
-      Else
-        Throw New Exception("Formulário não encontrado.")
-      End If
+      Throw New Exception("Formulário não encontrado.")
     End Function
     Private Function GetHomePage(homePageName As String) As Form
       For i As Integer = 0 To Application.OpenForms.Count - 1
