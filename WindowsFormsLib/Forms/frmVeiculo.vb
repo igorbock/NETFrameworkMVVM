@@ -1,8 +1,5 @@
-﻿Imports EntityFrameworkLib.Interfaces
-Imports EntityFrameworkLib.Models
+﻿Imports EntityFrameworkLib.Models
 Imports VisualBasicLib.Abstracts
-Imports VisualBasicLib.ViewModels
-Imports WindowsFormsCRUD.Navigator
 
 Public Class frmVeiculo
   Private ReadOnly Property _formNumber As Integer

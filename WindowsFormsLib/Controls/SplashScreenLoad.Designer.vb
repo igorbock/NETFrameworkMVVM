@@ -31,7 +31,7 @@ Partial Class SplashScreenLoad
         'PictureBox
         '
         Me.PictureBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox.Image = Global.WindowsFormsCRUD.My.Resources.Resources.AppCRUD
+        Me.PictureBox.Image = Global.WindowsFormsLib.My.Resources.Resources.AppCRUD
         Me.PictureBox.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox.Name = "PictureBox"
         Me.PictureBox.Size = New System.Drawing.Size(399, 318)

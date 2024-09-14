@@ -1,6 +1,6 @@
 ﻿Imports EntityFrameworkLib.Models
 Imports VisualBasicLib.Abstracts
-Imports WindowsFormsCRUD.Classes
+Imports WindowsFormsLib.Classes
 
 Public Class frmEndereco
   Private ReadOnly Property _viewModelEndereco As TypeTViewModel(Of Endereco)

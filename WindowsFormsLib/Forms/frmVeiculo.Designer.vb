@@ -23,7 +23,7 @@ Partial Class frmVeiculo
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
     Me.tbpBaseCRUD = New System.Windows.Forms.TableLayoutPanel()
-    Me.navigator = New WindowsFormsCRUD.UscCRUD()
+    Me.navigator = New WindowsFormsLib.UscCRUD()
     Me.tbpBaseCRUD.SuspendLayout()
     Me.SuspendLayout()
     '

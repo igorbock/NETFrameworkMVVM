@@ -1,6 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports System.Drawing.Design
-Imports EntityFrameworkLib.Interfaces
 Imports VisualBasicLib.Classes
 
 Public Class UscCRUD

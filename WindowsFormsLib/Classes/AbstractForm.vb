@@ -1,6 +1,6 @@
 ﻿Imports EntityFrameworkLib.Interfaces
 Imports VisualBasicLib.Abstracts
-Imports WindowsFormsCRUD.Classes
+Imports WindowsFormsLib.Classes
 
 Public MustInherit Class AbstractForm(Of TypeT As IEntity)
   Inherits Form

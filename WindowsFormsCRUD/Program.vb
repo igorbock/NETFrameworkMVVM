@@ -1,7 +1,8 @@
 ﻿Imports System.Threading
 Imports Ninject
 Imports VisualBasicLib.Classes
-Imports WindowsFormsCRUD.Classes
+Imports WindowsFormsLib
+Imports WindowsFormsLib.Classes
 
 Public Module Program
   Private kernel As IKernel

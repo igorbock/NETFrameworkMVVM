@@ -23,8 +23,8 @@ Partial Class frmLogin
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
         Me.tbpLogin = New System.Windows.Forms.TableLayoutPanel()
-        Me.txtUser = New WindowsFormsCRUD.UscTextBox()
-        Me.txtSenha = New WindowsFormsCRUD.UscTextBox()
+        Me.txtUser = New WindowsFormsLib.UscTextBox()
+        Me.txtSenha = New WindowsFormsLib.UscTextBox()
         Me.btnEntrar = New System.Windows.Forms.Button()
         Me.btnSair = New System.Windows.Forms.Button()
         Me.tbpLogin.SuspendLayout()

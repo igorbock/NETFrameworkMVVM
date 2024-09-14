@@ -3,7 +3,7 @@ Imports VisualBasicLib.ViewModels
 Imports VisualBasicLib.Extensions.PessoaExtensions
 Imports VisualBasicLib.Abstracts
 Imports EntityFrameworkLib.Models
-Imports WindowsFormsCRUD.Classes
+Imports WindowsFormsLib.Classes
 
 Public Class frmPessoa
   Private ReadOnly Property _viewModelPessoa As PessoaViewModel

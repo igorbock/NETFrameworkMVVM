@@ -25,9 +25,9 @@ Partial Class frmNovoUsuario
         Me.tbpRegistro = New System.Windows.Forms.TableLayoutPanel()
         Me.btnConfirmar = New System.Windows.Forms.Button()
         Me.btnSair = New System.Windows.Forms.Button()
-        Me.txtNome = New WindowsFormsCRUD.UscTextBox()
-        Me.txtSenha = New WindowsFormsCRUD.UscTextBox()
-        Me.txtConfirmaSenha = New WindowsFormsCRUD.UscTextBox()
+        Me.txtNome = New WindowsFormsLib.UscTextBox()
+        Me.txtSenha = New WindowsFormsLib.UscTextBox()
+        Me.txtConfirmaSenha = New WindowsFormsLib.UscTextBox()
         Me.tbpRegistro.SuspendLayout()
         Me.SuspendLayout()
         '

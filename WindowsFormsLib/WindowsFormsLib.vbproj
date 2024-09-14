@@ -1,60 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{338C579A-F77C-4224-934F-69819C718F07}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>Sub Main</StartupObject>
-    <RootNamespace>WindowsFormsCRUD</RootNamespace>
-    <AssemblyName>WindowsFormsCRUD</AssemblyName>
+    <ProjectGuid>{53F7F1A4-B571-4E01-B6BB-AF3EC056283D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WindowsFormsLib</RootNamespace>
+    <AssemblyName>WindowsFormsLib</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>WindowsFormsCRUD.xml</DocumentationFile>
+    <DocumentationFile>WindowsFormsLib.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>WindowsFormsCRUD.xml</DocumentationFile>
+    <DocumentationFile>WindowsFormsLib.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionExplicit>Off</OptionExplicit>
+    <OptionExplicit>On</OptionExplicit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionCompare>Binary</OptionCompare>
@@ -64,9 +44,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -81,12 +58,6 @@
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Design.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
@@ -136,12 +107,6 @@
     <Reference Include="Ninject, Version=3.3.6.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.6\lib\net45\Ninject.dll</HintPath>
     </Reference>
-    <Reference Include="Npgsql, Version=4.1.14.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Npgsql.4.1.14\lib\net461\Npgsql.dll</HintPath>
-    </Reference>
-    <Reference Include="Npgsql.EntityFrameworkCore.PostgreSQL, Version=3.1.18.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Npgsql.EntityFrameworkCore.PostgreSQL.3.1.18\lib\netstandard2.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -154,12 +119,11 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=8.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.8.0.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
@@ -206,13 +170,101 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WindowsFormsDI.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Classes\AbstractForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\FormUtils.vb" />
+    <Compile Include="Classes\UserService.vb" />
+    <Compile Include="Controls\SplashScreenApp.Designer.vb">
+      <DependentUpon>SplashScreenApp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplashScreenApp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SplashScreenLoad.Designer.vb">
+      <DependentUpon>SplashScreenLoad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplashScreenLoad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\UscCRUD.Designer.vb">
+      <DependentUpon>UscCRUD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UscCRUD.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UscDataGridViewPessoas.Designer.vb">
+      <DependentUpon>UscDataGridViewPessoas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UscDataGridViewPessoas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UscMaskedTextBox.Designer.vb">
+      <DependentUpon>UscMaskedTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UscMaskedTextBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UscNumeric.Designer.vb">
+      <DependentUpon>UscNumeric.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UscNumeric.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UscTextBox.Designer.vb">
+      <DependentUpon>UscTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UscTextBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForm.Designer.vb">
+      <DependentUpon>BaseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEndereco.Designer.vb">
+      <DependentUpon>frmEndereco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEndereco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNovoUsuario.Designer.vb">
+      <DependentUpon>frmNovoUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNovoUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPessoa.Designer.vb">
+      <DependentUpon>frmPessoa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPessoa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVeiculo.Designer.vb">
+      <DependentUpon>frmVeiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVeiculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Navigator\NavigatorWindowsForm.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,10 +275,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Program.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Controls\SplashScreenApp.resx">
+      <DependentUpon>SplashScreenApp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SplashScreenLoad.resx">
+      <DependentUpon>SplashScreenLoad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UscCRUD.resx">
+      <DependentUpon>UscCRUD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UscDataGridViewPessoas.resx">
+      <DependentUpon>UscDataGridViewPessoas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UscMaskedTextBox.resx">
+      <DependentUpon>UscMaskedTextBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UscNumeric.resx">
+      <DependentUpon>UscNumeric.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UscTextBox.resx">
+      <DependentUpon>UscTextBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEndereco.resx">
+      <DependentUpon>frmEndereco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNovoUsuario.resx">
+      <DependentUpon>frmNovoUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPessoa.resx">
+      <DependentUpon>frmPessoa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVeiculo.resx">
+      <DependentUpon>frmVeiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -235,20 +327,20 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="My Project\app.manifest" />
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\DataSources\EntityFrameworkLib.Models.Endereco.datasource" />
-    <None Include="My Project\DataSources\EntityFrameworkLib.Models.Pessoa.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NETLibMVVM\EntityFrameworkLib\EntityFrameworkLib.csproj">
@@ -259,28 +351,25 @@
       <Project>{1b5adf9a-d240-456f-92f5-87dbae5bee74}</Project>
       <Name>VisualBasicLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WindowsFormsLib\WindowsFormsLib.vbproj">
-      <Project>{53f7f1a4-b571-4e01-b6bb-af3ec056283d}</Project>
-      <Name>WindowsFormsLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\anterior.png" />
+    <Content Include="Resources\AppCRUD.jpeg" />
+    <Content Include="Resources\atualizar.png" />
+    <Content Include="Resources\bin.png" />
+    <Content Include="Resources\disquete.png" />
+    <Content Include="Resources\editar.png" />
+    <Content Include="Resources\homem-de-negocios.png" />
+    <Content Include="Resources\homem-de-negocios1.png" />
+    <Content Include="Resources\impressora.png" />
+    <Content Include="Resources\lancamento.png" />
+    <Content Include="Resources\localizador-de-mapa.png" />
+    <Content Include="Resources\notificacao.png" />
+    <Content Include="Resources\notificacao_pendente.png" />
+    <Content Include="Resources\porta.png" />
+    <Content Include="Resources\proximo-botao.png" />
+    <Content Include="Resources\recarregar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
-  </Target>
 </Project>

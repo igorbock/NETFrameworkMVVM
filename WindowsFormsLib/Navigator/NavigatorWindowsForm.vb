@@ -2,7 +2,7 @@
 Imports Ninject
 Imports VisualBasicLib.Interfaces
 Imports VisualBasicLib.Extensions.StringExtensions
-Imports WindowsFormsCRUD.Classes
+Imports WindowsFormsLib.Classes
 Imports System.Reflection
 
 Namespace Navigator

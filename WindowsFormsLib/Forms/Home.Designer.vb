@@ -56,7 +56,7 @@ Partial Class Home
         '
         'btnPessoa
         '
-        Me.btnPessoa.Image = Global.WindowsFormsCRUD.My.Resources.Resources.homem_de_negocios1
+        Me.btnPessoa.Image = Global.WindowsFormsLib.My.Resources.Resources.homem_de_negocios1
         Me.btnPessoa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btnPessoa.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnPessoa.Name = "btnPessoa"
@@ -67,7 +67,7 @@ Partial Class Home
         '
         'btnEndereco
         '
-        Me.btnEndereco.Image = Global.WindowsFormsCRUD.My.Resources.Resources.localizador_de_mapa
+        Me.btnEndereco.Image = Global.WindowsFormsLib.My.Resources.Resources.localizador_de_mapa
         Me.btnEndereco.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btnEndereco.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnEndereco.Name = "btnEndereco"
@@ -121,7 +121,7 @@ Partial Class Home
         'btnLogout
         '
         Me.btnLogout.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic)
-        Me.btnLogout.Image = Global.WindowsFormsCRUD.My.Resources.Resources.porta
+        Me.btnLogout.Image = Global.WindowsFormsLib.My.Resources.Resources.porta
         Me.btnLogout.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -156,14 +156,14 @@ Partial Class Home
         '
         'btnAtualizarRecente
         '
-        Me.btnAtualizarRecente.Image = Global.WindowsFormsCRUD.My.Resources.Resources.lancamento
+        Me.btnAtualizarRecente.Image = Global.WindowsFormsLib.My.Resources.Resources.lancamento
         Me.btnAtualizarRecente.Name = "btnAtualizarRecente"
         Me.btnAtualizarRecente.Size = New System.Drawing.Size(216, 22)
         Me.btnAtualizarRecente.Text = "&Buscar versão mais recente"
         '
         'btnAtualizar
         '
-        Me.btnAtualizar.Image = Global.WindowsFormsCRUD.My.Resources.Resources.atualizar
+        Me.btnAtualizar.Image = Global.WindowsFormsLib.My.Resources.Resources.atualizar
         Me.btnAtualizar.Name = "btnAtualizar"
         Me.btnAtualizar.Size = New System.Drawing.Size(216, 22)
         Me.btnAtualizar.Text = "&Atualizar"

@@ -24,7 +24,7 @@ Namespace Classes
           .Key = "teste123teste123teste123teste123",
           .Algorithm = SecurityAlgorithms.HmacSha256,
           .Issuer = "NETFrameworkLib",
-          .Audience = "WindowsFormsCRUD",
+          .Audience = "WindowsFormsLib",
           .IssuedDay = Date.Now,
           .IssuedTime = Date.Now,
           .ExpirationDay = Date.Now.AddSeconds(5),

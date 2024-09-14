@@ -1,8 +1,9 @@
 ﻿Imports Ninject.Modules
 Imports VisualBasicLib.Abstracts
 Imports VisualBasicLib.Interfaces
-Imports WindowsFormsCRUD.Classes
-Imports WindowsFormsCRUD.Navigator
+Imports WindowsFormsLib
+Imports WindowsFormsLib.Classes
+Imports WindowsFormsLib.Navigator
 
 Public Class WindowsFormsDI
   Inherits NinjectModule
