@@ -11,16 +11,12 @@ Public Module Program
     Application.EnableVisualStyles()
     Application.SetCompatibleTextRenderingDefault(False)
 
-    Dim thr As New Thread(New ThreadStart(AddressOf FormUtils.StartSplashScreen))
+    Dim thr As New Thread(New ThreadStart(AddressOf StartSplashScreen))
     thr.Start()
-    Thread.Sleep(3000)
-    thr.Abort()
+    Thread.Sleep(4000)
+    CloseSplashScreen()
 
     kernel = New StandardKernel(New WindowsFormsDI(), New NinjectDI())
-#If DEBUG Then
     Application.Run(kernel.Get(Of Home))
-#Else
-    Application.Run(kernel.Get(Of frmLogin))
-#End If
   End Sub
 End Module

@@ -1,5 +1,6 @@
 ﻿Imports EntityFrameworkLib.Models
 Imports VisualBasicLib.Abstracts
+Imports WindowsFormsCRUD.Classes
 
 Public Class frmEndereco
   Private ReadOnly Property _viewModelEndereco As TypeTViewModel(Of Endereco)
@@ -33,8 +34,8 @@ Public Class frmEndereco
     btnCRUD.DataBindings.Add("NextEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("CloseEnabled", _viewModelEndereco, NameOf(_viewModelEndereco.ButtonCloseVisible), True, DataSourceUpdateMode.OnPropertyChanged)
 
-    AddHandler _viewModelEndereco.ErrorOcurred, AddressOf Classes.FormUtils.ShowError
-    AddHandler _viewModelEndereco.QuestionOcurred, Sub(sender, e) e.Iteration = Classes.FormUtils.ShowYesNoQuestion(sender, e)
+    AddHandler _viewModelEndereco.ErrorOcurred, AddressOf ShowError
+    AddHandler _viewModelEndereco.QuestionOcurred, Sub(sender, e) e.Iteration = ShowYesNoQuestion(sender, e)
 
     AddHandler btnCRUD.NewEvent, Sub() _viewModelEndereco.CreateCommand.Execute(Nothing)
     AddHandler btnCRUD.EditEvent, Sub() _viewModelEndereco.UpdateCommand.Execute(Nothing)

@@ -36,7 +36,7 @@ Namespace Navigator
     End Sub
 
     Public Sub ShowPage(pageName As String) Implements INavigationManager.ShowPage
-      Dim thr As New Thread(New ThreadStart(Sub() FormUtils.StartSplashScreenLoad($"Carregando '{pageName}'...")))
+      Dim thr As New Thread(New ThreadStart(Sub() StartSplashScreenLoad($"Carregando '{pageName}'...")))
       Try
         thr.Start()
         Dim form As Form = GetOpenedOrCreatePage(pageName)

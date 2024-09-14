@@ -3,6 +3,7 @@ Imports VisualBasicLib.ViewModels
 Imports VisualBasicLib.Extensions.PessoaExtensions
 Imports VisualBasicLib.Abstracts
 Imports EntityFrameworkLib.Models
+Imports WindowsFormsCRUD.Classes
 
 Public Class frmPessoa
   Private ReadOnly Property _viewModelPessoa As PessoaViewModel
@@ -45,8 +46,8 @@ Public Class frmPessoa
     btnCRUD.DataBindings.Add("NextEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     btnCRUD.DataBindings.Add("CloseEnabled", _viewModelPessoa, NameOf(_viewModelPessoa.ButtonCloseVisible), True, DataSourceUpdateMode.OnPropertyChanged)
 
-    AddHandler _viewModelPessoa.ErrorOcurred, AddressOf Classes.FormUtils.ShowError
-    AddHandler _viewModelPessoa.QuestionOcurred, Sub(sender, e) e.Iteration = Classes.FormUtils.ShowYesNoQuestion(sender, e)
+    AddHandler _viewModelPessoa.ErrorOcurred, AddressOf ShowError
+    AddHandler _viewModelPessoa.QuestionOcurred, Sub(sender, e) e.Iteration = ShowYesNoQuestion(sender, e)
 
     AddHandler btnCRUD.NewEvent, Sub() _viewModelPessoa.CreateCommand.Execute(Nothing)
     AddHandler btnCRUD.EditEvent, Sub() _viewModelPessoa.UpdateCommand.Execute(Nothing)

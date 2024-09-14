@@ -1,5 +1,6 @@
 ﻿Imports EntityFrameworkLib.Interfaces
 Imports VisualBasicLib.Abstracts
+Imports WindowsFormsCRUD.Classes
 
 Public MustInherit Class AbstractForm(Of TypeT As IEntity)
   Inherits Form
@@ -20,8 +21,8 @@ Public MustInherit Class AbstractForm(Of TypeT As IEntity)
     _navigator.DataBindings.Add("NextEnabled", _viewModel, NameOf(_viewModel.EnableControl), True, DataSourceUpdateMode.OnPropertyChanged)
     _navigator.DataBindings.Add("CloseEnabled", _viewModel, NameOf(_viewModel.ButtonCloseVisible), True, DataSourceUpdateMode.OnPropertyChanged)
 
-    AddHandler _viewModel.ErrorOcurred, AddressOf Classes.FormUtils.ShowError
-    AddHandler _viewModel.QuestionOcurred, Sub(sender, e) e.Iteration = Classes.FormUtils.ShowYesNoQuestion(sender, e)
+    AddHandler _viewModel.ErrorOcurred, AddressOf ShowError
+    AddHandler _viewModel.QuestionOcurred, Sub(sender, e) e.Iteration = ShowYesNoQuestion(sender, e)
 
     AddHandler _navigator.NewEvent, Sub() _viewModel.CreateCommand.Execute(Nothing)
     AddHandler _navigator.EditEvent, Sub() _viewModel.UpdateCommand.Execute(Nothing)
